@@ -1,0 +1,23 @@
+#!/usr/bin/env python2
+
+bnchmrk="maxFlow"
+benchmark="Maximum Flow"
+checkProgram="../common/maxFlowCheck"
+dataDir = "../graphData/data"
+
+tests = [
+    [1, "randLocalGraph_F_5_200000", "", ""],
+    [1, "rMatGraph_F_5_200000", "", ""],
+#    [1, "ac_F_5000", "", ""],
+    [1, "ac_F_4000", "", ""],
+    [1, "ak_F_12000", "", ""],
+    [1, "genrmf_long_F_5", "", ""],
+    [1, "genrmf_wide_F_3", "", ""],
+    [1, "washington_rlg_long_F_14", "", ""],
+    [1, "washington_rlg_wide_F_12", "", ""],
+    [1, "washington_line_moderate_F_6", "", ""],
+    ]
+
+import runTests
+runTests.timeAllArgs(bnchmrk, benchmark, checkProgram, dataDir, tests)
+

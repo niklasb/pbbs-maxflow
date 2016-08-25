@@ -1,0 +1,167 @@
+#include <iostream>
+#include <limits.h>
+#include "sequence.h"
+#include "gettime.h"
+#include "sampleSort.h"
+#include "graph.h"
+#include "cilk.h"
+using namespace std;
+
+// **************************************************************
+//    FIND OPERATION FOR UNION FIND
+// **************************************************************
+
+// Assumes root is negative
+inline vindex find(vindex i, vindex* parent) {
+  if ((parent[i]) < 0) return i;
+  vindex j = parent[i];     
+  if (parent[j] < 0) return j;
+  do j = parent[j]; 
+  while (parent[j] >= 0);
+  parent[i] = j;
+
+  // partial path compress
+  vindex tmp;
+  int k = 0;
+  while ((tmp = parent[i]) != j) { 
+    if (k++ == 5) {parent[i] = j; k = 0;}
+    i = tmp;}
+    
+  return j;
+}
+
+// **************************************************************
+//    PARALLEL VERSION OF KRUSKAL'S ALGORITHM
+// **************************************************************
+
+int unionFindLoop(wghEdge* E, int m, int nInMst,
+		  vindex* parents, vindex* hooks, wghEdge *mst) {
+  int roundSize = m/20+1;
+  vindex *hold = newA(vindex,roundSize);
+  vindex *EP = newA(vindex,roundSize);
+  bool *flags = newA(bool,roundSize);
+  int nDone = 0;  // number of edges that are done
+  int keep = 0;   // number of edges that need to be retried in next round
+  int round = 0; 
+
+  while (nDone < m) {
+    utils::myAssert(round++ < 1000,"unionFindLoop: too many iterations");
+    int size = min(roundSize, m-nDone);
+    cilk_for (int i=0; i < size-keep; i++) 
+      EP[i+keep] = nDone+keep+i;   // new edge pointers to add
+
+    cilk_for (int i =0; i < size; i++) {
+      flags[i] = 0;
+      int r = EP[i];
+      vindex u = find(E[r].u,parents);
+      vindex v = find(E[r].v,parents);
+      if (u != v) {
+        // "reserve" the two endpoints
+	utils::writeMin(&hooks[v],r);
+	utils::writeMin(&hooks[u],r);
+	flags[i] = 1;
+      }
+    }
+
+    // keep edges that are not self edges
+    int n1   = sequence::pack(EP, hold, flags, size);
+
+    cilk_for (int i =0; i < n1; i++) {
+      flags[i] = 0; 
+      int r = hold[i];
+      vindex u = find(E[r].u,parents);
+      vindex v = find(E[r].v,parents);
+      // check if successfully reserved (i.e. min) in either direction
+      //   and hook if so
+      if (hooks[u] == r) {
+	parents[u] = v;
+	if (hooks[v] == r) hooks[v] = INT_MAX;
+      } else if (hooks[v] == r) 
+	parents[v] = u;
+
+      // if not then it needs to be kept for the next round
+      else flags[i] = 1;
+    }
+
+    // keep edges that failed to hook for next round
+    keep = sequence::pack(hold, EP, flags, n1);
+
+    // add hooked edges to mst
+    cilk_for (int j = 0; j < n1; j++) flags[j] = !flags[j];
+    int newInMst = sequence::pack(hold, EP+keep, flags, n1);
+    cilk_for (int j = 0; j < newInMst; j++) mst[nInMst+j] = E[EP[keep+j]];
+
+    nDone += size - keep;
+    nInMst += newInMst;
+  }
+  free(hold); free(EP); free(flags);
+  return nInMst;
+}
+
+struct edgeLess {
+  bool operator() (wghEdge a, wghEdge b) { return (a.weight < b.weight); }
+};
+
+template <class E, class F>
+int almostKth(E* A, E* B, int k, int n, F f) {
+  int ssize = min(1000,n);
+  int stride = n/ssize;
+  int km = (int) (k * ((double) ssize) / n);
+  E T[ssize];
+  bool *flags = newA(bool,n);
+  for (int i = 0; i < ssize; i++) T[i] = A[i*stride];
+  sort(T,T+ssize,f);
+  E p = T[km];
+
+  {cilk_for (int i=0; i < n; i++) flags[i] = f(A[i],p);}
+  int l = sequence::pack(A,B,flags,n);
+  {cilk_for (int i=0; i < n; i++) flags[i] = !flags[i];}
+  sequence::pack(A,B+l,flags,n);
+  free(flags);
+  return l;
+}
+
+wghEdgeArray mst(wghEdgeArray G) { 
+  wghEdge *E = G.E;
+  wghEdge* TE = newA(wghEdge,G.m);
+
+  //startTime();
+  vindex *parents = newA(vindex,G.n);
+  cilk_for (int i=0; i < G.n; i++) parents[i] = -1;
+  vindex *hooks = newA(vindex,G.n);
+  cilk_for (int i=0; i < G.n; i++) hooks[i] = INT_MAX;
+  wghEdge *mst = newA(wghEdge,G.n);
+  int l = min(4*G.n/3,G.m);
+
+  //nextTime("init");
+  l = almostKth(E, TE, l, G.m, edgeLess());
+  //nextTime("nth");
+  compSort(TE, l, edgeLess());
+  //nextTime("sort");
+
+  int nInMst = unionFindLoop(TE, l, 0, parents, hooks, mst);
+
+  //nextTime("ufloop 1");
+  bool *flags = newA(bool,G.m-l);
+
+  cilk_for (int i = 0; i < G.m-l; i++) {
+    vindex u = find(TE[i+l].u, parents);
+    vindex v = find(TE[i+l].v, parents);
+    if (u != v) flags[i] = 1;
+    else flags[i] = 0;
+  }
+  //nextTime("check");
+  int k = sequence::pack(TE+l,E,flags,G.m-l);
+
+  //nextTime("filter");
+  //cout << "kept=" << k << endl;
+
+  compSort(E, k, edgeLess());
+  //nextTime("sort 2");
+  nInMst = unionFindLoop(E, k, nInMst, parents, hooks, mst);
+  //nextTime("ufloop 2");
+  //cout << "n = " << G.n << " edges in mst = " << nInMst << endl;
+
+  free(parents); free(hooks); free(TE); free(flags);
+  return wghEdgeArray(mst, G.n, nInMst);
+}

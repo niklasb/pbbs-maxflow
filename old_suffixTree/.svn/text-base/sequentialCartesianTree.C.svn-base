@@ -1,0 +1,77 @@
+#include <iostream>
+#include "cartesianTreeNode.h"
+#include "suffixTree.h"
+#include "gettime.h"
+using namespace std;
+
+void cartesianTreeStack(node_c* Nodes, int n){
+  int ptr = 0; //first node in list
+  for(int i=1;i<n;i++){
+    while(Nodes[i].value < Nodes[ptr].value && Nodes[ptr].parent != -1){
+      ptr = Nodes[ptr].parent;
+    }
+    //new root case
+    if(Nodes[ptr].parent == -1 && Nodes[i].value < Nodes[ptr].value){
+      //Nodes[i].leftChild = ptr;
+      Nodes[ptr].parent = i;
+    }
+    else {
+      Nodes[i].parent = ptr;
+      int rc = Nodes[ptr].rightChild;
+      //Nodes[i].leftChild = rc;
+      Nodes[rc].parent = i;
+      Nodes[ptr].rightChild = i;
+    }
+    ptr = i;
+  }
+}
+
+
+
+void ANSV(node* Nodes, int* SN, int n){
+  uint* stack = new uint[n];
+  int curr = 0;
+
+  //left neighbors (-1 if no smaller neighbor)
+  SN[0] = -1;
+  stack[curr] = 0;
+  
+  for(int i=1;i<n;i++){
+    while(curr >= 0 && Nodes[i].value < Nodes[stack[curr]].value)
+      curr--;
+    if(curr<0) SN[i] = -1;
+    else  SN[i] = stack[curr];
+    stack[++curr] = i;
+
+  }
+
+  //right neighbors
+  curr = 0;
+  stack[curr] = n-1;
+  for(int i=n-2;i>=0;i--){
+    while(curr >= 0 && Nodes[i].value < Nodes[stack[curr]].value)
+      curr--;
+    if(curr >= 0){
+      if(SN[i] == -1) SN[i] = stack[curr];
+      else if(stack[curr] != -1)
+	SN[i] = (Nodes[SN[i]].value < Nodes[stack[curr]].value) ?
+	  SN[i] : stack[curr];
+    }
+    stack[++curr] = i;
+  }
+
+  delete [] stack;
+ 
+}
+
+void cartesianTreeANSV(node* Nodes, int n){
+  int* SN = new int[n];
+  ANSV(Nodes,SN,n);
+
+  //build cartesian tree using SN array
+  cilk_for(int i=0;i<n;i++) Nodes[i].parent = SN[i];
+  delete [] SN;
+
+}
+
+

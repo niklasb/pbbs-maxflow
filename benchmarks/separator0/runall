@@ -1,0 +1,43 @@
+#!/usr/bin/python
+#
+# run all tests
+#
+
+import os
+import sys
+import signal
+import time
+import subprocess
+
+
+def signal_handler(signal,frame):
+  print "bye\n"
+  sys.exit(0)
+signal.signal(signal.SIGINT,signal_handler)
+
+def shellGetOutput(str) :
+  process = subprocess.Popen(str,shell=True,stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE)
+  output, err = process.communicate()
+  
+  if (len(err) > 0):
+      raise NameError(str+"\n"+output+err)
+  return output
+
+applications = ["parallelSeparator"]
+#serial_applications = ["serialHash"]
+testfiles = ["3Dgrid_J_10000000","randLocalGraph_J_5_10000000","rMatGraph_J_5_10000000"]
+
+processors = [1,2,4]+range(8,64+1,8)
+processors = [1,40,60,80]
+
+for app in applications:
+  os.system("cd "+app+"; make clean; make; cd ..");
+  for testfile in testfiles :
+    for p in processors :
+      ss = "export CILK_NWORKERS="+`p`+"; ./" + app + "/Separator graphData/data/"+testfile
+      print app+" "+`p` + " " + testfile 
+      print shellGetOutput(ss)
+      sys.stdout.flush()
+
+os.system("unset CILK_NWORKERS;")

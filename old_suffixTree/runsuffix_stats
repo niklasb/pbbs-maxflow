@@ -1,0 +1,51 @@
+#!/usr/bin/python
+#
+# run all tests
+#
+
+import os
+import sys
+import signal
+import time
+import subprocess
+
+def signal_handler(signal,frame):
+  print "bye\n"
+  sys.exit(0)
+signal.signal(signal.SIGINT,signal_handler)
+
+def shellGetOutput(str) :
+  process = subprocess.Popen(str,shell=True,stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE)
+  output, err = process.communicate()
+  
+  if (len(err) > 0):
+      raise NameError(str+"\n"+output+err)
+  return output
+
+#testfiles = []
+testfiles = ["10Midentical","10Mrandom","10Msqrtn","chr22.dna","etext99","howto","jdk13c","kingjamesbible","rctail96","rfc","sprot34.dat","thesaurus.doc","w3c2","wikisamp8.xml"]
+#testfiles = ["10Mrandom"]
+integertestfiles = ["10Mrandom_ints_range_10K","10Mrandom_ints_range_INTMAX"]
+#integertestfiles = []
+processors = [1,2,4]+range(8,64+1,8)
+if (len(sys.argv) > 1) :
+  tests = [test for test in tests if test[0] in sys.argv]
+
+for testfile in testfiles :
+  for p in processors :
+    
+    ss = "export CILK_NWORKERS="+`p`+"; ./suffixTree f testfiles/"+testfile+ " -cilk_set_worker_count "+`p`
+    print `p` + " " + testfile 
+    print shellGetOutput(ss)
+    sys.stdout.flush()
+
+    #os.system(ss)
+
+
+for testfile in integertestfiles :
+  for p in processors :
+    ss = "export CILK_NWORKERS="+`p`+"; ./suffixTree i testfiles/"+testfile+ " -cilk_set_worker_count "+`p`
+    print `p` + " " + testfile + " -i"
+    print shellGetOutput(ss)
+    sys.stdout.flush()

@@ -1,0 +1,11 @@
+#!/bin/bash
+graph=$1
+name=${2-default}
+dir=runs/$graph-$name
+echo "writing to $dir"
+mkdir -p $dir
+for i in 1 2 4 8 16 32; do
+  echo "run $name, graph $graph, $i threads"
+  CILK_NWORKERS=$i numactl -i all ./maxFlow -r 1 ../graphData/data/$graph > $dir/$i
+done
+./timings $dir

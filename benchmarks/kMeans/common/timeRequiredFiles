@@ -1,0 +1,8 @@
+BNCHMRK = kmeans
+
+GLOBAL_GENERIC = utils.h parseCommandLine.h parallel.h gettime.h sequence.h runTests.py quickSort.h
+
+TIME_GLOBAL_REQUIRE = ${GLOBAL_GENERIC} 
+
+TIME_REQUIRE = kmeansutils.h datautils.h kmeansIO.h random.h
+

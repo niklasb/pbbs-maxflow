@@ -1,0 +1,527 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/pbbs/!svn/ver/325/branches/tmpsrc
+END
+graphGen.C
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/graphGen.C
+END
+maxIndSet.C
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/maxIndSet.C
+END
+maxMatchingTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/maxMatchingTest.C
+END
+delaunay.C
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/delaunay.C
+END
+mst.C
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/mst.C
+END
+stringGen.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pbbs/!svn/ver/292/branches/tmpsrc/stringGen.h
+END
+graph.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/graph.h
+END
+intSort.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pbbs/!svn/ver/305/branches/tmpsrc/intSort.h
+END
+bfsTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/bfsTest.C
+END
+randPerm.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/randPerm.h
+END
+nbody.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/nbody.h
+END
+mvMultiply.C
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/mvMultiply.C
+END
+sequentialCartesianTree.C
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pbbs/!svn/ver/292/branches/tmpsrc/sequentialCartesianTree.C
+END
+stackSpace.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pbbs/!svn/ver/305/branches/tmpsrc/stackSpace.h
+END
+geomGen.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/geomGen.h
+END
+cilk.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/cilk.h
+END
+mergesuffixtimings-dec04-aware
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/pbbs/!svn/ver/294/branches/tmpsrc/mergesuffixtimings-dec04-aware
+END
+hash.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/hash.h
+END
+quickSort.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/quickSort.h
+END
+mergesuffixtimings-dec06-aware
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/pbbs/!svn/ver/308/branches/tmpsrc/mergesuffixtimings-dec06-aware
+END
+seq.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/seq.h
+END
+sampleSort.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/sampleSort.h
+END
+suffixtree-times-dec5
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pbbs/!svn/ver/306/branches/tmpsrc/suffixtree-times-dec5
+END
+separator.C
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/separator.C
+END
+rangeMin.C
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/rangeMin.C
+END
+graphGen.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/graphGen.h
+END
+colorGraph.C
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/colorGraph.C
+END
+remDuplicatesTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/remDuplicatesTest.C
+END
+intSortTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/pbbs/!svn/ver/305/branches/tmpsrc/intSortTest.C
+END
+gettime.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pbbs/!svn/ver/255/branches/tmpsrc/gettime.h
+END
+suffixArrayTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/pbbs/!svn/ver/313/branches/tmpsrc/suffixArrayTest.C
+END
+serialMst.C
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/serialMst.C
+END
+hullTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/hullTest.C
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/utils.h
+END
+compSortTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/compSortTest.C
+END
+mergeSuffixArrayToTree.C
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pbbs/!svn/ver/306/branches/tmpsrc/mergeSuffixArrayToTree.C
+END
+delaunay.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/delaunay.h
+END
+editGraph.C
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/editGraph.C
+END
+randPermTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/randPermTest.C
+END
+monster_search_dec13
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pbbs/!svn/ver/323/branches/tmpsrc/monster_search_dec13
+END
+nbodyTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/nbodyTest.C
+END
+sequence.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pbbs/!svn/ver/305/branches/tmpsrc/sequence.h
+END
+suffixArray2.C
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/pbbs/!svn/ver/313/branches/tmpsrc/suffixArray2.C
+END
+pOctTree.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/pOctTree.h
+END
+geom.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/geom.h
+END
+maxIndSetTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/maxIndSetTest.C
+END
+itemGen.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/itemGen.h
+END
+runsuffix_search
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/pbbs/!svn/ver/323/branches/tmpsrc/runsuffix_search
+END
+cartesianTree.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/pbbs/!svn/ver/243/branches/tmpsrc/cartesianTree.h
+END
+maxMatching.C
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/maxMatching.C
+END
+delaunayTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/delaunayTest.C
+END
+monster_sizes_dec13
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pbbs/!svn/ver/325/branches/tmpsrc/monster_sizes_dec13
+END
+mstTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/mstTest.C
+END
+merge.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/merge.h
+END
+cartesianTreeNode.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pbbs/!svn/ver/292/branches/tmpsrc/cartesianTreeNode.h
+END
+rangeMin.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/rangeMin.h
+END
+sequenceTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/sequenceTest.C
+END
+ppOctTree.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/ppOctTree.h
+END
+bfs.C
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/bfs.C
+END
+runall
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/pbbs/!svn/ver/305/branches/tmpsrc/runall
+END
+runsuffix_differentsizes
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pbbs/!svn/ver/319/branches/tmpsrc/runsuffix_differentsizes
+END
+nearestNeighbor.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/nearestNeighbor.h
+END
+seqGen.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/seqGen.h
+END
+suffixTree.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pbbs/!svn/ver/258/branches/tmpsrc/suffixTree.h
+END
+spmv.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/spmv.h
+END
+barnesHut.C
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/barnesHut.C
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/pbbs/!svn/ver/313/branches/tmpsrc/Makefile
+END
+serialSort.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/serialSort.h
+END
+stlParallelSort.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/stlParallelSort.h
+END
+mergeTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/mergeTest.C
+END
+separatorTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/separatorTest.C
+END
+colorGraphTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/colorGraphTest.C
+END
+suffixArray.C
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/pbbs/!svn/ver/258/branches/tmpsrc/suffixArray.C
+END
+hull.C
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/hull.C
+END
+runsuffix
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pbbs/!svn/ver/306/branches/tmpsrc/runsuffix
+END
+hash2.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/pbbs/!svn/ver/258/branches/tmpsrc/hash2.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/README
+END
+buildTreeTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/buildTreeTest.C
+END
+LICENSE.TXT
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/LICENSE.TXT
+END
+nearestNeighborTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/nearestNeighborTest.C
+END
+runtest
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/runtest
+END
+transpose.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/transpose.h
+END
+suffixTreeTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/pbbs/!svn/ver/323/branches/tmpsrc/suffixTreeTest.C
+END
+quadOctTree.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/quadOctTree.h
+END
+spmvTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/spmvTest.C
+END
+suffixArrayTest2.C
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/pbbs/!svn/ver/313/branches/tmpsrc/suffixArrayTest2.C
+END
+tableTest.C
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pbbs/!svn/ver/242/branches/tmpsrc/tableTest.C
+END

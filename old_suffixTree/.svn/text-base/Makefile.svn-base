@@ -1,0 +1,232 @@
+CC = g++
+LFLAGS =
+CFLAGS = -O2
+CILK=1
+GPCC = /usr/bin/g++
+GPLFLAGS =
+GPCFLAGS = -O2 -fopenmp
+
+ifdef MKLROOTX
+PCC = icpc
+PCFLAGS = -O3 -DCILKP
+PLFLAGS =
+else ifdef CILK
+PCC = cilk++
+PCFLAGS = -O2 -DCILK -Wno-cilk-for
+#LFLAGS = -lmiser
+PLFLAGS =
+else 
+PCC = $(CC)
+PLFLAGS = $(LFLAGS)
+PCFLAGS = $(CFLAGS)
+endif
+
+
+BASIC = cilk.h utils.h
+SEQUENCE = sequence.h $(BASIC)
+SEQ = seq.h $(SEQUENCE)
+GRAPH = graph.h
+INTSORT = intSort.h transpose.h
+QOTREE = $(INTSORT) quadOctTree.h pOctTree.h ppOctTree.h
+NNGH = nearestNeighbor.h $(QOTREE)
+ITEMGEN = itemGen.h gettime.h
+STRINGGEN = $(ITEMGEN) stringGen.h
+SEQGEN = $(STRINGGEN) seqGen.h
+GEOMGEN = $(ITEMGEN) geomGen.h
+GRAPHGEN = $(GRAPH) graphGen.h 
+
+sequenceTest: sequenceTest.C $(SEQUENCE) 
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o sequenceTest sequenceTest.C
+
+mergeTest: mergeTest.C merge.h $(BASIC)
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o mergeTest mergeTest.C 
+
+randPermTest: mergeTest.C randPerm.h $(SEQGEN) $(BASIC)
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o randPermTest randPermTest.C 
+
+genSeqRand : genSeqRand.C $(SEQGEN)
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o genSeqRand genSeqRand.C
+
+genSeqTrigramString : genSeqTrigramString.C $(SEQGEN)
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o genSeqTrigramString genSeqTrigramString.C
+
+genSeqAlmostSorted : genSeqAlmostSorted.C $(SEQGEN)
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o genSeqAlmostSorted genSeqAlmostSorted.C
+
+data/seqRand_10M_double : genSeqRand
+	./genSeqRand -t double 10000000 data/seqRand_10M_double
+
+genSeqExp : genSeqExp.C $(SEQGEN)
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o genSeqExp genSeqExp.C
+
+compSortCheck: compSortCheck.C sampleSort.h $(BASIC) $(SEQGEN)
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o compSortCheck compSortCheck.C
+
+quickSortTest: compSortTest.C quickSort.h $(SEQGEN) $(BASIC) randPerm.h
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -include quickSort.h -o quickSortTest compSortTest.C
+
+sampleSortTest: compSortTest.C sampleSort.h quickSort.h transpose.h $(SEQGEN) $(BASIC) 
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -include sampleSort.h -o sampleSortTest compSortTest.C
+
+serialSortTest: compSortTest.C serialSort.h $(SEQGEN) $(BASIC) 
+	$(CC) $(CFLAGS) $(LFLAGS) -include serialSort.h -o serialSortTest compSortTest.C
+
+stlParallelSortTest: compSortTest.C stlParallelSort.h $(SEQGEN) $(BASIC) 
+	$(GPCC) $(GPCFLAGS) $(GPLFLAGS) -include stlParallelSort.h -o stlParallelSortTest compSortTest.C
+
+intSortTest: intSortTest.C $(INTSORT) $(SEQUENCE) $(SEQGEN)
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o intSortTest intSortTest.C
+
+remDuplicatesTest: remDuplicatesTest.C hash.h $(SEQGEN) $(SEQ)
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o remDuplicatesTest remDuplicatesTest.C
+
+tableTest: tableTest.C hash.h $(SEQGEN) $(SEQ)
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o tableTest tableTest.C
+
+graphGen.o: graphGen.C $(INTSORT) hash.h $(GRAPH) $(GRAPHGEN)
+	$(PCC) $(PCFLAGS) -c graphGen.C
+
+mst.o: mst.C quickSort.h $(GRAPH)
+	$(PCC) $(PCFLAGS) -c mst.C
+
+serialMst.o: serialMst.C quickSort.h $(GRAPH)
+	$(PCC) $(PCFLAGS) -c serialMst.C
+
+mstTest.o: mstTest.C $(GRAPHGEN)
+	$(PCC) $(PCFLAGS) -c mstTest.C
+
+mstTest: graphGen.o mst.o mstTest.o
+	$(PCC) $(PLFLAGS) -o mstTest graphGen.o mst.o mstTest.o
+
+serialMstTest: graphGen.o serialMst.o mstTest.o
+	$(PCC) $(PLFLAGS) -o serialMstTest graphGen.o serialMst.o mstTest.o
+
+maxIndSet.o: maxIndSet.C $(GRAPH)
+	$(PCC) $(PCFLAGS) -c maxIndSet.C
+
+maxIndSetTest.o: maxIndSetTest.C $(GRAPHGEN)
+	$(PCC) $(PCFLAGS) -c maxIndSetTest.C
+
+maxIndSetTest: maxIndSetTest.o graphGen.o maxIndSet.o
+	$(PCC) $(PLFLAGS) -o maxIndSetTest graphGen.o maxIndSet.o maxIndSetTest.o
+
+colorGraph.o: colorGraph.C $(GRAPH)
+	$(PCC) $(PCFLAGS) -c colorGraph.C
+
+colorGraphTest.o: colorGraphTest.C $(GRAPHGEN)
+	$(PCC) $(PCFLAGS) -c colorGraphTest.C
+
+colorGraphTest: colorGraphTest.o colorGraph.o graphGen.o maxIndSet.o
+	$(PCC) $(PLFLAGS) -o colorGraphTest graphGen.o colorGraph.o maxIndSet.o colorGraphTest.o
+
+maxMatching.o: maxMatching.C $(GRAPH)
+	$(PCC) $(PCFLAGS) -c maxMatching.C
+
+maxMatchingTest.o: maxMatchingTest.C $(GRAPHGEN)
+	$(PCC) $(PCFLAGS) -c maxMatchingTest.C
+
+maxMatchingTest: graphGen.o maxMatchingTest.o maxMatching.o
+	$(PCC) $(PLFLAGS) -o maxMatchingTest graphGen.o maxMatching.o maxMatchingTest.o
+
+separator.o: separator.C quickSort.h $(GRAPH)
+	$(PCC) $(PCFLAGS) -c separator.C
+
+separatorTest.o: separatorTest.C $(GRAPHGEN)
+	$(PCC) $(PCFLAGS) -c separatorTest.C
+
+separatorTest: graphGen.o separatorTest.o separator.o maxMatching.o
+	$(PCC) $(PLFLAGS) -o separatorTest graphGen.o separator.o separatorTest.o maxMatching.o
+
+bfs.o: bfs.C $(GRAPH)
+	$(PCC) $(PCFLAGS) -c bfs.C
+
+bfsTest.o: bfsTest.C $(GRAPHGEN)
+	$(PCC) $(PCFLAGS) -c bfsTest.C
+
+bfsTest: bfsTest.o graphGen.o bfs.o
+	$(PCC) $(PLFLAGS) -o bfsTest graphGen.o bfs.o bfsTest.o
+
+delaunay.o: delaunay.C delaunay.h $(NNGH) $(SEQ)
+	$(PCC) $(PCFLAGS) -c delaunay.C 
+
+delaunayTest.o: delaunayTest.C geom.h delaunay.h $(GEOMGEN)
+	$(PCC) $(PCFLAGS) -c delaunayTest.C 
+
+delaunayTest: delaunay.o delaunayTest.o
+	$(PCC) $(PLFLAGS) -o delaunayTest delaunayTest.o delaunay.o
+
+hull.o: hull.C geom.h $(SEQUENCE)
+	$(PCC) $(PCFLAGS) -c hull.C
+
+hullTest.o: hullTest.C geom.h $(GEOMGEN)
+	$(PCC) $(PCFLAGS) -c hullTest.C
+
+hullTest: hull.o hullTest.o
+	$(PCC) $(PLFLAGS) -o hullTest hullTest.o hull.o
+
+nearestNeighborTest: nearestNeighborTest.C $(NNGH) $(GEOMGEN) $(SEQ)
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o nearestNeighborTest nearestNeighborTest.C
+
+buildTreeTest: buildTreeTest.C $(NNGH) $(GEOMGEN) $(SEQ) 
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o buildTreeTest buildTreeTest.C
+
+barnesHut.o: barnesHut.C geom.h quadOctTree.h $(SEQ) nbody.h
+	$(PCC) $(PCFLAGS) -c barnesHut.C
+
+nbodyTest.o: nbodyTest.C geom.h quadOctTree.h $(SEQ) $(GEOMGEN) nbody.h
+	$(PCC) $(PCFLAGS) -c nbodyTest.C
+
+nbodyTest: barnesHut.o nbodyTest.o
+	$(PCC) $(PLFLAGS) -o nbodyTest barnesHut.o nbodyTest.o
+
+spmvTest.o: spmvTest.C $(GRAPH) spmv.h
+	$(PCC) $(PCFLAGS) -c spmvTest.C
+
+spmvTest: spmvTest.o graphGen.o 
+	$(PCC) $(PLFLAGS) -o spmvTest spmvTest.o graphGen.o 
+
+editGraph: editGraph.C hash.h $(INTSORT) $(SEQ)
+	$(PCC) $(PCFLAGS) $(PLFLAGS) -o editGraph editGraph.C
+
+suffixArrayTest.o: suffixArrayTest.C $(STRINGGEN) $(SEQUENCE) stackSpace.h
+	$(PCC) $(PCFLAGS) -c suffixArrayTest.C
+
+rangeMin.o: rangeMin.C rangeMin.h $(BASIC) $(SEQUENCE)
+	$(PCC) $(PCFLAGS) -c rangeMin.C
+
+mergeSuffixArrayToTree.o: mergeSuffixArrayToTree.C suffixTree.h cartesianTree.h $(SEQUENCE) $(INTSORT) hash.h hash2.h stackSpace.h
+	$(PCC) $(PCFLAGS) -c mergeSuffixArrayToTree.C
+
+suffixTreeTest.o: suffixTreeTest.C $(STRINGGEN) $(SEQUENCE) hash.h suffixTree.h stackSpace.h
+	$(PCC) $(PCFLAGS) -c suffixTreeTest.C
+
+mergeSuffixTreeTest: suffixArray.o rangeMin.o suffixTreeTest.o mergeSuffixArrayToTree.o sequentialCartesianTree.o
+	$(PCC) $(PLFLAGS) -o $@ suffixTreeTest.o suffixArray.o rangeMin.o mergeSuffixArrayToTree.o sequentialCartesianTree.o
+
+suffixArray.o: suffixArray.C merge.h $(INTSORT) $(SEQUENCE) stackSpace.h
+	$(PCC) $(PCFLAGS) -c suffixArray.C
+
+suffixArrayTest : suffixArrayTest.o suffixArray.o rangeMin.o
+	$(PCC) $(PLFLAGS) -o $@ suffixArrayTest.o suffixArray.o rangeMin.o
+
+rangeMinTest: rangeMinTest.C rangeMin.o
+	$(PCC) $(PCFLAGS) rangeMinTest.C $(PLFLAGS) -o rangeMinTest rangeMin.o
+
+sequentialCartesianTree.o : sequentialCartesianTree.C cartesianTreeNode.h
+	$(PCC) $(PCFLAGS) -c sequentialCartesianTree.C
+
+suffixArrayTest2.o: suffixArrayTest2.C $(STRINGGEN) $(SEQUENCE)
+	$(PCC) $(PCFLAGS) -c suffixArrayTest2.C
+
+suffixArray2.o: suffixArray2.C merge.h $(INTSORT) $(SEQUENCE)
+	$(PCC) $(PCFLAGS) -c suffixArray2.C
+
+suffixArrayTest2 : suffixArrayTest2.o suffixArray2.o
+	$(PCC) $(PLFLAGS) -o $@ suffixArrayTest2.o suffixArray2.o
+
+ALL= sequenceTest mergeTest intSortTest quickSortTest sampleSortTest serialSortTest stlParallelSortTest remDuplicatesTest tableTest maxIndSetTest colorGraphTest maxMatchingTest separatorTest bfsTest delaunayTest nearestNeighborTest spmvTest nbodyTest suffixArrayTest mergeSuffixTreeTest hullTest mstTest serialMstTest randPermTest buildTreeTest
+
+all : $(ALL)
+
+clean :
+	rm -f *.o $(ALL)

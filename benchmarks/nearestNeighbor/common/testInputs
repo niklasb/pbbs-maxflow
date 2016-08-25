@@ -1,0 +1,18 @@
+#!/usr/bin/python
+
+checkProgram="../common/nnCheck"
+dataDir = ""
+
+tests = []
+
+# Point numbers have to be squares so grid will be fulll
+numofpoints = [pow(2,15), pow(2,16), pow(2,18), pow(2,20), pow(2,21)] 
+types = ["grid", "random", "shell"]
+for npts in numofpoints:
+    for t in types:
+       tests.append( [1, "", " -n %d -r 1 -t %s" %(npts, t), " -n %d" %npts] )
+   
+   
+import runTests
+runTests.timeAllArgs(checkProgram, dataDir, tests, problem="nearestNeighbor")
+

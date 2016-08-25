@@ -1,0 +1,49 @@
+#include <iostream>
+#include <math.h>
+#include "sequence.h"
+#include "cilk.h"
+#include "quadOctTree.h"
+#include "geomGen.h"
+#include "nbody.h"
+
+using namespace std;
+using namespace dataGen;
+
+double check(particle** p, int n) {
+  int nCheck = 10;
+  double Err = 0.0;
+  for (int i=0; i < nCheck; i++) {
+    int idx = dataGen::hash<int>(i)%n;
+    vect3d force;
+    for (int j=0; j < n; j++) {
+      if (idx != j) {
+	vect3d v = (p[j]->pt) - (p[idx]->pt);
+	double r = v.Length();
+	force = force + (v * (p[j]->mass * p[idx]->mass * gGrav /(r*r*r)));
+      }
+    }
+    Err += pow((point3d(force)-point3d(p[idx]->force)).Length()/force.Length(),
+	       2.0);
+  }
+  return sqrt(Err/nCheck);
+}
+
+int cilk_main(int argc, char *argv[]) {
+  int t1, t2, n;
+  if (argc > 1) n = std::atoi(argv[1]); else n = 10000;
+
+  // need to add another distribution
+  {
+    particle** p = new particle*[n];
+    for (int i=0; i < n; i++) {
+      double mass = hash<double>(3*n + i);
+      p[i] = new particle(randPlummer(i),mass);
+    }
+    startTime();
+    step(seq<particle*>(p,n));
+    stopTime(.1,"Nbody (Random 3d points)");
+    cout << "  Sampled RMS Error = "<< check(p,n) << endl;
+  }
+
+  reportTime("Nbody (weighted average)");
+}

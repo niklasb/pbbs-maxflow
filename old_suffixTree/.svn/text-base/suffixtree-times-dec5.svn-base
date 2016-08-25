@@ -1,0 +1,2444 @@
+HOSTNAME: monster
+Path: .
+URL: https://freyja.aladdin.cs.cmu.edu/svn/pbbs/branches/tmpsrc
+Repository Root: https://freyja.aladdin.cs.cmu.edu/svn/pbbs
+Repository UUID: 62bc7976-c1cc-4065-800b-67e61e609b9e
+Revision: 296
+Node Kind: directory
+Schedule: normal
+Last Changed Author: jshun@CS.CMU.EDU
+Last Changed Rev: 294
+Last Changed Date: 2010-12-04 19:59:38 -0500 (Sat, 04 Dec 2010)
+
+make: `mergeSuffixTreeTest' is up to date.
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Midentical -cilk_set_worker_count 1
+Radix sort time: 0.632946
+Merge time: 0.458907
+LCP time: 1.51382
+Time for suffix array with input as a file : 3.52 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.147 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.125 seconds
+Time to initialize nodes : 0.094 seconds
+Time for building CT in parallel : 0.396 seconds
+Time for shortcuts : 0.107 seconds
+Time for inserting into hash table : 0.221 seconds
+Time for converting to suffix tree : 1.09 seconds
+
+Generate random : 0.104 seconds
+Time to search n/20 strings : 0.236 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Midentical -cilk_set_worker_count 2
+Radix sort time: 0.361128
+Merge time: 0.230121
+LCP time: 0.779763
+Time for suffix array with input as a file : 1.88 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0877 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.143 seconds
+Time to initialize nodes : 0.0649 seconds
+Time for building CT in parallel : 0.202 seconds
+Time for shortcuts : 0.0598 seconds
+Time for inserting into hash table : 0.115 seconds
+Time for converting to suffix tree : 0.673 seconds
+
+Generate random : 0.0667 seconds
+Time to search n/20 strings : 0.118 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Midentical -cilk_set_worker_count 4
+Radix sort time: 0.208049
+Merge time: 0.116778
+LCP time: 0.41349
+Time for suffix array with input as a file : 1.03 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0609 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.163 seconds
+Time to initialize nodes : 0.0282 seconds
+Time for building CT in parallel : 0.103 seconds
+Time for shortcuts : 0.0332 seconds
+Time for inserting into hash table : 0.0591 seconds
+Time for converting to suffix tree : 0.447 seconds
+
+Generate random : 0.0332 seconds
+Time to search n/20 strings : 0.0595 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Midentical -cilk_set_worker_count 8
+Radix sort time: 0.144112
+Merge time: 0.0590529
+LCP time: 0.224679
+Time for suffix array with input as a file : 0.604 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0584 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.155 seconds
+Time to initialize nodes : 0.0178 seconds
+Time for building CT in parallel : 0.0538 seconds
+Time for shortcuts : 0.0163 seconds
+Time for inserting into hash table : 0.0322 seconds
+Time for converting to suffix tree : 0.334 seconds
+
+Generate random : 0.0175 seconds
+Time to search n/20 strings : 0.0299 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Midentical -cilk_set_worker_count 16
+Radix sort time: 0.109966
+Merge time: 0.0312407
+LCP time: 0.158523
+Time for suffix array with input as a file : 0.42 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.069 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.16 seconds
+Time to initialize nodes : 0.012 seconds
+Time for building CT in parallel : 0.0273 seconds
+Time for shortcuts : 0.0116 seconds
+Time for inserting into hash table : 0.0203 seconds
+Time for converting to suffix tree : 0.3 seconds
+
+Generate random : 0.01 seconds
+Time to search n/20 strings : 0.015 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Midentical -cilk_set_worker_count 24
+Radix sort time: 0.101602
+Merge time: 0.0222595
+LCP time: 0.145856
+Time for suffix array with input as a file : 0.378 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0697 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.162 seconds
+Time to initialize nodes : 0.011 seconds
+Time for building CT in parallel : 0.018 seconds
+Time for shortcuts : 0.00961 seconds
+Time for inserting into hash table : 0.0171 seconds
+Time for converting to suffix tree : 0.287 seconds
+
+Generate random : 0.00917 seconds
+Time to search n/20 strings : 0.0102 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Midentical -cilk_set_worker_count 28
+Radix sort time: 0.0987606
+Merge time: 0.0198474
+LCP time: 0.143543
+Time for suffix array with input as a file : 0.37 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0711 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.174 seconds
+Time to initialize nodes : 0.0111 seconds
+Time for building CT in parallel : 0.0156 seconds
+Time for shortcuts : 0.0108 seconds
+Time for inserting into hash table : 0.0169 seconds
+Time for converting to suffix tree : 0.3 seconds
+
+Generate random : 0.00937 seconds
+Time to search n/20 strings : 0.00878 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Midentical -cilk_set_worker_count 32
+Radix sort time: 0.100262
+Merge time: 0.0178611
+LCP time: 0.143548
+Time for suffix array with input as a file : 0.372 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0704 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.167 seconds
+Time to initialize nodes : 0.0104 seconds
+Time for building CT in parallel : 0.014 seconds
+Time for shortcuts : 0.0105 seconds
+Time for inserting into hash table : 0.0164 seconds
+Time for converting to suffix tree : 0.289 seconds
+
+Generate random : 0.00956 seconds
+Time to search n/20 strings : 0.00766 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Midentical -cilk_set_worker_count 64
+Radix sort time: 0.117691
+Merge time: 0.0170033
+LCP time: 0.172159
+Time for suffix array with input as a file : 0.411 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0495 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.166 seconds
+Time to initialize nodes : 0.0114 seconds
+Time for building CT in parallel : 0.0113 seconds
+Time for shortcuts : 0.00958 seconds
+Time for inserting into hash table : 0.0137 seconds
+Time for converting to suffix tree : 0.262 seconds
+
+Generate random : 0.0077 seconds
+Time to search n/20 strings : 0.00684 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Mrandom -cilk_set_worker_count 1
+Radix sort time: 1.06756
+Merge time: 1.70499
+LCP time: 1.18427
+Time for suffix array with input as a file : 5.43 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.149 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.204 seconds
+Time to initialize nodes : 0.0944 seconds
+Time for building CT in parallel : 0.582 seconds
+Time for shortcuts : 0.34 seconds
+Time for inserting into hash table : 1.13 seconds
+Time for converting to suffix tree : 2.5 seconds
+
+Generate random : 0.114 seconds
+Time to search n/20 strings : 0.853 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Mrandom -cilk_set_worker_count 2
+Radix sort time: 0.582736
+Merge time: 0.880517
+LCP time: 0.611935
+Time for suffix array with input as a file : 2.87 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0916 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.218 seconds
+Time to initialize nodes : 0.0525 seconds
+Time for building CT in parallel : 0.299 seconds
+Time for shortcuts : 0.183 seconds
+Time for inserting into hash table : 0.63 seconds
+Time for converting to suffix tree : 1.47 seconds
+
+Generate random : 0.0621 seconds
+Time to search n/20 strings : 0.472 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Mrandom -cilk_set_worker_count 4
+Radix sort time: 0.291145
+Merge time: 0.426626
+LCP time: 0.299796
+Time for suffix array with input as a file : 1.42 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0591 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.225 seconds
+Time to initialize nodes : 0.0297 seconds
+Time for building CT in parallel : 0.152 seconds
+Time for shortcuts : 0.0891 seconds
+Time for inserting into hash table : 0.296 seconds
+Time for converting to suffix tree : 0.851 seconds
+
+Generate random : 0.0327 seconds
+Time to search n/20 strings : 0.236 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Mrandom -cilk_set_worker_count 8
+Radix sort time: 0.162038
+Merge time: 0.214395
+LCP time: 0.163425
+Time for suffix array with input as a file : 0.777 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0596 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.215 seconds
+Time to initialize nodes : 0.0174 seconds
+Time for building CT in parallel : 0.075 seconds
+Time for shortcuts : 0.0447 seconds
+Time for inserting into hash table : 0.153 seconds
+Time for converting to suffix tree : 0.565 seconds
+
+Generate random : 0.0172 seconds
+Time to search n/20 strings : 0.116 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Mrandom -cilk_set_worker_count 16
+Radix sort time: 0.0908141
+Merge time: 0.109845
+LCP time: 0.104607
+Time for suffix array with input as a file : 0.443 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0604 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.218 seconds
+Time to initialize nodes : 0.0127 seconds
+Time for building CT in parallel : 0.0382 seconds
+Time for shortcuts : 0.0229 seconds
+Time for inserting into hash table : 0.086 seconds
+Time for converting to suffix tree : 0.438 seconds
+
+Generate random : 0.00964 seconds
+Time to search n/20 strings : 0.0579 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Mrandom -cilk_set_worker_count 24
+Radix sort time: 0.0729702
+Merge time: 0.0777459
+LCP time: 0.0914342
+Time for suffix array with input as a file : 0.357 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0598 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.217 seconds
+Time to initialize nodes : 0.0113 seconds
+Time for building CT in parallel : 0.0258 seconds
+Time for shortcuts : 0.0158 seconds
+Time for inserting into hash table : 0.0652 seconds
+Time for converting to suffix tree : 0.395 seconds
+
+Generate random : 0.00844 seconds
+Time to search n/20 strings : 0.0389 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Mrandom -cilk_set_worker_count 28
+Radix sort time: 0.0671341
+Merge time: 0.0668478
+LCP time: 0.0878348
+Time for suffix array with input as a file : 0.326 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0597 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.213 seconds
+Time to initialize nodes : 0.0106 seconds
+Time for building CT in parallel : 0.0225 seconds
+Time for shortcuts : 0.0137 seconds
+Time for inserting into hash table : 0.0605 seconds
+Time for converting to suffix tree : 0.38 seconds
+
+Generate random : 0.00917 seconds
+Time to search n/20 strings : 0.0335 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Mrandom -cilk_set_worker_count 32
+Radix sort time: 0.0650027
+Merge time: 0.0607572
+LCP time: 0.0875678
+Time for suffix array with input as a file : 0.318 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0712 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.215 seconds
+Time to initialize nodes : 0.0108 seconds
+Time for building CT in parallel : 0.0193 seconds
+Time for shortcuts : 0.0125 seconds
+Time for inserting into hash table : 0.0553 seconds
+Time for converting to suffix tree : 0.384 seconds
+
+Generate random : 0.00559 seconds
+Time to search n/20 strings : 0.0293 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Mrandom -cilk_set_worker_count 64
+Radix sort time: 0.0586224
+Merge time: 0.0491369
+LCP time: 0.0991571
+Time for suffix array with input as a file : 0.313 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0502 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.268 seconds
+Time to initialize nodes : 0.0106 seconds
+Time for building CT in parallel : 0.0146 seconds
+Time for shortcuts : 0.01 seconds
+Time for inserting into hash table : 0.0457 seconds
+Time for converting to suffix tree : 0.399 seconds
+
+Generate random : 0.0101 seconds
+Time to search n/20 strings : 0.0177 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Msqrtn -cilk_set_worker_count 1
+Radix sort time: 0.728224
+Merge time: 0.827922
+LCP time: 2.11622
+Time for suffix array with input as a file : 4.91 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.147 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.14 seconds
+Time to initialize nodes : 0.0933 seconds
+Time for building CT in parallel : 0.438 seconds
+Time for shortcuts : 0.116 seconds
+Time for inserting into hash table : 0.224 seconds
+Time for converting to suffix tree : 1.16 seconds
+
+Generate random : 0.104 seconds
+Time to search n/20 strings : 0.286 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Msqrtn -cilk_set_worker_count 2
+Radix sort time: 0.4267
+Merge time: 0.443669
+LCP time: 1.10662
+Time for suffix array with input as a file : 2.67 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0924 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.159 seconds
+Time to initialize nodes : 0.0525 seconds
+Time for building CT in parallel : 0.23 seconds
+Time for shortcuts : 0.0575 seconds
+Time for inserting into hash table : 0.111 seconds
+Time for converting to suffix tree : 0.703 seconds
+
+Generate random : 0.0628 seconds
+Time to search n/20 strings : 0.144 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Msqrtn -cilk_set_worker_count 4
+Radix sort time: 0.243937
+Merge time: 0.231464
+LCP time: 0.579764
+Time for suffix array with input as a file : 1.43 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0568 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.169 seconds
+Time to initialize nodes : 0.031 seconds
+Time for building CT in parallel : 0.127 seconds
+Time for shortcuts : 0.0308 seconds
+Time for inserting into hash table : 0.0579 seconds
+Time for converting to suffix tree : 0.473 seconds
+
+Generate random : 0.0331 seconds
+Time to search n/20 strings : 0.0721 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Msqrtn -cilk_set_worker_count 8
+Radix sort time: 0.164483
+Merge time: 0.118394
+LCP time: 0.319812
+Time for suffix array with input as a file : 0.818 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0607 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.178 seconds
+Time to initialize nodes : 0.0173 seconds
+Time for building CT in parallel : 0.059 seconds
+Time for shortcuts : 0.0169 seconds
+Time for inserting into hash table : 0.0321 seconds
+Time for converting to suffix tree : 0.364 seconds
+
+Generate random : 0.0174 seconds
+Time to search n/20 strings : 0.0362 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Msqrtn -cilk_set_worker_count 16
+Radix sort time: 0.129678
+Merge time: 0.0630984
+LCP time: 0.213626
+Time for suffix array with input as a file : 0.555 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0699 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.187 seconds
+Time to initialize nodes : 0.0129 seconds
+Time for building CT in parallel : 0.033 seconds
+Time for shortcuts : 0.0116 seconds
+Time for inserting into hash table : 0.0208 seconds
+Time for converting to suffix tree : 0.335 seconds
+
+Generate random : 0.0101 seconds
+Time to search n/20 strings : 0.0183 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Msqrtn -cilk_set_worker_count 24
+Radix sort time: 0.120491
+Merge time: 0.0447576
+LCP time: 0.186998
+Time for suffix array with input as a file : 0.479 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0692 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.178 seconds
+Time to initialize nodes : 0.0113 seconds
+Time for building CT in parallel : 0.0218 seconds
+Time for shortcuts : 0.00974 seconds
+Time for inserting into hash table : 0.0173 seconds
+Time for converting to suffix tree : 0.308 seconds
+
+Generate random : 0.0092 seconds
+Time to search n/20 strings : 0.0123 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Msqrtn -cilk_set_worker_count 28
+Radix sort time: 0.12054
+Merge time: 0.039432
+LCP time: 0.178299
+Time for suffix array with input as a file : 0.458 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0706 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.178 seconds
+Time to initialize nodes : 0.0108 seconds
+Time for building CT in parallel : 0.0186 seconds
+Time for shortcuts : 0.0112 seconds
+Time for inserting into hash table : 0.0172 seconds
+Time for converting to suffix tree : 0.307 seconds
+
+Generate random : 0.00968 seconds
+Time to search n/20 strings : 0.0106 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Msqrtn -cilk_set_worker_count 32
+Radix sort time: 0.118982
+Merge time: 0.0362287
+LCP time: 0.1768
+Time for suffix array with input as a file : 0.455 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0705 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.161 seconds
+Time to initialize nodes : 0.0112 seconds
+Time for building CT in parallel : 0.0163 seconds
+Time for shortcuts : 0.00961 seconds
+Time for inserting into hash table : 0.0164 seconds
+Time for converting to suffix tree : 0.286 seconds
+
+Generate random : 0.00988 seconds
+Time to search n/20 strings : 0.00926 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/10Msqrtn -cilk_set_worker_count 64
+Radix sort time: 0.135524
+Merge time: 0.035934
+LCP time: 0.198155
+Time for suffix array with input as a file : 0.491 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0501 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.192 seconds
+Time to initialize nodes : 0.0112 seconds
+Time for building CT in parallel : 0.0131 seconds
+Time for shortcuts : 0.00966 seconds
+Time for inserting into hash table : 0.0177 seconds
+Time for converting to suffix tree : 0.294 seconds
+
+Generate random : 0.00822 seconds
+Time to search n/20 strings : 0.00767 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/chr22.dna -cilk_set_worker_count 1
+Radix sort time: 6.72135
+Merge time: 8.02247
+LCP time: 8.29122
+Time for suffix array with input as a file : 30.5 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.464 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.655 seconds
+Time to initialize nodes : 0.319 seconds
+Time for building CT in parallel : 1.77 seconds
+Time for shortcuts : 0.878 seconds
+Time for inserting into hash table : 3.94 seconds
+Time for converting to suffix tree : 8.02 seconds
+
+Generate random : 0.38 seconds
+Time to search n/20 strings : 5.08 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/chr22.dna -cilk_set_worker_count 2
+Radix sort time: 3.84783
+Merge time: 4.55644
+LCP time: 4.73357
+Time for suffix array with input as a file : 17.5 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.315 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.771 seconds
+Time to initialize nodes : 0.228 seconds
+Time for building CT in parallel : 1.05 seconds
+Time for shortcuts : 0.547 seconds
+Time for inserting into hash table : 2.27 seconds
+Time for converting to suffix tree : 5.19 seconds
+
+Generate random : 0.243 seconds
+Time to search n/20 strings : 2.97 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/chr22.dna -cilk_set_worker_count 4
+Radix sort time: 2.06772
+Merge time: 2.3805
+LCP time: 2.44283
+Time for suffix array with input as a file : 9.26 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.208 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.798 seconds
+Time to initialize nodes : 0.119 seconds
+Time for building CT in parallel : 0.518 seconds
+Time for shortcuts : 0.273 seconds
+Time for inserting into hash table : 1.18 seconds
+Time for converting to suffix tree : 3.09 seconds
+
+Generate random : 0.121 seconds
+Time to search n/20 strings : 1.5 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/chr22.dna -cilk_set_worker_count 8
+Radix sort time: 1.12109
+Merge time: 1.19912
+LCP time: 1.27609
+Time for suffix array with input as a file : 4.9 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.19 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.788 seconds
+Time to initialize nodes : 0.06 seconds
+Time for building CT in parallel : 0.262 seconds
+Time for shortcuts : 0.136 seconds
+Time for inserting into hash table : 0.598 seconds
+Time for converting to suffix tree : 2.03 seconds
+
+Generate random : 0.0665 seconds
+Time to search n/20 strings : 0.727 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/chr22.dna -cilk_set_worker_count 16
+Radix sort time: 0.679323
+Merge time: 0.621257
+LCP time: 0.74103
+Time for suffix array with input as a file : 2.93 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.24 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.822 seconds
+Time to initialize nodes : 0.0467 seconds
+Time for building CT in parallel : 0.137 seconds
+Time for shortcuts : 0.0697 seconds
+Time for inserting into hash table : 0.319 seconds
+Time for converting to suffix tree : 1.63 seconds
+
+Generate random : 0.0369 seconds
+Time to search n/20 strings : 0.36 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/chr22.dna -cilk_set_worker_count 24
+Radix sort time: 0.578777
+Merge time: 0.433975
+LCP time: 0.582168
+Time for suffix array with input as a file : 2.34 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.243 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.802 seconds
+Time to initialize nodes : 0.0435 seconds
+Time for building CT in parallel : 0.0975 seconds
+Time for shortcuts : 0.0494 seconds
+Time for inserting into hash table : 0.243 seconds
+Time for converting to suffix tree : 1.48 seconds
+
+Generate random : 0.0315 seconds
+Time to search n/20 strings : 0.241 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/chr22.dna -cilk_set_worker_count 28
+Radix sort time: 0.532151
+Merge time: 0.391069
+LCP time: 0.541419
+Time for suffix array with input as a file : 2.18 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.243 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.807 seconds
+Time to initialize nodes : 0.0443 seconds
+Time for building CT in parallel : 0.0825 seconds
+Time for shortcuts : 0.0456 seconds
+Time for inserting into hash table : 0.224 seconds
+Time for converting to suffix tree : 1.45 seconds
+
+Generate random : 0.0331 seconds
+Time to search n/20 strings : 0.207 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/chr22.dna -cilk_set_worker_count 32
+Radix sort time: 0.491833
+Merge time: 0.350071
+LCP time: 0.519224
+Time for suffix array with input as a file : 2.02 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.249 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.816 seconds
+Time to initialize nodes : 0.0396 seconds
+Time for building CT in parallel : 0.0677 seconds
+Time for shortcuts : 0.0428 seconds
+Time for inserting into hash table : 0.212 seconds
+Time for converting to suffix tree : 1.43 seconds
+
+Generate random : 0.0332 seconds
+Time to search n/20 strings : 0.182 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/chr22.dna -cilk_set_worker_count 64
+Radix sort time: 0.511367
+Merge time: 0.279932
+LCP time: 0.485011
+Time for suffix array with input as a file : 1.91 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.17 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.995 seconds
+Time to initialize nodes : 0.0385 seconds
+Time for building CT in parallel : 0.0483 seconds
+Time for shortcuts : 0.0361 seconds
+Time for inserting into hash table : 0.191 seconds
+Time for converting to suffix tree : 1.48 seconds
+
+Generate random : 0.0278 seconds
+Time to search n/20 strings : 0.105 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/etext99 -cilk_set_worker_count 1
+Radix sort time: 27.7346
+Merge time: 27.2525
+LCP time: 30.3684
+Time for suffix array with input as a file : 111 seconds
+Time to initialize nodes for sequential CT (subtract off) : 1.4 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.02 seconds
+Time to initialize nodes : 0.975 seconds
+Time for building CT in parallel : 6.2 seconds
+Time for shortcuts : 2.95 seconds
+Time for inserting into hash table : 13.8 seconds
+Time for converting to suffix tree : 27.4 seconds
+
+Generate random : 1.31 seconds
+Time to search n/20 strings : 16.3 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/etext99 -cilk_set_worker_count 2
+Radix sort time: 15.8846
+Merge time: 15.8053
+LCP time: 17.8938
+Time for suffix array with input as a file : 65 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.895 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.42 seconds
+Time to initialize nodes : 0.706 seconds
+Time for building CT in parallel : 3.67 seconds
+Time for shortcuts : 1.82 seconds
+Time for inserting into hash table : 8.1 seconds
+Time for converting to suffix tree : 17.6 seconds
+
+Generate random : 0.666 seconds
+Time to search n/20 strings : 9.31 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/etext99 -cilk_set_worker_count 4
+Radix sort time: 8.7177
+Merge time: 8.40003
+LCP time: 9.63067
+Time for suffix array with input as a file : 35.5 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.633 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.47 seconds
+Time to initialize nodes : 0.331 seconds
+Time for building CT in parallel : 1.96 seconds
+Time for shortcuts : 0.908 seconds
+Time for inserting into hash table : 4.29 seconds
+Time for converting to suffix tree : 10.6 seconds
+
+Generate random : 0.392 seconds
+Time to search n/20 strings : 4.71 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/etext99 -cilk_set_worker_count 8
+Radix sort time: 5.37562
+Merge time: 4.2983
+LCP time: 5.05272
+Time for suffix array with input as a file : 20.7 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.636 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.46 seconds
+Time to initialize nodes : 0.213 seconds
+Time for building CT in parallel : 0.917 seconds
+Time for shortcuts : 0.446 seconds
+Time for inserting into hash table : 2.2 seconds
+Time for converting to suffix tree : 6.88 seconds
+
+Generate random : 0.213 seconds
+Time to search n/20 strings : 2.39 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/etext99 -cilk_set_worker_count 16
+Radix sort time: 3.11832
+Merge time: 2.21473
+LCP time: 2.71343
+Time for suffix array with input as a file : 11.7 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.731 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.47 seconds
+Time to initialize nodes : 0.138 seconds
+Time for building CT in parallel : 0.461 seconds
+Time for shortcuts : 0.226 seconds
+Time for inserting into hash table : 1.27 seconds
+Time for converting to suffix tree : 5.3 seconds
+
+Generate random : 0.118 seconds
+Time to search n/20 strings : 1.17 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/etext99 -cilk_set_worker_count 24
+Radix sort time: 2.68507
+Merge time: 1.59453
+LCP time: 2.32194
+Time for suffix array with input as a file : 9.83 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.69 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.31 seconds
+Time to initialize nodes : 0.142 seconds
+Time for building CT in parallel : 0.306 seconds
+Time for shortcuts : 0.168 seconds
+Time for inserting into hash table : 1.01 seconds
+Time for converting to suffix tree : 4.63 seconds
+
+Generate random : 0.099 seconds
+Time to search n/20 strings : 0.774 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/etext99 -cilk_set_worker_count 28
+Radix sort time: 2.27213
+Merge time: 1.34371
+LCP time: 1.85837
+Time for suffix array with input as a file : 8.15 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.741 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.41 seconds
+Time to initialize nodes : 0.133 seconds
+Time for building CT in parallel : 0.257 seconds
+Time for shortcuts : 0.139 seconds
+Time for inserting into hash table : 0.957 seconds
+Time for converting to suffix tree : 4.64 seconds
+
+Generate random : 0.0994 seconds
+Time to search n/20 strings : 0.663 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/etext99 -cilk_set_worker_count 32
+Radix sort time: 2.08294
+Merge time: 1.21708
+LCP time: 1.72583
+Time for suffix array with input as a file : 7.41 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.741 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.39 seconds
+Time to initialize nodes : 0.128 seconds
+Time for building CT in parallel : 0.224 seconds
+Time for shortcuts : 0.131 seconds
+Time for inserting into hash table : 0.896 seconds
+Time for converting to suffix tree : 4.51 seconds
+
+Generate random : 0.102 seconds
+Time to search n/20 strings : 0.579 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/etext99 -cilk_set_worker_count 64
+Radix sort time: 2.25544
+Merge time: 0.980054
+LCP time: 1.60076
+Time for suffix array with input as a file : 7.5 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.52 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.9 seconds
+Time to initialize nodes : 0.13 seconds
+Time for building CT in parallel : 0.151 seconds
+Time for shortcuts : 0.109 seconds
+Time for inserting into hash table : 0.811 seconds
+Time for converting to suffix tree : 4.63 seconds
+
+Generate random : 0.0893 seconds
+Time to search n/20 strings : 0.343 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/howto -cilk_set_worker_count 1
+Radix sort time: 9.93087
+Merge time: 8.80454
+LCP time: 10.2206
+Time for suffix array with input as a file : 37.6 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.535 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.764 seconds
+Time to initialize nodes : 0.368 seconds
+Time for building CT in parallel : 2.01 seconds
+Time for shortcuts : 1.05 seconds
+Time for inserting into hash table : 4.76 seconds
+Time for converting to suffix tree : 9.49 seconds
+
+Generate random : 0.476 seconds
+Time to search n/20 strings : 4.82 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/howto -cilk_set_worker_count 2
+Radix sort time: 5.74437
+Merge time: 5.0119
+LCP time: 5.83827
+Time for suffix array with input as a file : 21.7 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.338 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.92 seconds
+Time to initialize nodes : 0.261 seconds
+Time for building CT in parallel : 1.17 seconds
+Time for shortcuts : 0.609 seconds
+Time for inserting into hash table : 2.85 seconds
+Time for converting to suffix tree : 6.15 seconds
+
+Generate random : 0.28 seconds
+Time to search n/20 strings : 2.84 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/howto -cilk_set_worker_count 4
+Radix sort time: 3.10313
+Merge time: 2.61554
+LCP time: 3.04051
+Time for suffix array with input as a file : 11.5 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.232 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.929 seconds
+Time to initialize nodes : 0.126 seconds
+Time for building CT in parallel : 0.697 seconds
+Time for shortcuts : 0.334 seconds
+Time for inserting into hash table : 1.45 seconds
+Time for converting to suffix tree : 3.77 seconds
+
+Generate random : 0.146 seconds
+Time to search n/20 strings : 1.44 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/howto -cilk_set_worker_count 8
+Radix sort time: 1.72066
+Merge time: 1.34001
+LCP time: 1.62035
+Time for suffix array with input as a file : 6.35 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.24 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.912 seconds
+Time to initialize nodes : 0.0764 seconds
+Time for building CT in parallel : 0.317 seconds
+Time for shortcuts : 0.161 seconds
+Time for inserting into hash table : 0.76 seconds
+Time for converting to suffix tree : 2.47 seconds
+
+Generate random : 0.0761 seconds
+Time to search n/20 strings : 0.704 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/howto -cilk_set_worker_count 16
+Radix sort time: 1.16474
+Merge time: 0.698816
+LCP time: 0.912595
+Time for suffix array with input as a file : 3.85 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.257 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.927 seconds
+Time to initialize nodes : 0.0533 seconds
+Time for building CT in parallel : 0.153 seconds
+Time for shortcuts : 0.0833 seconds
+Time for inserting into hash table : 0.458 seconds
+Time for converting to suffix tree : 1.93 seconds
+
+Generate random : 0.0422 seconds
+Time to search n/20 strings : 0.346 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/howto -cilk_set_worker_count 24
+Radix sort time: 1.02399
+Merge time: 0.511579
+LCP time: 0.718631
+Time for suffix array with input as a file : 3.2 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.274 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.932 seconds
+Time to initialize nodes : 0.0521 seconds
+Time for building CT in parallel : 0.103 seconds
+Time for shortcuts : 0.0621 seconds
+Time for inserting into hash table : 0.365 seconds
+Time for converting to suffix tree : 1.79 seconds
+
+Generate random : 0.0355 seconds
+Time to search n/20 strings : 0.231 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/howto -cilk_set_worker_count 28
+Radix sort time: 0.774056
+Merge time: 0.432487
+LCP time: 0.643603
+Time for suffix array with input as a file : 2.62 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.279 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.947 seconds
+Time to initialize nodes : 0.0476 seconds
+Time for building CT in parallel : 0.0891 seconds
+Time for shortcuts : 0.0523 seconds
+Time for inserting into hash table : 0.35 seconds
+Time for converting to suffix tree : 1.76 seconds
+
+Generate random : 0.0371 seconds
+Time to search n/20 strings : 0.198 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/howto -cilk_set_worker_count 32
+Radix sort time: 0.89306
+Merge time: 0.427349
+LCP time: 0.636253
+Time for suffix array with input as a file : 2.84 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.279 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.923 seconds
+Time to initialize nodes : 0.048 seconds
+Time for building CT in parallel : 0.077 seconds
+Time for shortcuts : 0.0496 seconds
+Time for inserting into hash table : 0.331 seconds
+Time for converting to suffix tree : 1.71 seconds
+
+Generate random : 0.038 seconds
+Time to search n/20 strings : 0.174 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/howto -cilk_set_worker_count 64
+Radix sort time: 0.813501
+Merge time: 0.323374
+LCP time: 0.582722
+Time for suffix array with input as a file : 2.47 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.194 seconds
+Time for stack-based sequential CT construction (subtract off) : 1.12 seconds
+Time to initialize nodes : 0.044 seconds
+Time for building CT in parallel : 0.056 seconds
+Time for shortcuts : 0.0428 seconds
+Time for inserting into hash table : 0.285 seconds
+Time for converting to suffix tree : 1.74 seconds
+
+Generate random : 0.0318 seconds
+Time to search n/20 strings : 0.104 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/jdk13c -cilk_set_worker_count 1
+Radix sort time: 15.6381
+Merge time: 16.564
+LCP time: 29.2277
+Time for suffix array with input as a file : 77.3 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.937 seconds
+Time for stack-based sequential CT construction (subtract off) : 1.27 seconds
+Time to initialize nodes : 0.647 seconds
+Time for building CT in parallel : 3.56 seconds
+Time for shortcuts : 1.68 seconds
+Time for inserting into hash table : 7.01 seconds
+Time for converting to suffix tree : 15.1 seconds
+
+Generate random : 0.858 seconds
+Time to search n/20 strings : 6.52 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/jdk13c -cilk_set_worker_count 2
+Radix sort time: 8.9859
+Merge time: 9.45154
+LCP time: 16.6232
+Time for suffix array with input as a file : 44.5 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.633 seconds
+Time for stack-based sequential CT construction (subtract off) : 1.52 seconds
+Time to initialize nodes : 0.369 seconds
+Time for building CT in parallel : 2.1 seconds
+Time for shortcuts : 1.05 seconds
+Time for inserting into hash table : 4.23 seconds
+Time for converting to suffix tree : 9.9 seconds
+
+Generate random : 0.462 seconds
+Time to search n/20 strings : 3.52 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/jdk13c -cilk_set_worker_count 4
+Radix sort time: 5.03681
+Merge time: 4.98344
+LCP time: 9.04103
+Time for suffix array with input as a file : 24.4 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.415 seconds
+Time for stack-based sequential CT construction (subtract off) : 1.62 seconds
+Time to initialize nodes : 0.236 seconds
+Time for building CT in parallel : 1.06 seconds
+Time for shortcuts : 0.524 seconds
+Time for inserting into hash table : 2.12 seconds
+Time for converting to suffix tree : 5.97 seconds
+
+Generate random : 0.269 seconds
+Time to search n/20 strings : 1.87 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/jdk13c -cilk_set_worker_count 8
+Radix sort time: 2.65868
+Merge time: 2.55163
+LCP time: 4.68428
+Time for suffix array with input as a file : 12.9 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.387 seconds
+Time for stack-based sequential CT construction (subtract off) : 1.6 seconds
+Time to initialize nodes : 0.131 seconds
+Time for building CT in parallel : 0.537 seconds
+Time for shortcuts : 0.263 seconds
+Time for inserting into hash table : 1.1 seconds
+Time for converting to suffix tree : 4.02 seconds
+
+Generate random : 0.139 seconds
+Time to search n/20 strings : 0.922 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/jdk13c -cilk_set_worker_count 16
+Radix sort time: 2.13596
+Merge time: 1.43949
+LCP time: 2.52628
+Time for suffix array with input as a file : 8.6 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.482 seconds
+Time for stack-based sequential CT construction (subtract off) : 1.59 seconds
+Time to initialize nodes : 0.1 seconds
+Time for building CT in parallel : 0.265 seconds
+Time for shortcuts : 0.134 seconds
+Time for inserting into hash table : 0.628 seconds
+Time for converting to suffix tree : 3.2 seconds
+
+Generate random : 0.077 seconds
+Time to search n/20 strings : 0.455 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/jdk13c -cilk_set_worker_count 24
+Radix sort time: 1.38381
+Merge time: 0.923415
+LCP time: 1.79552
+Time for suffix array with input as a file : 5.88 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.494 seconds
+Time for stack-based sequential CT construction (subtract off) : 1.59 seconds
+Time to initialize nodes : 0.0839 seconds
+Time for building CT in parallel : 0.178 seconds
+Time for shortcuts : 0.103 seconds
+Time for inserting into hash table : 0.473 seconds
+Time for converting to suffix tree : 2.93 seconds
+
+Generate random : 0.0636 seconds
+Time to search n/20 strings : 0.302 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/jdk13c -cilk_set_worker_count 28
+Radix sort time: 1.45191
+Merge time: 0.85527
+LCP time: 1.65276
+Time for suffix array with input as a file : 5.66 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.491 seconds
+Time for stack-based sequential CT construction (subtract off) : 1.6 seconds
+Time to initialize nodes : 0.0922 seconds
+Time for building CT in parallel : 0.16 seconds
+Time for shortcuts : 0.0873 seconds
+Time for inserting into hash table : 0.423 seconds
+Time for converting to suffix tree : 2.85 seconds
+
+Generate random : 0.0674 seconds
+Time to search n/20 strings : 0.26 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/jdk13c -cilk_set_worker_count 32
+Radix sort time: 1.29188
+Merge time: 0.7525
+LCP time: 1.47689
+Time for suffix array with input as a file : 5.11 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.496 seconds
+Time for stack-based sequential CT construction (subtract off) : 1.61 seconds
+Time to initialize nodes : 0.0834 seconds
+Time for building CT in parallel : 0.139 seconds
+Time for shortcuts : 0.092 seconds
+Time for inserting into hash table : 0.421 seconds
+Time for converting to suffix tree : 2.84 seconds
+
+Generate random : 0.0673 seconds
+Time to search n/20 strings : 0.228 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/jdk13c -cilk_set_worker_count 64
+Radix sort time: 1.26262
+Merge time: 0.60926
+LCP time: 1.25716
+Time for suffix array with input as a file : 4.7 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.336 seconds
+Time for stack-based sequential CT construction (subtract off) : 1.95 seconds
+Time to initialize nodes : 0.0796 seconds
+Time for building CT in parallel : 0.0926 seconds
+Time for shortcuts : 0.0735 seconds
+Time for inserting into hash table : 0.359 seconds
+Time for converting to suffix tree : 2.89 seconds
+
+Generate random : 0.054 seconds
+Time to search n/20 strings : 0.135 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/kingjamesbible -cilk_set_worker_count 1
+Radix sort time: 0.674942
+Merge time: 0.604141
+LCP time: 0.625905
+Time for suffix array with input as a file : 2.52 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0669 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.0958 seconds
+Time to initialize nodes : 0.0429 seconds
+Time for building CT in parallel : 0.266 seconds
+Time for shortcuts : 0.143 seconds
+Time for inserting into hash table : 0.394 seconds
+Time for converting to suffix tree : 1.01 seconds
+
+Generate random : 0.0444 seconds
+Time to search n/20 strings : 0.433 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/kingjamesbible -cilk_set_worker_count 2
+Radix sort time: 0.375726
+Merge time: 0.317749
+LCP time: 0.333402
+Time for suffix array with input as a file : 1.39 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.04 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.102 seconds
+Time to initialize nodes : 0.0292 seconds
+Time for building CT in parallel : 0.136 seconds
+Time for shortcuts : 0.0726 seconds
+Time for inserting into hash table : 0.215 seconds
+Time for converting to suffix tree : 0.595 seconds
+
+Generate random : 0.0254 seconds
+Time to search n/20 strings : 0.236 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/kingjamesbible -cilk_set_worker_count 4
+Radix sort time: 0.204844
+Merge time: 0.155088
+LCP time: 0.175057
+Time for suffix array with input as a file : 0.733 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0275 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.0971 seconds
+Time to initialize nodes : 0.0135 seconds
+Time for building CT in parallel : 0.0698 seconds
+Time for shortcuts : 0.0369 seconds
+Time for inserting into hash table : 0.114 seconds
+Time for converting to suffix tree : 0.359 seconds
+
+Generate random : 0.0143 seconds
+Time to search n/20 strings : 0.115 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/kingjamesbible -cilk_set_worker_count 8
+Radix sort time: 0.117108
+Merge time: 0.0779309
+LCP time: 0.0959449
+Time for suffix array with input as a file : 0.402 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0246 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.106 seconds
+Time to initialize nodes : 0.00725 seconds
+Time for building CT in parallel : 0.0341 seconds
+Time for shortcuts : 0.0181 seconds
+Time for inserting into hash table : 0.0573 seconds
+Time for converting to suffix tree : 0.247 seconds
+
+Generate random : 0.0075 seconds
+Time to search n/20 strings : 0.057 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/kingjamesbible -cilk_set_worker_count 16
+Radix sort time: 0.0736446
+Merge time: 0.039814
+LCP time: 0.0669398
+Time for suffix array with input as a file : 0.248 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0311 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.0971 seconds
+Time to initialize nodes : 0.00508 seconds
+Time for building CT in parallel : 0.0178 seconds
+Time for shortcuts : 0.00933 seconds
+Time for inserting into hash table : 0.0329 seconds
+Time for converting to suffix tree : 0.193 seconds
+
+Generate random : 0.00411 seconds
+Time to search n/20 strings : 0.0286 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/kingjamesbible -cilk_set_worker_count 24
+Radix sort time: 0.060231
+Merge time: 0.0275681
+LCP time: 0.0621169
+Time for suffix array with input as a file : 0.207 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0263 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.103 seconds
+Time to initialize nodes : 0.00464 seconds
+Time for building CT in parallel : 0.0118 seconds
+Time for shortcuts : 0.00642 seconds
+Time for inserting into hash table : 0.0248 seconds
+Time for converting to suffix tree : 0.177 seconds
+
+Generate random : 0.00421 seconds
+Time to search n/20 strings : 0.0195 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/kingjamesbible -cilk_set_worker_count 28
+Radix sort time: 0.0567954
+Merge time: 0.0241139
+LCP time: 0.0614498
+Time for suffix array with input as a file : 0.198 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0274 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.094 seconds
+Time to initialize nodes : 0.00466 seconds
+Time for building CT in parallel : 0.0103 seconds
+Time for shortcuts : 0.0056 seconds
+Time for inserting into hash table : 0.0231 seconds
+Time for converting to suffix tree : 0.165 seconds
+
+Generate random : 0.00419 seconds
+Time to search n/20 strings : 0.0169 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/kingjamesbible -cilk_set_worker_count 32
+Radix sort time: 0.054924
+Merge time: 0.0212951
+LCP time: 0.0623441
+Time for suffix array with input as a file : 0.192 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0309 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.0974 seconds
+Time to initialize nodes : 0.00462 seconds
+Time for building CT in parallel : 0.00901 seconds
+Time for shortcuts : 0.005 seconds
+Time for inserting into hash table : 0.021 seconds
+Time for converting to suffix tree : 0.168 seconds
+
+Generate random : 0.00411 seconds
+Time to search n/20 strings : 0.0147 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/kingjamesbible -cilk_set_worker_count 64
+Radix sort time: 0.0580461
+Merge time: 0.0174203
+LCP time: 0.083894
+Time for suffix array with input as a file : 0.215 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0223 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.125 seconds
+Time to initialize nodes : 0.00423 seconds
+Time for building CT in parallel : 0.00636 seconds
+Time for shortcuts : 0.00347 seconds
+Time for inserting into hash table : 0.0205 seconds
+Time for converting to suffix tree : 0.182 seconds
+
+Generate random : 0.00365 seconds
+Time to search n/20 strings : 0.00955 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rctail96 -cilk_set_worker_count 1
+Radix sort time: 26.7128
+Merge time: 28.924
+LCP time: 46.4685
+Time for suffix array with input as a file : 130 seconds
+Time to initialize nodes for sequential CT (subtract off) : 1.53 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.18 seconds
+Time to initialize nodes : 1.07 seconds
+Time for building CT in parallel : 6.31 seconds
+Time for shortcuts : 2.98 seconds
+Time for inserting into hash table : 13 seconds
+Time for converting to suffix tree : 27.1 seconds
+
+Generate random : 1.43 seconds
+Time to search n/20 strings : 11.5 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rctail96 -cilk_set_worker_count 2
+Radix sort time: 15.2884
+Merge time: 16.8494
+LCP time: 27.0204
+Time for suffix array with input as a file : 75.8 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.97 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.58 seconds
+Time to initialize nodes : 0.768 seconds
+Time for building CT in parallel : 3.76 seconds
+Time for shortcuts : 1.84 seconds
+Time for inserting into hash table : 7.56 seconds
+Time for converting to suffix tree : 17.5 seconds
+
+Generate random : 0.803 seconds
+Time to search n/20 strings : 6.42 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rctail96 -cilk_set_worker_count 4
+Radix sort time: 8.30272
+Merge time: 8.98806
+LCP time: 14.7263
+Time for suffix array with input as a file : 41.1 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.698 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.64 seconds
+Time to initialize nodes : 0.357 seconds
+Time for building CT in parallel : 1.85 seconds
+Time for shortcuts : 0.896 seconds
+Time for inserting into hash table : 3.98 seconds
+Time for converting to suffix tree : 10.4 seconds
+
+Generate random : 0.412 seconds
+Time to search n/20 strings : 3.22 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rctail96 -cilk_set_worker_count 8
+Radix sort time: 4.97885
+Merge time: 4.53032
+LCP time: 7.624
+Time for suffix array with input as a file : 23.4 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.684 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.63 seconds
+Time to initialize nodes : 0.225 seconds
+Time for building CT in parallel : 0.931 seconds
+Time for shortcuts : 0.45 seconds
+Time for inserting into hash table : 2.05 seconds
+Time for converting to suffix tree : 6.97 seconds
+
+Generate random : 0.232 seconds
+Time to search n/20 strings : 1.66 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rctail96 -cilk_set_worker_count 16
+Radix sort time: 3.12129
+Merge time: 2.38564
+LCP time: 4.14063
+Time for suffix array with input as a file : 13.9 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.798 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.68 seconds
+Time to initialize nodes : 0.167 seconds
+Time for building CT in parallel : 0.464 seconds
+Time for shortcuts : 0.231 seconds
+Time for inserting into hash table : 1.18 seconds
+Time for converting to suffix tree : 5.52 seconds
+
+Generate random : 0.12 seconds
+Time to search n/20 strings : 0.812 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rctail96 -cilk_set_worker_count 24
+Radix sort time: 2.93359
+Merge time: 1.76635
+LCP time: 3.22851
+Time for suffix array with input as a file : 11.8 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.804 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.7 seconds
+Time to initialize nodes : 0.141 seconds
+Time for building CT in parallel : 0.317 seconds
+Time for shortcuts : 0.16 seconds
+Time for inserting into hash table : 0.943 seconds
+Time for converting to suffix tree : 5.06 seconds
+
+Generate random : 0.107 seconds
+Time to search n/20 strings : 0.539 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rctail96 -cilk_set_worker_count 28
+Radix sort time: 2.83378
+Merge time: 1.53968
+LCP time: 2.74172
+Time for suffix array with input as a file : 10.7 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.816 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.55 seconds
+Time to initialize nodes : 0.155 seconds
+Time for building CT in parallel : 0.263 seconds
+Time for shortcuts : 0.153 seconds
+Time for inserting into hash table : 0.859 seconds
+Time for converting to suffix tree : 4.8 seconds
+
+Generate random : 0.108 seconds
+Time to search n/20 strings : 0.459 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rctail96 -cilk_set_worker_count 32
+Radix sort time: 2.6164
+Merge time: 1.42242
+LCP time: 2.50464
+Time for suffix array with input as a file : 9.98 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.805 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.51 seconds
+Time to initialize nodes : 0.136 seconds
+Time for building CT in parallel : 0.226 seconds
+Time for shortcuts : 0.137 seconds
+Time for inserting into hash table : 0.831 seconds
+Time for converting to suffix tree : 4.65 seconds
+
+Generate random : 0.0918 seconds
+Time to search n/20 strings : 0.399 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rctail96 -cilk_set_worker_count 64
+Radix sort time: 2.33038
+Merge time: 1.11428
+LCP time: 2.03774
+Time for suffix array with input as a file : 8.42 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.566 seconds
+Time for stack-based sequential CT construction (subtract off) : 3.1 seconds
+Time to initialize nodes : 0.133 seconds
+Time for building CT in parallel : 0.155 seconds
+Time for shortcuts : 0.121 seconds
+Time for inserting into hash table : 0.709 seconds
+Time for converting to suffix tree : 4.79 seconds
+
+Generate random : 0.0962 seconds
+Time to search n/20 strings : 0.236 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rfc -cilk_set_worker_count 1
+Radix sort time: 29.0424
+Merge time: 28.3299
+LCP time: 40.0641
+Time for suffix array with input as a file : 125 seconds
+Time to initialize nodes for sequential CT (subtract off) : 1.56 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.24 seconds
+Time to initialize nodes : 1.08 seconds
+Time for building CT in parallel : 6.34 seconds
+Time for shortcuts : 2.87 seconds
+Time for inserting into hash table : 14.3 seconds
+Time for converting to suffix tree : 28.4 seconds
+
+Generate random : 1.45 seconds
+Time to search n/20 strings : 18.4 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rfc -cilk_set_worker_count 2
+Radix sort time: 16.6919
+Merge time: 16.4622
+LCP time: 23.3793
+Time for suffix array with input as a file : 72.7 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.986 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.7 seconds
+Time to initialize nodes : 0.778 seconds
+Time for building CT in parallel : 3.75 seconds
+Time for shortcuts : 1.66 seconds
+Time for inserting into hash table : 8.4 seconds
+Time for converting to suffix tree : 18.3 seconds
+
+Generate random : 0.804 seconds
+Time to search n/20 strings : 10.5 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rfc -cilk_set_worker_count 4
+Radix sort time: 9.24952
+Merge time: 8.75542
+LCP time: 12.6135
+Time for suffix array with input as a file : 39.9 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.675 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.75 seconds
+Time to initialize nodes : 0.399 seconds
+Time for building CT in parallel : 1.87 seconds
+Time for shortcuts : 0.873 seconds
+Time for inserting into hash table : 4.35 seconds
+Time for converting to suffix tree : 10.9 seconds
+
+Generate random : 0.431 seconds
+Time to search n/20 strings : 5.25 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rfc -cilk_set_worker_count 8
+Radix sort time: 5.22934
+Merge time: 4.49432
+LCP time: 6.62851
+Time for suffix array with input as a file : 22.4 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.709 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.78 seconds
+Time to initialize nodes : 0.211 seconds
+Time for building CT in parallel : 0.946 seconds
+Time for shortcuts : 0.443 seconds
+Time for inserting into hash table : 2.29 seconds
+Time for converting to suffix tree : 7.38 seconds
+
+Generate random : 0.236 seconds
+Time to search n/20 strings : 2.67 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rfc -cilk_set_worker_count 16
+Radix sort time: 3.25746
+Merge time: 2.31875
+LCP time: 3.5538
+Time for suffix array with input as a file : 12.9 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.806 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.74 seconds
+Time to initialize nodes : 0.165 seconds
+Time for building CT in parallel : 0.471 seconds
+Time for shortcuts : 0.225 seconds
+Time for inserting into hash table : 1.34 seconds
+Time for converting to suffix tree : 5.75 seconds
+
+Generate random : 0.131 seconds
+Time to search n/20 strings : 1.31 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rfc -cilk_set_worker_count 24
+Radix sort time: 2.69865
+Merge time: 1.68518
+LCP time: 2.75524
+Time for suffix array with input as a file : 10.5 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.721 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.73 seconds
+Time to initialize nodes : 0.146 seconds
+Time for building CT in parallel : 0.308 seconds
+Time for shortcuts : 0.176 seconds
+Time for inserting into hash table : 1.07 seconds
+Time for converting to suffix tree : 5.15 seconds
+
+Generate random : 0.108 seconds
+Time to search n/20 strings : 0.867 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rfc -cilk_set_worker_count 28
+Radix sort time: 2.6536
+Merge time: 1.49964
+LCP time: 2.32748
+Time for suffix array with input as a file : 9.7 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.816 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.73 seconds
+Time to initialize nodes : 0.146 seconds
+Time for building CT in parallel : 0.269 seconds
+Time for shortcuts : 0.145 seconds
+Time for inserting into hash table : 1.03 seconds
+Time for converting to suffix tree : 5.14 seconds
+
+Generate random : 0.109 seconds
+Time to search n/20 strings : 0.745 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rfc -cilk_set_worker_count 32
+Radix sort time: 2.81495
+Merge time: 1.41582
+LCP time: 2.35838
+Time for suffix array with input as a file : 9.96 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.825 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.67 seconds
+Time to initialize nodes : 0.143 seconds
+Time for building CT in parallel : 0.229 seconds
+Time for shortcuts : 0.147 seconds
+Time for inserting into hash table : 0.935 seconds
+Time for converting to suffix tree : 4.95 seconds
+
+Generate random : 0.112 seconds
+Time to search n/20 strings : 0.648 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/rfc -cilk_set_worker_count 64
+Radix sort time: 2.29664
+Merge time: 1.03511
+LCP time: 1.79608
+Time for suffix array with input as a file : 7.73 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.583 seconds
+Time for stack-based sequential CT construction (subtract off) : 3.23 seconds
+Time to initialize nodes : 0.13 seconds
+Time for building CT in parallel : 0.157 seconds
+Time for shortcuts : 0.123 seconds
+Time for inserting into hash table : 0.813 seconds
+Time for converting to suffix tree : 5.04 seconds
+
+Generate random : 0.0978 seconds
+Time to search n/20 strings : 0.383 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/sprot34.dat -cilk_set_worker_count 1
+Radix sort time: 26.8205
+Merge time: 27.5572
+LCP time: 39.0855
+Time for suffix array with input as a file : 120 seconds
+Time to initialize nodes for sequential CT (subtract off) : 1.48 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.1 seconds
+Time to initialize nodes : 1.02 seconds
+Time for building CT in parallel : 6.2 seconds
+Time for shortcuts : 2.88 seconds
+Time for inserting into hash table : 13.3 seconds
+Time for converting to suffix tree : 26.9 seconds
+
+Generate random : 1.37 seconds
+Time to search n/20 strings : 12.4 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/sprot34.dat -cilk_set_worker_count 2
+Radix sort time: 15.2016
+Merge time: 15.8094
+LCP time: 22.5434
+Time for suffix array with input as a file : 69.2 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.988 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.47 seconds
+Time to initialize nodes : 0.735 seconds
+Time for building CT in parallel : 3.64 seconds
+Time for shortcuts : 1.65 seconds
+Time for inserting into hash table : 7.73 seconds
+Time for converting to suffix tree : 17.2 seconds
+
+Generate random : 0.719 seconds
+Time to search n/20 strings : 6.9 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/sprot34.dat -cilk_set_worker_count 4
+Radix sort time: 8.48152
+Merge time: 8.4365
+LCP time: 12.3001
+Time for suffix array with input as a file : 38.2 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.64 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.59 seconds
+Time to initialize nodes : 0.382 seconds
+Time for building CT in parallel : 1.89 seconds
+Time for shortcuts : 0.856 seconds
+Time for inserting into hash table : 3.99 seconds
+Time for converting to suffix tree : 10.4 seconds
+
+Generate random : 0.406 seconds
+Time to search n/20 strings : 3.46 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/sprot34.dat -cilk_set_worker_count 8
+Radix sort time: 4.59961
+Merge time: 4.27938
+LCP time: 6.38613
+Time for suffix array with input as a file : 20.2 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.684 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.6 seconds
+Time to initialize nodes : 0.194 seconds
+Time for building CT in parallel : 0.919 seconds
+Time for shortcuts : 0.436 seconds
+Time for inserting into hash table : 2.12 seconds
+Time for converting to suffix tree : 6.96 seconds
+
+Generate random : 0.223 seconds
+Time to search n/20 strings : 1.77 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/sprot34.dat -cilk_set_worker_count 16
+Radix sort time: 3.1256
+Merge time: 2.27852
+LCP time: 3.62982
+Time for suffix array with input as a file : 13.3 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.765 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.61 seconds
+Time to initialize nodes : 0.172 seconds
+Time for building CT in parallel : 0.461 seconds
+Time for shortcuts : 0.221 seconds
+Time for inserting into hash table : 1.2 seconds
+Time for converting to suffix tree : 5.43 seconds
+
+Generate random : 0.114 seconds
+Time to search n/20 strings : 0.868 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/sprot34.dat -cilk_set_worker_count 24
+Radix sort time: 2.65982
+Merge time: 1.61102
+LCP time: 2.57204
+Time for suffix array with input as a file : 10.3 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.765 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.41 seconds
+Time to initialize nodes : 0.169 seconds
+Time for building CT in parallel : 0.303 seconds
+Time for shortcuts : 0.175 seconds
+Time for inserting into hash table : 0.969 seconds
+Time for converting to suffix tree : 4.79 seconds
+
+Generate random : 0.103 seconds
+Time to search n/20 strings : 0.574 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/sprot34.dat -cilk_set_worker_count 28
+Radix sort time: 2.59198
+Merge time: 1.48646
+LCP time: 2.57184
+Time for suffix array with input as a file : 9.94 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.778 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.52 seconds
+Time to initialize nodes : 0.146 seconds
+Time for building CT in parallel : 0.265 seconds
+Time for shortcuts : 0.146 seconds
+Time for inserting into hash table : 0.873 seconds
+Time for converting to suffix tree : 4.73 seconds
+
+Generate random : 0.0917 seconds
+Time to search n/20 strings : 0.492 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/sprot34.dat -cilk_set_worker_count 32
+Radix sort time: 2.67372
+Merge time: 1.41517
+LCP time: 2.26597
+Time for suffix array with input as a file : 9.62 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.771 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.56 seconds
+Time to initialize nodes : 0.137 seconds
+Time for building CT in parallel : 0.232 seconds
+Time for shortcuts : 0.134 seconds
+Time for inserting into hash table : 0.81 seconds
+Time for converting to suffix tree : 4.65 seconds
+
+Generate random : 0.106 seconds
+Time to search n/20 strings : 0.431 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/sprot34.dat -cilk_set_worker_count 64
+Radix sort time: 2.49196
+Merge time: 1.06641
+LCP time: 1.84779
+Time for suffix array with input as a file : 8.27 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.519 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.98 seconds
+Time to initialize nodes : 0.125 seconds
+Time for building CT in parallel : 0.153 seconds
+Time for shortcuts : 0.115 seconds
+Time for inserting into hash table : 0.755 seconds
+Time for converting to suffix tree : 4.65 seconds
+
+Generate random : 0.0912 seconds
+Time to search n/20 strings : 0.251 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/thesaurus.doc -cilk_set_worker_count 1
+Radix sort time: 2.33835
+Merge time: 1.31345
+LCP time: 2.40221
+Time for suffix array with input as a file : 7.82 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.164 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.216 seconds
+Time to initialize nodes : 0.105 seconds
+Time for building CT in parallel : 0.678 seconds
+Time for shortcuts : 0.259 seconds
+Time for inserting into hash table : 0.911 seconds
+Time for converting to suffix tree : 2.33 seconds
+
+Generate random : 0.122 seconds
+Time to search n/20 strings : 0.275 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/thesaurus.doc -cilk_set_worker_count 2
+Radix sort time: 1.27945
+Merge time: 0.693679
+LCP time: 1.27932
+Time for suffix array with input as a file : 4.24 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.104 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.238 seconds
+Time to initialize nodes : 0.0732 seconds
+Time for building CT in parallel : 0.341 seconds
+Time for shortcuts : 0.132 seconds
+Time for inserting into hash table : 0.536 seconds
+Time for converting to suffix tree : 1.42 seconds
+
+Generate random : 0.0708 seconds
+Time to search n/20 strings : 0.164 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/thesaurus.doc -cilk_set_worker_count 4
+Radix sort time: 0.691489
+Merge time: 0.353386
+LCP time: 0.661413
+Time for suffix array with input as a file : 2.25 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0673 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.232 seconds
+Time to initialize nodes : 0.0358 seconds
+Time for building CT in parallel : 0.183 seconds
+Time for shortcuts : 0.0701 seconds
+Time for inserting into hash table : 0.275 seconds
+Time for converting to suffix tree : 0.864 seconds
+
+Generate random : 0.0374 seconds
+Time to search n/20 strings : 0.0828 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/thesaurus.doc -cilk_set_worker_count 8
+Radix sort time: 0.426266
+Merge time: 0.189388
+LCP time: 0.361586
+Time for suffix array with input as a file : 1.27 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.064 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.236 seconds
+Time to initialize nodes : 0.019 seconds
+Time for building CT in parallel : 0.0916 seconds
+Time for shortcuts : 0.0359 seconds
+Time for inserting into hash table : 0.144 seconds
+Time for converting to suffix tree : 0.59 seconds
+
+Generate random : 0.0195 seconds
+Time to search n/20 strings : 0.0409 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/thesaurus.doc -cilk_set_worker_count 16
+Radix sort time: 0.281201
+Merge time: 0.101603
+LCP time: 0.227846
+Time for suffix array with input as a file : 0.822 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0717 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.251 seconds
+Time to initialize nodes : 0.0141 seconds
+Time for building CT in parallel : 0.0457 seconds
+Time for shortcuts : 0.019 seconds
+Time for inserting into hash table : 0.0882 seconds
+Time for converting to suffix tree : 0.49 seconds
+
+Generate random : 0.0109 seconds
+Time to search n/20 strings : 0.0204 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/thesaurus.doc -cilk_set_worker_count 24
+Radix sort time: 0.248854
+Merge time: 0.0709369
+LCP time: 0.189921
+Time for suffix array with input as a file : 0.678 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0783 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.24 seconds
+Time to initialize nodes : 0.0127 seconds
+Time for building CT in parallel : 0.0306 seconds
+Time for shortcuts : 0.0144 seconds
+Time for inserting into hash table : 0.0672 seconds
+Time for converting to suffix tree : 0.443 seconds
+
+Generate random : 0.0105 seconds
+Time to search n/20 strings : 0.0138 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/thesaurus.doc -cilk_set_worker_count 28
+Radix sort time: 0.234665
+Merge time: 0.0634906
+LCP time: 0.186827
+Time for suffix array with input as a file : 0.639 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0793 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.243 seconds
+Time to initialize nodes : 0.0121 seconds
+Time for building CT in parallel : 0.0261 seconds
+Time for shortcuts : 0.0133 seconds
+Time for inserting into hash table : 0.0626 seconds
+Time for converting to suffix tree : 0.436 seconds
+
+Generate random : 0.0105 seconds
+Time to search n/20 strings : 0.0119 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/thesaurus.doc -cilk_set_worker_count 32
+Radix sort time: 0.229453
+Merge time: 0.0589209
+LCP time: 0.17633
+Time for suffix array with input as a file : 0.619 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0719 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.247 seconds
+Time to initialize nodes : 0.0124 seconds
+Time for building CT in parallel : 0.0231 seconds
+Time for shortcuts : 0.0125 seconds
+Time for inserting into hash table : 0.0578 seconds
+Time for converting to suffix tree : 0.425 seconds
+
+Generate random : 0.0105 seconds
+Time to search n/20 strings : 0.0105 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/thesaurus.doc -cilk_set_worker_count 64
+Radix sort time: 0.241491
+Merge time: 0.0467074
+LCP time: 0.189881
+Time for suffix array with input as a file : 0.627 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0508 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.286 seconds
+Time to initialize nodes : 0.0125 seconds
+Time for building CT in parallel : 0.017 seconds
+Time for shortcuts : 0.0127 seconds
+Time for inserting into hash table : 0.0492 seconds
+Time for converting to suffix tree : 0.428 seconds
+
+Generate random : 0.00875 seconds
+Time to search n/20 strings : 0.00642 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/w3c2 -cilk_set_worker_count 1
+Radix sort time: 26.0817
+Merge time: 24.196
+LCP time: 44.1095
+Time for suffix array with input as a file : 118 seconds
+Time to initialize nodes for sequential CT (subtract off) : 1.39 seconds
+Time for stack-based sequential CT construction (subtract off) : 1.86 seconds
+Time to initialize nodes : 0.96 seconds
+Time for building CT in parallel : 6.11 seconds
+Time for shortcuts : 2.27 seconds
+Time for inserting into hash table : 10.9 seconds
+Time for converting to suffix tree : 23.5 seconds
+
+Generate random : 1.29 seconds
+Time to search n/20 strings : 12.3 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/w3c2 -cilk_set_worker_count 2
+Radix sort time: 14.8986
+Merge time: 13.9247
+LCP time: 25.444
+Time for suffix array with input as a file : 68.6 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.952 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.26 seconds
+Time to initialize nodes : 0.686 seconds
+Time for building CT in parallel : 3.59 seconds
+Time for shortcuts : 1.43 seconds
+Time for inserting into hash table : 6.32 seconds
+Time for converting to suffix tree : 15.2 seconds
+
+Generate random : 0.72 seconds
+Time to search n/20 strings : 6.81 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/w3c2 -cilk_set_worker_count 4
+Radix sort time: 8.34911
+Merge time: 7.53674
+LCP time: 14.0286
+Time for suffix array with input as a file : 38.3 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.625 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.3 seconds
+Time to initialize nodes : 0.299 seconds
+Time for building CT in parallel : 1.84 seconds
+Time for shortcuts : 0.732 seconds
+Time for inserting into hash table : 3.3 seconds
+Time for converting to suffix tree : 9.1 seconds
+
+Generate random : 0.408 seconds
+Time to search n/20 strings : 3.45 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/w3c2 -cilk_set_worker_count 8
+Radix sort time: 4.83885
+Merge time: 3.8541
+LCP time: 7.27087
+Time for suffix array with input as a file : 21.3 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.632 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.3 seconds
+Time to initialize nodes : 0.184 seconds
+Time for building CT in parallel : 0.901 seconds
+Time for shortcuts : 0.358 seconds
+Time for inserting into hash table : 1.7 seconds
+Time for converting to suffix tree : 6.07 seconds
+
+Generate random : 0.201 seconds
+Time to search n/20 strings : 1.76 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/w3c2 -cilk_set_worker_count 16
+Radix sort time: 2.93234
+Merge time: 2.00859
+LCP time: 3.97262
+Time for suffix array with input as a file : 12.4 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.719 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.36 seconds
+Time to initialize nodes : 0.143 seconds
+Time for building CT in parallel : 0.453 seconds
+Time for shortcuts : 0.19 seconds
+Time for inserting into hash table : 0.96 seconds
+Time for converting to suffix tree : 4.82 seconds
+
+Generate random : 0.117 seconds
+Time to search n/20 strings : 0.866 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/w3c2 -cilk_set_worker_count 24
+Radix sort time: 2.51989
+Merge time: 1.41433
+LCP time: 2.83305
+Time for suffix array with input as a file : 9.61 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.737 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.35 seconds
+Time to initialize nodes : 0.125 seconds
+Time for building CT in parallel : 0.308 seconds
+Time for shortcuts : 0.144 seconds
+Time for inserting into hash table : 0.747 seconds
+Time for converting to suffix tree : 4.41 seconds
+
+Generate random : 0.0892 seconds
+Time to search n/20 strings : 0.577 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/w3c2 -cilk_set_worker_count 28
+Radix sort time: 2.19985
+Merge time: 1.26527
+LCP time: 2.54733
+Time for suffix array with input as a file : 8.66 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.732 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.31 seconds
+Time to initialize nodes : 0.121 seconds
+Time for building CT in parallel : 0.256 seconds
+Time for shortcuts : 0.133 seconds
+Time for inserting into hash table : 0.675 seconds
+Time for converting to suffix tree : 4.23 seconds
+
+Generate random : 0.0988 seconds
+Time to search n/20 strings : 0.492 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/w3c2 -cilk_set_worker_count 32
+Radix sort time: 2.70431
+Merge time: 1.27589
+LCP time: 2.35514
+Time for suffix array with input as a file : 9.22 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.738 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.23 seconds
+Time to initialize nodes : 0.125 seconds
+Time for building CT in parallel : 0.224 seconds
+Time for shortcuts : 0.116 seconds
+Time for inserting into hash table : 0.641 seconds
+Time for converting to suffix tree : 4.07 seconds
+
+Generate random : 0.101 seconds
+Time to search n/20 strings : 0.43 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/w3c2 -cilk_set_worker_count 64
+Radix sort time: 2.35099
+Merge time: 0.95122
+LCP time: 1.95775
+Time for suffix array with input as a file : 7.93 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.508 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.65 seconds
+Time to initialize nodes : 0.121 seconds
+Time for building CT in parallel : 0.149 seconds
+Time for shortcuts : 0.111 seconds
+Time for inserting into hash table : 0.561 seconds
+Time for converting to suffix tree : 4.1 seconds
+
+Generate random : 0.087 seconds
+Time to search n/20 strings : 0.251 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp8.xml -cilk_set_worker_count 1
+Radix sort time: 22.4207
+Merge time: 23.7301
+LCP time: 36.6397
+Time for suffix array with input as a file : 106 seconds
+Time to initialize nodes for sequential CT (subtract off) : 1.34 seconds
+Time for stack-based sequential CT construction (subtract off) : 1.9 seconds
+Time to initialize nodes : 0.923 seconds
+Time for building CT in parallel : 5.24 seconds
+Time for shortcuts : 2.83 seconds
+Time for inserting into hash table : 13.2 seconds
+Time for converting to suffix tree : 25.4 seconds
+
+Generate random : 1.24 seconds
+Time to search n/20 strings : 7.54 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp8.xml -cilk_set_worker_count 2
+Radix sort time: 13.0845
+Merge time: 13.822
+LCP time: 21.484
+Time for suffix array with input as a file : 62.1 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.856 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.25 seconds
+Time to initialize nodes : 0.528 seconds
+Time for building CT in parallel : 4.75 seconds
+Time for shortcuts : 1.74 seconds
+Time for inserting into hash table : 7.73 seconds
+Time for converting to suffix tree : 17.8 seconds
+
+Generate random : 0.684 seconds
+Time to search n/20 strings : 4.15 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp8.xml -cilk_set_worker_count 4
+Radix sort time: 7.28165
+Merge time: 7.39748
+LCP time: 11.7996
+Time for suffix array with input as a file : 34.4 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.604 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.3 seconds
+Time to initialize nodes : 0.314 seconds
+Time for building CT in parallel : 1.61 seconds
+Time for shortcuts : 0.877 seconds
+Time for inserting into hash table : 4.02 seconds
+Time for converting to suffix tree : 9.72 seconds
+
+Generate random : 0.39 seconds
+Time to search n/20 strings : 2.08 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp8.xml -cilk_set_worker_count 8
+Radix sort time: 4.36042
+Merge time: 3.78434
+LCP time: 6.14288
+Time for suffix array with input as a file : 19.5 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.616 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.31 seconds
+Time to initialize nodes : 0.2 seconds
+Time for building CT in parallel : 0.783 seconds
+Time for shortcuts : 0.425 seconds
+Time for inserting into hash table : 2.06 seconds
+Time for converting to suffix tree : 6.39 seconds
+
+Generate random : 0.202 seconds
+Time to search n/20 strings : 1.08 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp8.xml -cilk_set_worker_count 16
+Radix sort time: 2.69523
+Merge time: 1.98312
+LCP time: 3.28983
+Time for suffix array with input as a file : 11.2 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.69 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.33 seconds
+Time to initialize nodes : 0.128 seconds
+Time for building CT in parallel : 0.397 seconds
+Time for shortcuts : 0.225 seconds
+Time for inserting into hash table : 1.21 seconds
+Time for converting to suffix tree : 4.98 seconds
+
+Generate random : 0.113 seconds
+Time to search n/20 strings : 0.535 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp8.xml -cilk_set_worker_count 24
+Radix sort time: 2.33522
+Merge time: 1.39552
+LCP time: 2.4697
+Time for suffix array with input as a file : 8.84 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.703 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.32 seconds
+Time to initialize nodes : 0.125 seconds
+Time for building CT in parallel : 0.257 seconds
+Time for shortcuts : 0.158 seconds
+Time for inserting into hash table : 0.939 seconds
+Time for converting to suffix tree : 4.5 seconds
+
+Generate random : 0.0927 seconds
+Time to search n/20 strings : 0.349 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp8.xml -cilk_set_worker_count 28
+Radix sort time: 2.41623
+Merge time: 1.25447
+LCP time: 2.19277
+Time for suffix array with input as a file : 8.77 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.709 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.21 seconds
+Time to initialize nodes : 0.124 seconds
+Time for building CT in parallel : 0.221 seconds
+Time for shortcuts : 0.134 seconds
+Time for inserting into hash table : 0.861 seconds
+Time for converting to suffix tree : 4.26 seconds
+
+Generate random : 0.0839 seconds
+Time to search n/20 strings : 0.299 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp8.xml -cilk_set_worker_count 32
+Radix sort time: 2.65945
+Merge time: 1.24181
+LCP time: 2.09104
+Time for suffix array with input as a file : 8.83 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.603 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.22 seconds
+Time to initialize nodes : 0.118 seconds
+Time for building CT in parallel : 0.194 seconds
+Time for shortcuts : 0.13 seconds
+Time for inserting into hash table : 0.873 seconds
+Time for converting to suffix tree : 4.13 seconds
+
+Generate random : 0.0958 seconds
+Time to search n/20 strings : 0.261 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp8.xml -cilk_set_worker_count 64
+Radix sort time: 2.22832
+Merge time: 0.953483
+LCP time: 1.63532
+Time for suffix array with input as a file : 7.3 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.488 seconds
+Time for stack-based sequential CT construction (subtract off) : 2.77 seconds
+Time to initialize nodes : 0.115 seconds
+Time for building CT in parallel : 0.137 seconds
+Time for shortcuts : 0.104 seconds
+Time for inserting into hash table : 0.774 seconds
+Time for converting to suffix tree : 4.38 seconds
+
+Generate random : 0.0826 seconds
+Time to search n/20 strings : 0.155 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_10K -cilk_set_worker_count 1
+Radix sort time: 1.85155
+Merge time: 1.33071
+LCP time: 0.673588
+Time for suffix array with input as a file : 5 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.153 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.164 seconds
+Time to initialize nodes : 0.0951 seconds
+Time for building CT in parallel : 0.454 seconds
+Time for shortcuts : 0.182 seconds
+Time for inserting into hash table : 2.01 seconds
+Time for converting to suffix tree : 3.06 seconds
+
+Generate random : 0.0933 seconds
+Time to search n/20 strings : 0.346 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_10K -cilk_set_worker_count 2
+Radix sort time: 1.02603
+Merge time: 0.700075
+LCP time: 0.339216
+Time for suffix array with input as a file : 2.68 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0911 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.214 seconds
+Time to initialize nodes : 0.0529 seconds
+Time for building CT in parallel : 0.231 seconds
+Time for shortcuts : 0.094 seconds
+Time for inserting into hash table : 1.14 seconds
+Time for converting to suffix tree : 1.83 seconds
+
+Generate random : 0.0626 seconds
+Time to search n/20 strings : 0.2 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_10K -cilk_set_worker_count 4
+Radix sort time: 0.509544
+Merge time: 0.337965
+LCP time: 0.171467
+Time for suffix array with input as a file : 1.33 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0606 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.222 seconds
+Time to initialize nodes : 0.0338 seconds
+Time for building CT in parallel : 0.121 seconds
+Time for shortcuts : 0.0477 seconds
+Time for inserting into hash table : 0.582 seconds
+Time for converting to suffix tree : 1.07 seconds
+
+Generate random : 0.0332 seconds
+Time to search n/20 strings : 0.103 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_10K -cilk_set_worker_count 8
+Radix sort time: 0.275064
+Merge time: 0.171549
+LCP time: 0.0966802
+Time for suffix array with input as a file : 0.718 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0576 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.204 seconds
+Time to initialize nodes : 0.0172 seconds
+Time for building CT in parallel : 0.0599 seconds
+Time for shortcuts : 0.0243 seconds
+Time for inserting into hash table : 0.31 seconds
+Time for converting to suffix tree : 0.673 seconds
+
+Generate random : 0.0173 seconds
+Time to search n/20 strings : 0.0502 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_10K -cilk_set_worker_count 16
+Radix sort time: 0.153365
+Merge time: 0.0881929
+LCP time: 0.0642471
+Time for suffix array with input as a file : 0.41 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0656 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.207 seconds
+Time to initialize nodes : 0.0118 seconds
+Time for building CT in parallel : 0.0309 seconds
+Time for shortcuts : 0.0143 seconds
+Time for inserting into hash table : 0.206 seconds
+Time for converting to suffix tree : 0.535 seconds
+
+Generate random : 0.00979 seconds
+Time to search n/20 strings : 0.0251 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_10K -cilk_set_worker_count 24
+Radix sort time: 0.116512
+Merge time: 0.0616221
+LCP time: 0.0601611
+Time for suffix array with input as a file : 0.322 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0623 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.21 seconds
+Time to initialize nodes : 0.0115 seconds
+Time for building CT in parallel : 0.0208 seconds
+Time for shortcuts : 0.0114 seconds
+Time for inserting into hash table : 0.172 seconds
+Time for converting to suffix tree : 0.489 seconds
+
+Generate random : 0.00921 seconds
+Time to search n/20 strings : 0.0171 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_10K -cilk_set_worker_count 28
+Radix sort time: 0.105307
+Merge time: 0.0551889
+LCP time: 0.0568662
+Time for suffix array with input as a file : 0.297 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0654 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.218 seconds
+Time to initialize nodes : 0.0115 seconds
+Time for building CT in parallel : 0.0181 seconds
+Time for shortcuts : 0.0109 seconds
+Time for inserting into hash table : 0.163 seconds
+Time for converting to suffix tree : 0.487 seconds
+
+Generate random : 0.00951 seconds
+Time to search n/20 strings : 0.0147 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_10K -cilk_set_worker_count 32
+Radix sort time: 0.104689
+Merge time: 0.0506659
+LCP time: 0.0584202
+Time for suffix array with input as a file : 0.29 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0661 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.206 seconds
+Time to initialize nodes : 0.0107 seconds
+Time for building CT in parallel : 0.0166 seconds
+Time for shortcuts : 0.0107 seconds
+Time for inserting into hash table : 0.154 seconds
+Time for converting to suffix tree : 0.465 seconds
+
+Generate random : 0.00938 seconds
+Time to search n/20 strings : 0.013 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_10K -cilk_set_worker_count 64
+Radix sort time: 0.0929029
+Merge time: 0.0400798
+LCP time: 0.0701492
+Time for suffix array with input as a file : 0.279 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0499 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.193 seconds
+Time to initialize nodes : 0.0109 seconds
+Time for building CT in parallel : 0.0125 seconds
+Time for shortcuts : 0.0104 seconds
+Time for inserting into hash table : 0.123 seconds
+Time for converting to suffix tree : 0.401 seconds
+
+Generate random : 0.00624 seconds
+Time to search n/20 strings : 0.00829 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_INTMAX -cilk_set_worker_count 1
+Radix sort time: 1.47297
+Merge time: 0.785639
+LCP time: 0.406027
+Time for suffix array with input as a file : 3.27 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.153 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.114 seconds
+Time to initialize nodes : 0.0944 seconds
+Time for building CT in parallel : 0.401 seconds
+Time for shortcuts : 0.134 seconds
+Time for inserting into hash table : 2.07 seconds
+Time for converting to suffix tree : 2.96 seconds
+
+Generate random : 0.104 seconds
+Time to search n/20 strings : 0.273 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_INTMAX -cilk_set_worker_count 2
+Radix sort time: 0.816886
+Merge time: 0.420655
+LCP time: 0.207141
+Time for suffix array with input as a file : 1.78 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0929 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.147 seconds
+Time to initialize nodes : 0.0657 seconds
+Time for building CT in parallel : 0.2 seconds
+Time for shortcuts : 0.0932 seconds
+Time for inserting into hash table : 1.17 seconds
+Time for converting to suffix tree : 1.77 seconds
+
+Generate random : 0.0561 seconds
+Time to search n/20 strings : 0.16 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_INTMAX -cilk_set_worker_count 4
+Radix sort time: 0.404414
+Merge time: 0.207543
+LCP time: 0.101588
+Time for suffix array with input as a file : 0.885 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0596 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.141 seconds
+Time to initialize nodes : 0.0317 seconds
+Time for building CT in parallel : 0.112 seconds
+Time for shortcuts : 0.0574 seconds
+Time for inserting into hash table : 0.591 seconds
+Time for converting to suffix tree : 0.993 seconds
+
+Generate random : 0.0328 seconds
+Time to search n/20 strings : 0.0813 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_INTMAX -cilk_set_worker_count 8
+Radix sort time: 0.214837
+Merge time: 0.104572
+LCP time: 0.055191
+Time for suffix array with input as a file : 0.472 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0599 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.171 seconds
+Time to initialize nodes : 0.018 seconds
+Time for building CT in parallel : 0.0531 seconds
+Time for shortcuts : 0.0334 seconds
+Time for inserting into hash table : 0.315 seconds
+Time for converting to suffix tree : 0.65 seconds
+
+Generate random : 0.0164 seconds
+Time to search n/20 strings : 0.0398 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_INTMAX -cilk_set_worker_count 16
+Radix sort time: 0.123146
+Merge time: 0.0571058
+LCP time: 0.0395961
+Time for suffix array with input as a file : 0.29 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0649 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.141 seconds
+Time to initialize nodes : 0.0121 seconds
+Time for building CT in parallel : 0.0272 seconds
+Time for shortcuts : 0.0394 seconds
+Time for inserting into hash table : 0.209 seconds
+Time for converting to suffix tree : 0.494 seconds
+
+Generate random : 0.00928 seconds
+Time to search n/20 strings : 0.0199 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_INTMAX -cilk_set_worker_count 24
+Radix sort time: 0.0947189
+Merge time: 0.0420651
+LCP time: 0.0389919
+Time for suffix array with input as a file : 0.231 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0658 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.141 seconds
+Time to initialize nodes : 0.0121 seconds
+Time for building CT in parallel : 0.0189 seconds
+Time for shortcuts : 0.0398 seconds
+Time for inserting into hash table : 0.171 seconds
+Time for converting to suffix tree : 0.449 seconds
+
+Generate random : 0.00677 seconds
+Time to search n/20 strings : 0.0136 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_INTMAX -cilk_set_worker_count 28
+Radix sort time: 0.0821147
+Merge time: 0.034447
+LCP time: 0.034832
+Time for suffix array with input as a file : 0.201 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0638 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.155 seconds
+Time to initialize nodes : 0.0116 seconds
+Time for building CT in parallel : 0.0158 seconds
+Time for shortcuts : 0.0317 seconds
+Time for inserting into hash table : 0.16 seconds
+Time for converting to suffix tree : 0.438 seconds
+
+Generate random : 0.00957 seconds
+Time to search n/20 strings : 0.0117 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_INTMAX -cilk_set_worker_count 32
+Radix sort time: 0.0748661
+Merge time: 0.0302281
+LCP time: 0.034687
+Time for suffix array with input as a file : 0.185 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0643 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.152 seconds
+Time to initialize nodes : 0.0113 seconds
+Time for building CT in parallel : 0.0139 seconds
+Time for shortcuts : 0.0407 seconds
+Time for inserting into hash table : 0.154 seconds
+Time for converting to suffix tree : 0.436 seconds
+
+Generate random : 0.00604 seconds
+Time to search n/20 strings : 0.0104 seconds
+
+./mergeSuffixTreeTest i ../julians-branch/testfiles/10Mrandom_ints_range_INTMAX -cilk_set_worker_count 64
+Radix sort time: 0.0812292
+Merge time: 0.032048
+LCP time: 0.0452371
+Time for suffix array with input as a file : 0.219 seconds
+Time to initialize nodes for sequential CT (subtract off) : 0.0486 seconds
+Time for stack-based sequential CT construction (subtract off) : 0.205 seconds
+Time to initialize nodes : 0.0118 seconds
+Time for building CT in parallel : 0.0114 seconds
+Time for shortcuts : 0.0478 seconds
+Time for inserting into hash table : 0.124 seconds
+Time for converting to suffix tree : 0.449 seconds
+
+Generate random : 0.00592 seconds
+Time to search n/20 strings : 0.00706 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp9.xml -cilk_set_worker_count 1
+Radix sort time: 307.388
+Merge time: 384.207
+LCP time: 550.383
+Time for suffix array with input as a file : 1.55e+03 seconds
+Time to initialize nodes : 12.4 seconds
+Time for building CT in parallel : 52.3 seconds
+Time for shortcuts : 30.6 seconds
+Time for inserting into hash table : 190 seconds
+Time for converting to suffix tree : 286 seconds
+
+Generate random : 16.3 seconds
+Time to search n/20 strings : 160 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp9.xml -cilk_set_worker_count 2
+Radix sort time: 156.886
+Merge time: 193.328
+LCP time: 301.756
+Time for suffix array with input as a file : 816 seconds
+Time to initialize nodes : 6.29 seconds
+Time for building CT in parallel : 26.6 seconds
+Time for shortcuts : 15 seconds
+Time for inserting into hash table : 97.1 seconds
+Time for converting to suffix tree : 145 seconds
+
+Generate random : 9.19 seconds
+Time to search n/20 strings : 74.7 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp9.xml -cilk_set_worker_count 4
+Radix sort time: 85.6934
+Merge time: 93.1597
+LCP time: 150.587
+Time for suffix array with input as a file : 426 seconds
+Time to initialize nodes : 2.86 seconds
+Time for building CT in parallel : 14.2 seconds
+Time for shortcuts : 7.47 seconds
+Time for inserting into hash table : 47.5 seconds
+Time for converting to suffix tree : 72 seconds
+
+Generate random : 4.68 seconds
+Time to search n/20 strings : 34.5 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp9.xml -cilk_set_worker_count 8
+Radix sort time: 51.2177
+Merge time: 48.0709
+LCP time: 78.3969
+Time for suffix array with input as a file : 242 seconds
+Time to initialize nodes : 1.84 seconds
+Time for building CT in parallel : 7.67 seconds
+Time for shortcuts : 3.8 seconds
+Time for inserting into hash table : 24.5 seconds
+Time for converting to suffix tree : 37.8 seconds
+
+Generate random : 2.44 seconds
+Time to search n/20 strings : 17 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp9.xml -cilk_set_worker_count 16
+Radix sort time: 39.7263
+Merge time: 25.8267
+LCP time: 44.0524
+Time for suffix array with input as a file : 162 seconds
+Time to initialize nodes : 1.36 seconds
+Time for building CT in parallel : 3.83 seconds
+Time for shortcuts : 2.26 seconds
+Time for inserting into hash table : 14 seconds
+Time for converting to suffix tree : 21.5 seconds
+
+Generate random : 1.29 seconds
+Time to search n/20 strings : 8.42 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp9.xml -cilk_set_worker_count 24
+Radix sort time: 37.5112
+Merge time: 18.9281
+LCP time: 32.6576
+Time for suffix array with input as a file : 132 seconds
+Time to initialize nodes : 1.25 seconds
+Time for building CT in parallel : 2.39 seconds
+Time for shortcuts : 1.47 seconds
+Time for inserting into hash table : 11.3 seconds
+Time for converting to suffix tree : 16.4 seconds
+
+Generate random : 0.988 seconds
+Time to search n/20 strings : 5.65 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp9.xml -cilk_set_worker_count 28
+Radix sort time: 30.3563
+Merge time: 16.2049
+LCP time: 30.1087
+Time for suffix array with input as a file : 114 seconds
+Time to initialize nodes : 1.23 seconds
+Time for building CT in parallel : 2.12 seconds
+Time for shortcuts : 1.36 seconds
+Time for inserting into hash table : 9.97 seconds
+Time for converting to suffix tree : 14.7 seconds
+
+Generate random : 0.992 seconds
+Time to search n/20 strings : 4.88 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp9.xml -cilk_set_worker_count 32
+Radix sort time: 27.7659
+Merge time: 13.9179
+LCP time: 26.1041
+Time for suffix array with input as a file : 99.9 seconds
+Time to initialize nodes : 1.16 seconds
+Time for building CT in parallel : 1.87 seconds
+Time for shortcuts : 1.28 seconds
+Time for inserting into hash table : 9.88 seconds
+Time for converting to suffix tree : 14.2 seconds
+
+Generate random : 1.15 seconds
+Time to search n/20 strings : 4.3 seconds
+
+./mergeSuffixTreeTest f ../julians-branch/testfiles/wikisamp9.xml -cilk_set_worker_count 64
+Radix sort time: 33.9733
+Merge time: 12.1212
+LCP time: 21.8916
+Time for suffix array with input as a file : 105 seconds
+Time to initialize nodes : 1.31 seconds
+Time for building CT in parallel : 1.27 seconds
+Time for shortcuts : 1.08 seconds
+Time for inserting into hash table : 9.08 seconds
+Time for converting to suffix tree : 12.7 seconds
+
+Generate random : 0.916 seconds
+Time to search n/20 strings : 2.57 seconds
+

@@ -1,0 +1,37 @@
+<h1>Listing pbbs_subruns</h1>
+<%= link_to 'Back to Runs', :controller => "pbbs_runs", :problem_id => @problem_id %>
+
+<table>
+  <tr>
+    <th>Program</th>
+    <th>Input file</th>
+    <th>Time</th>
+	<th>Weight</th>
+	<th>Params</th>
+	<th>Check params</th>
+  </tr>
+
+<% @pbbs_subruns.each do |sub| %>
+  <tr> 
+	<td><%= sub.pbbs_run.pbbs_program.name %> </td>
+	<td><%= sub.inputfile %> </td>
+	<td><%= sub.time %> </td>
+	<td><%= sub.weight %> </td>
+	<td><%= sub.params %> </td>
+	<td><%= sub.check_params %> </td>
+	
+  </tr>
+<% end %>
+</table>
+
+
+<h2>Saved Output</h2>
+<pre>
+
+<%= @pbbs_subruns[0].output %>
+</pre>
+
+
+<br />
+
+ 

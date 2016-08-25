@@ -1,0 +1,173 @@
+#!/usr/bin/python
+#
+# run all tests
+#
+
+import os
+import sys
+import signal
+import time
+import subprocess
+
+
+def signal_handler(signal,frame):
+  print "bye\n"
+  sys.exit(0)
+signal.signal(signal.SIGINT,signal_handler)
+
+def shellGetOutput(str) :
+  process = subprocess.Popen(str,shell=True,stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE)
+  output, err = process.communicate()
+  
+  if (len(err) > 0):
+      raise NameError(str+"\n"+output+err)
+  return output
+
+applications = ["BFS","BC","Radii","Components","PageRank"]
+applications = ["Radii"]
+wapplications = ["BellmanFord"]
+wapplications = []
+pagerank = ["PageRank","PageRankDelta"]
+
+testfiles = ["randLocalGraph_J_5_10000000_ordered","rMatGraph_J_5_10000000_ordered","3Dgrid_J_10000000_ordered","wiki-Talk.txt_J_dfsOrdered","soc-LiveJournal1.txt_J_psep_ordered","cit-Patents.txt_J_psep_ordered","com-lj.ungraph.txt_J_psep_ordered","com-orkut.ungraph.txt_J_psep_ordered","nlpkkt_bfsR_J"]
+
+# testfiles = ["nlpkkt_bfsR_J"]
+# testfiles = ["soc-LiveJournal1.txt_J_psep_ordered","com-orkut.ungraph.txt_J_psep_ordered"]
+# testfiles = ["cit-Patents.txt_J_psep_ordered","com-lj.ungraph.txt_J_psep_ordered"]
+
+wtestfiles = ["randLocalGraph_WJ_5_10000000_ordered","rMatGraph_WJ_5_10000000_ordered","3Dgrid_WJ_10000000_ordered"]#,"wiki-Talk.txt_WJ","soc-LiveJournal1.txt_WJ","cit-Patents.txt_WJ","com-lj.ungraph.txt_WJ","com-orkut.ungraph.txt_WJ"]
+wtestfiles = ["nlpkkt_bfsR_WJ"]
+wtestfiles = ["soc-LiveJournal1.txt_WJ_psep_ordered","com-orkut.ungraph.txt_WJ_psep_ordered"]#,"cit-Patents.txt_WJ_psep_ordered","com-lj.ungraph_WJ_psep_ordered"
+
+processors = [1,2,4]+range(8,80+1,8)
+
+
+# for app in pagerank:
+#   for testfile in testfiles:
+#     for p in processors:
+#       ss = "export CILK_NWORKERS="+`p`+"; ./" + app + " data/"+testfile+" -s"
+#       print app+" "+`p` + " " + testfile 
+#       print shellGetOutput(ss)
+#       sys.stdout.flush()
+      
+
+#os.system("make clean;unset LONG;make;")
+
+for app in applications:
+  for testfile in testfiles :
+    for p in processors :
+      for i in range(3):
+        if p == 1:
+          ss = "CILK_NWORKERS="+`p`+" ./" + app + " data/"+testfile+" -s"
+        else:
+          ss = "CILK_NWORKERS="+`p`+" numactl -i all ./" + app + " data/"+testfile+" -s"
+        print app+" "+`p` + " " + testfile 
+        print shellGetOutput(ss)
+        sys.stdout.flush()
+
+
+for app in wapplications:
+  for testfile in wtestfiles :
+    for p in processors :
+      for i in range(3):
+        if p == 1:
+          ss = "CILK_NWORKERS="+`p`+" ./" + app + " data/"+testfile+" -s"
+        else:
+          ss = "CILK_NWORKERS="+`p`+" numactl -i all ./" + app + " data/"+testfile+" -s"
+        print app+" "+`p` + " " + testfile 
+        print shellGetOutput(ss)
+        sys.stdout.flush()
+
+sys.exit();
+
+for app in applications:
+  for p in processors :
+    for i in range(3):
+      if p == 1:
+        ss = "CILK_NWORKERS="+`p`+" ./" + app + " data/twitter_J"
+      else:
+        ss = "CILK_NWORKERS="+`p`+" numactl -i all ./" + app + " data/twitter_J"
+      print app+" "+`p` + " twitter"
+      print shellGetOutput(ss)
+      sys.stdout.flush()
+
+
+for app in wapplications:
+  for p in processors :
+    for i in range(3):
+      if p == 1:
+        ss = "CILK_NWORKERS="+`p`+" ./" + app + " data/twitter_WJ"
+      else:
+        ss = "CILK_NWORKERS="+`p`+" numactl -i all ./" + app + " data/twitter_WJ"
+      print app+" "+`p` + " twitter"
+      print shellGetOutput(ss)
+      sys.stdout.flush()
+
+sys.exit()
+
+# for app in applications:
+#   ss = "export CILK_NWORKERS=80; ./"+app+" data/rMatGraph_J_16_134217728_noDups -s"
+#   print app+" 80 rMat27"
+#   print shellGetOutput(ss)
+#   sys.stdout.flush()
+#   print shellGetOutput(ss)
+#   sys.stdout.flush()
+#   print shellGetOutput(ss)
+#   sys.stdout.flush()
+
+
+#   ss = "export CILK_NWORKERS=1; ./"+app+" data/rMatGraph_J_16_134217728_noDups -s"
+#   print app+" 1 rMat27"
+#   print shellGetOutput(ss)
+#   sys.stdout.flush()
+
+#os.system("make clean; LONG=1 make;~/hog2 250")
+
+# for app in wapplications:
+#   ss = "export CILK_NWORKERS=80; ./"+app+" data/rMatGraph_WJ_16_134217728_noDups -s"
+#   print app+" 80 rMat27"
+#   print shellGetOutput(ss)
+#   sys.stdout.flush()
+#   print shellGetOutput(ss)
+#   sys.stdout.flush()
+#   print shellGetOutput(ss)
+#   sys.stdout.flush()
+
+#   ss = "export CILK_NWORKERS=1; ./"+app+" data/rMatGraph_WJ_16_134217728_noDups -s"
+#   print app+" 1 rMat27"
+#   print shellGetOutput(ss)
+#   sys.stdout.flush()
+
+
+#os.system("~/hog2 250")
+
+for app in applications+wapplications:
+  ss = "CILK_NWORKERS=80 numactl -i all ./"+app+" data/yahoo_hybrid -s -b"
+  print app+" 80 yahoo"
+  print shellGetOutput(ss)
+  sys.stdout.flush()
+  print shellGetOutput(ss)
+  sys.stdout.flush()
+  print shellGetOutput(ss)
+  sys.stdout.flush()
+
+
+
+  # ss = "export CILK_NWORKERS=1; ./"+app+" data/yahoo -s -b"
+  # print app+" 1 yahoo"
+  # print shellGetOutput(ss)
+  # sys.stdout.flush()
+
+# os.system("~/hog2 200")
+
+# for app in wapplications+["PageRank"]:
+#   ss = "export CILK_NWORKERS=80; ./"+app+" ~/data/yahoograph/yahoows -s -b"
+#   print app+" 80 yahoo"
+#   print shellGetOutput(ss)
+#   sys.stdout.flush()
+
+#   ss = "export CILK_NWORKERS=1; ./"+app+" ~/data/yahoograph/yahoows -s -b"
+#   print app+" 1 yahoo"
+#   print shellGetOutput(ss)
+#   sys.stdout.flush()

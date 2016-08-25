@@ -1,0 +1,29 @@
+#!/bin/csh
+#PBS -l ncpus=128
+#PBS -l walltime=10:00
+#PBS -q batch
+
+echo 'Home', $HOME
+echo 'Scratch', $SCRATCH
+
+
+
+
+# move ty my scratch
+cd $SCRATCH
+
+ja
+
+# Copy executable
+cp $HOME/numatest .
+
+setenv OMP_NUM_THREADS $PBS_NCPUS
+
+echo 'PBS CPUS:', $PBS_NCPUS
+echo 'OMP THREADS:', $OMP_NUM_THREADS
+
+omplace -nt $OMP_NUM_THREADS ./numatest memacc.mb 128 num_workers $OMP_NUM_THREADS 
+mv $SCRATCH/statsdump.txt $HOME/statsdump_`date +%m%d_%H%M%S` 
+
+
+ja -chlst

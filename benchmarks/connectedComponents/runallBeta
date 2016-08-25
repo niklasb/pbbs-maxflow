@@ -1,0 +1,38 @@
+#!/usr/bin/python
+#
+# run all tests
+#
+
+import os
+import sys
+import signal
+import time
+import subprocess
+import numpy
+
+def signal_handler(signal,frame):
+  print "bye\n"
+  sys.exit(0)
+signal.signal(signal.SIGINT,signal_handler)
+
+def shellGetOutput(str) :
+  process = subprocess.Popen(str,shell=True,stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE)
+  output, err = process.communicate()
+  
+  if (len(err) > 0):
+      raise NameError(str+"\n"+output+err)
+  return output
+
+applications = ["ndHybridCC"]
+testfiles = ["randLocalGraph_J_5_100000000","rMatGraph_J_5_100000000","3Dgrid_J_100000000","lineGraph_J_500000000"]
+
+betas = numpy.concatenate([numpy.array([0.001,0.003,0.005,0.008]),numpy.concatenate([numpy.arange(0.01,0.1,0.01),numpy.arange(0.1,0.96,0.05)])])
+
+for app in applications:
+  for testfile in testfiles :
+    for beta in betas:
+      ss = "CILK_NWORKERS=80 numactl -i all ./" + app + "/CC -r 3 -b " + `beta` + " graphData/data/"+testfile
+      print app + " " + testfile + " beta="+ `beta` 
+      print shellGetOutput(ss)
+      sys.stdout.flush()

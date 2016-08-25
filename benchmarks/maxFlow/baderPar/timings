@@ -1,0 +1,8 @@
+#!/bin/bash
+dir=$1
+phase=${2-total}
+echo "# run $name, $phase time"
+for i in 1 2 4 8 16 32; do
+  echo -n "$i "
+  cat $dir/$i | grep "$phase time" | tail -n 1 | ruby -n -e '$_ =~ /([^\s+]+)$/; puts $1'
+done

@@ -1,0 +1,26 @@
+CPPSRCS	= main.cpp cpp_framework.cpp
+TARGET	= test_sparc64
+
+CPP			= /opt/SUNWspro/bin/CC
+CPPFLAGS	= -O4 -m64 -mt -lrt -lmtmalloc -DNDEBUG -D_REENTRANT -DSPARC64 ./framework/sparc_mcas.il
+LFLAGS		= $(CPPFLAGS)
+
+OBJS		= $(CPPSRCS:.cpp=.o)
+
+all: $(TARGET)
+
+main.o:
+	$(CPP) $(CPPFLAGS) -c ./test/main.cpp
+
+cpp_framework.o:
+	$(CPP) $(CPPFLAGS) -c ./framework/cpp_framework.cpp
+
+$(TARGET): $(OBJS)
+	$(CPP) $(LFLAGS) $(OBJS) -o $(TARGET)
+
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+depend:
+	mkdep $(SRCS)
+

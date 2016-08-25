@@ -1,0 +1,397 @@
+hostname: oblivious
+
+./sequenceTest 100000000 -cilk_set_worker_count 1
+tabulate (double): 0.132 seconds; 
+map (double, +1): 0.189 seconds; 
+map (char, +1): 0.149 seconds; 
+map (char, isalpha): 0.347 seconds; 
+reduce (double, add): 0.164 seconds; 
+map reduce (char, add): 0.168 seconds; 
+max Index (double): 0.139 seconds; 
+scan (double, add, inplace): 0.335 seconds; 
+scan (double, add): 0.357 seconds; 
+scanI (double, add): 0.528 seconds; 
+scan (int, max): 0.306 seconds; 
+sequential scan (double, add): 0.183 seconds; 
+sequential scan (int, max): 0.147 seconds; 
+filter (double, odd): 0.348 seconds; 
+pack (double, odd): 0.282 seconds; 
+gather (int): 2.03 seconds; 
+gather (double): 2.44 seconds; 
+scatter (int): 2.13 seconds; 
+scatter (double): 2.53 seconds; 
+scatter contended (10^6): 1.15 seconds; 
+scatter contended (10^5): 0.476 seconds; 
+scatter CAS (int): 9.63 seconds; 
+scatter CAS contended (10^6): 1.8 seconds; 
+scatter CAS contended conditional (10^6): 0.513 seconds; 
+scatter CAS contended (10^5): 1.31 seconds; 
+scatter CAS contended conditional (10^5): 0.318 seconds; 
+
+./sequenceTest 100000000 -cilk_set_worker_count 2
+tabulate (double): 0.0807 seconds; 
+map (double, +1): 0.144 seconds; 
+map (char, +1): 0.0736 seconds; 
+map (char, isalpha): 0.172 seconds; 
+reduce (double, add): 0.084 seconds; 
+map reduce (char, add): 0.0835 seconds; 
+max Index (double): 0.0755 seconds; 
+scan (double, add, inplace): 0.182 seconds; 
+scan (double, add): 0.229 seconds; 
+scanI (double, add): 0.266 seconds; 
+scan (int, max): 0.157 seconds; 
+sequential scan (double, add): 0.185 seconds; 
+sequential scan (int, max): 0.144 seconds; 
+filter (double, odd): 0.206 seconds; 
+pack (double, odd): 0.171 seconds; 
+gather (int): 1.02 seconds; 
+gather (double): 1.24 seconds; 
+scatter (int): 1.07 seconds; 
+scatter (double): 1.29 seconds; 
+scatter contended (10^6): 0.568 seconds; 
+scatter contended (10^5): 0.256 seconds; 
+scatter CAS (int): 4.8 seconds; 
+scatter CAS contended (10^6): 0.948 seconds; 
+scatter CAS contended conditional (10^6): 0.258 seconds; 
+scatter CAS contended (10^5): 0.98 seconds; 
+scatter CAS contended conditional (10^5): 0.157 seconds; 
+
+./sequenceTest 100000000 -cilk_set_worker_count 4
+tabulate (double): 0.0699 seconds; 
+map (double, +1): 0.118 seconds; 
+map (char, +1): 0.0385 seconds; 
+map (char, isalpha): 0.0897 seconds; 
+reduce (double, add): 0.0515 seconds; 
+map reduce (char, add): 0.0437 seconds; 
+max Index (double): 0.0496 seconds; 
+scan (double, add, inplace): 0.123 seconds; 
+scan (double, add): 0.17 seconds; 
+scanI (double, add): 0.173 seconds; 
+scan (int, max): 0.0998 seconds; 
+sequential scan (double, add): 0.235 seconds; 
+sequential scan (int, max): 0.152 seconds; 
+filter (double, odd): 0.152 seconds; 
+pack (double, odd): 0.131 seconds; 
+gather (int): 0.549 seconds; 
+gather (double): 0.647 seconds; 
+scatter (int): 0.661 seconds; 
+scatter (double): 0.745 seconds; 
+scatter contended (10^6): 0.347 seconds; 
+scatter contended (10^5): 0.228 seconds; 
+scatter CAS (int): 2.43 seconds; 
+scatter CAS contended (10^6): 0.537 seconds; 
+scatter CAS contended conditional (10^6): 0.137 seconds; 
+scatter CAS contended (10^5): 0.657 seconds; 
+scatter CAS contended conditional (10^5): 0.0821 seconds; 
+
+./sequenceTest 100000000 -cilk_set_worker_count 8
+tabulate (double): 0.0498 seconds; 
+map (double, +1): 0.0776 seconds; 
+map (char, +1): 0.0197 seconds; 
+map (char, isalpha): 0.0453 seconds; 
+reduce (double, add): 0.0295 seconds; 
+map reduce (char, add): 0.0219 seconds; 
+max Index (double): 0.0291 seconds; 
+scan (double, add, inplace): 0.0799 seconds; 
+scan (double, add): 0.143 seconds; 
+scanI (double, add): 0.11 seconds; 
+scan (int, max): 0.06 seconds; 
+sequential scan (double, add): 0.257 seconds; 
+sequential scan (int, max): 0.153 seconds; 
+filter (double, odd): 0.094 seconds; 
+pack (double, odd): 0.0714 seconds; 
+gather (int): 0.289 seconds; 
+gather (double): 0.337 seconds; 
+scatter (int): 0.418 seconds; 
+scatter (double): 0.454 seconds; 
+scatter contended (10^6): 0.227 seconds; 
+scatter contended (10^5): 0.213 seconds; 
+scatter CAS (int): 1.24 seconds; 
+scatter CAS contended (10^6): 0.577 seconds; 
+scatter CAS contended conditional (10^6): 0.0689 seconds; 
+scatter CAS contended (10^5): 0.64 seconds; 
+scatter CAS contended conditional (10^5): 0.0424 seconds; 
+
+./mergeTest 100000000 -cilk_set_worker_count 1
+Merge: 0.686 seconds; 
+
+./mergeTest 100000000 -cilk_set_worker_count 2
+Merge: 0.358 seconds; 
+
+./mergeTest 100000000 -cilk_set_worker_count 4
+Merge: 0.197 seconds; 
+
+./mergeTest 100000000 -cilk_set_worker_count 8
+Merge: 0.123 seconds; 
+
+./radixSortTest 100000000 -cilk_set_worker_count 1
+radix sort (int): 3.9 seconds; 
+radix sort (int + int payload): 5.26 seconds; 
+collect double (2 buckets, inplace): 0.66 seconds; 
+collect (double, 8 buckets, inplace): 0.75 seconds; 
+collect (double, 256 buckets, inplace): 1.43 seconds; 
+collect (int, 256 buckets, inplace): 1.06 seconds; 
+collect (int, 65K buckets, allocate): 2.96 seconds; 
+
+./radixSortTest 100000000 -cilk_set_worker_count 2
+radix sort (int): 2.08 seconds; 
+radix sort (int + int payload): 2.89 seconds; 
+collect double (2 buckets, inplace): 0.398 seconds; 
+collect (double, 8 buckets, inplace): 0.63 seconds; 
+collect (double, 256 buckets, inplace): 0.843 seconds; 
+collect (int, 256 buckets, inplace): 0.6 seconds; 
+collect (int, 65K buckets, allocate): 1.8 seconds; 
+
+./radixSortTest 100000000 -cilk_set_worker_count 4
+radix sort (int): 1.06 seconds; 
+radix sort (int + int payload): 1.63 seconds; 
+collect double (2 buckets, inplace): 0.264 seconds; 
+collect (double, 8 buckets, inplace): 0.399 seconds; 
+collect (double, 256 buckets, inplace): 0.506 seconds; 
+collect (int, 256 buckets, inplace): 0.342 seconds; 
+collect (int, 65K buckets, allocate): 1.08 seconds; 
+
+./radixSortTest 100000000 -cilk_set_worker_count 8
+radix sort (int): 0.575 seconds; 
+radix sort (int + int payload): 0.998 seconds; 
+collect double (2 buckets, inplace): 0.251 seconds; 
+collect (double, 8 buckets, inplace): 0.267 seconds; 
+collect (double, 256 buckets, inplace): 0.233 seconds; 
+collect (int, 256 buckets, inplace): 0.204 seconds; 
+collect (int, 65K buckets, allocate): 0.768 seconds; 
+
+./sortTest 10000000 -cilk_set_worker_count 1
+quickSort (int): 0.996 seconds; 
+quickSort (double): 1.08 seconds; 
+quickSort (string): 5.43 seconds; 
+
+./sortTest 10000000 -cilk_set_worker_count 2
+quickSort (int): 0.519 seconds; 
+quickSort (double): 0.563 seconds; 
+quickSort (string): 2.88 seconds; 
+
+./sortTest 10000000 -cilk_set_worker_count 4
+quickSort (int): 0.297 seconds; 
+quickSort (double): 0.319 seconds; 
+quickSort (string): 1.63 seconds; 
+
+./sortTest 10000000 -cilk_set_worker_count 8
+quickSort (int): 0.177 seconds; 
+quickSort (double): 0.201 seconds; 
+quickSort (string): 0.93 seconds; 
+
+./remDuplicatesTest 10000000 -cilk_set_worker_count 1
+Remove duplicates (int, rand in n): 0.745 seconds; 
+Remove duplicates (int, rand in n/10): 0.51 seconds; 
+Remove duplicates (string, 10 chars, rand in n): 1.81 seconds; 
+
+./remDuplicatesTest 10000000 -cilk_set_worker_count 2
+Remove duplicates (int, rand in n): 0.38 seconds; 
+Remove duplicates (int, rand in n/10): 0.258 seconds; 
+Remove duplicates (string, 10 chars, rand in n): 0.893 seconds; 
+
+./remDuplicatesTest 10000000 -cilk_set_worker_count 4
+Remove duplicates (int, rand in n): 0.199 seconds; 
+Remove duplicates (int, rand in n/10): 0.136 seconds; 
+Remove duplicates (string, 10 chars, rand in n): 0.468 seconds; 
+
+./remDuplicatesTest 10000000 -cilk_set_worker_count 8
+Remove duplicates (int, rand in n): 0.112 seconds; 
+Remove duplicates (int, rand in n/10): 0.0722 seconds; 
+Remove duplicates (string, 10 chars, rand in n): 0.27 seconds; 
+
+./tableTest 10000000 -cilk_set_worker_count 1
+table (int, insert and find): 0.858 seconds; 
+
+./tableTest 10000000 -cilk_set_worker_count 2
+table (int, insert and find): 0.431 seconds; 
+
+./tableTest 10000000 -cilk_set_worker_count 4
+table (int, insert and find): 0.223 seconds; 
+
+./tableTest 10000000 -cilk_set_worker_count 8
+table (int, insert and find): 0.236 seconds; 
+
+./maxIndSetTest 10000000 -cilk_set_worker_count 1
+Maximal Independent Set (rand dim=2, m=n*10): 1.32 seconds; 
+
+./maxIndSetTest 10000000 -cilk_set_worker_count 2
+Maximal Independent Set (rand dim=2, m=n*10): 0.689 seconds; 
+
+./maxIndSetTest 10000000 -cilk_set_worker_count 4
+Maximal Independent Set (rand dim=2, m=n*10): 0.368 seconds; 
+
+./maxIndSetTest 10000000 -cilk_set_worker_count 8
+Maximal Independent Set (rand dim=2, m=n*10): 0.207 seconds; 
+
+./colorGraphTest 10000000 -cilk_set_worker_count 1
+Color Graph (rand dim=2, m=n*10): 4.89 seconds; 
+
+./colorGraphTest 10000000 -cilk_set_worker_count 2
+Color Graph (rand dim=2, m=n*10): 2.6 seconds; 
+
+./colorGraphTest 10000000 -cilk_set_worker_count 4
+Color Graph (rand dim=2, m=n*10): 1.42 seconds; 
+
+./colorGraphTest 10000000 -cilk_set_worker_count 8
+Color Graph (rand dim=2, m=n*10): 0.76 seconds; 
+
+./maxMatchingTest 10000000 -cilk_set_worker_count 1
+maximal Tree Matching (rand parent): 0.899 seconds; 
+maximal Matching (rand dim=2, m=n*10): 1.83 seconds; 
+maximal Matching (2d mesh): 1.46 seconds; 
+
+./maxMatchingTest 10000000 -cilk_set_worker_count 2
+maximal Tree Matching (rand parent): 0.462 seconds; 
+maximal Matching (rand dim=2, m=n*10): 0.962 seconds; 
+maximal Matching (2d mesh): 0.803 seconds; 
+
+./maxMatchingTest 10000000 -cilk_set_worker_count 4
+maximal Tree Matching (rand parent): 0.254 seconds; 
+maximal Matching (rand dim=2, m=n*10): 0.551 seconds; 
+maximal Matching (2d mesh): 0.45 seconds; 
+
+./maxMatchingTest 10000000 -cilk_set_worker_count 8
+maximal Tree Matching (rand parent): 0.168 seconds; 
+maximal Matching (rand dim=2, m=n*10): 0.342 seconds; 
+maximal Matching (2d mesh): 0.292 seconds; 
+
+./separatorTest 10000000 -cilk_set_worker_count 1
+Separator (2d mesh) : 15.1274 seconds;
+  Quality: Log Cost = 6.31706 before, 3.2306 after
+Separator (rand dim, d=2, m = 10*n) : 42.1918 seconds;
+  Quality: Log Cost = 4.94007 before, 6.50404 after
+
+./separatorTest 10000000 -cilk_set_worker_count 2
+Separator (2d mesh) : 7.89208 seconds;
+  Quality: Log Cost = 6.31706 before, 3.2306 after
+Separator (rand dim, d=2, m = 10*n) : 21.671 seconds;
+  Quality: Log Cost = 4.94007 before, 6.50404 after
+
+./separatorTest 10000000 -cilk_set_worker_count 4
+Separator (2d mesh) : 4.40503 seconds;
+  Quality: Log Cost = 6.31706 before, 3.2306 after
+Separator (rand dim, d=2, m = 10*n) : 11.6848 seconds;
+  Quality: Log Cost = 4.94007 before, 6.50404 after
+
+./separatorTest 10000000 -cilk_set_worker_count 8
+Separator (2d mesh) : 2.57402 seconds;
+  Quality: Log Cost = 6.31706 before, 3.2306 after
+Separator (rand dim, d=2, m = 10*n) : 6.49673 seconds;
+  Quality: Log Cost = 4.94007 before, 6.50404 after
+
+./bfsTest 10000000 -cilk_set_worker_count 1
+Nondeterministic BFS (rand dim=2, m=n*10): 2.26 seconds; 
+Deterministic BFS (return BFS tree) (rand dim=2, m=n*10): 3.26 seconds; 
+
+./bfsTest 10000000 -cilk_set_worker_count 2
+Nondeterministic BFS (rand dim=2, m=n*10): 1.18 seconds; 
+Deterministic BFS (return BFS tree) (rand dim=2, m=n*10): 1.66 seconds; 
+
+./bfsTest 10000000 -cilk_set_worker_count 4
+Nondeterministic BFS (rand dim=2, m=n*10): 0.652 seconds; 
+Deterministic BFS (return BFS tree) (rand dim=2, m=n*10): 0.874 seconds; 
+
+./bfsTest 10000000 -cilk_set_worker_count 8
+Nondeterministic BFS (rand dim=2, m=n*10): 0.362 seconds; 
+Deterministic BFS (return BFS tree) (rand dim=2, m=n*10): 0.464 seconds; 
+
+./delaunay 10000000 -cilk_set_worker_count 1
+Delaunay (random points) : 72 seconds;
+
+./delaunay 10000000 -cilk_set_worker_count 2
+Delaunay (random points) : 37 seconds;
+
+./delaunay 10000000 -cilk_set_worker_count 4
+Delaunay (random points) : 19.3 seconds;
+
+./delaunay 10000000 -cilk_set_worker_count 8
+Delaunay (random points) : 10.8 seconds;
+
+./nearestNeighborTest 10000000 -cilk_set_worker_count 1
+k-nearest neighbors (random 3d, k=1) build tree : 4.46 seconds;
+k-nearest neighbors (random 3d, k=1) find neighbors : 12.1 seconds;
+k-nearest neighbors (random 2d, k=1) build tree : 5.09 seconds;
+k-nearest neighbors (random 2d, k=1) find neighbors : 7.23 seconds;
+
+./nearestNeighborTest 10000000 -cilk_set_worker_count 2
+k-nearest neighbors (random 3d, k=1) build tree : 2.72 seconds;
+k-nearest neighbors (random 3d, k=1) find neighbors : 6.13 seconds;
+k-nearest neighbors (random 2d, k=1) build tree : 2.92 seconds;
+k-nearest neighbors (random 2d, k=1) find neighbors : 3.64 seconds;
+
+./nearestNeighborTest 10000000 -cilk_set_worker_count 4
+k-nearest neighbors (random 3d, k=1) build tree : 1.58 seconds;
+k-nearest neighbors (random 3d, k=1) find neighbors : 3.23 seconds;
+k-nearest neighbors (random 2d, k=1) build tree : 1.66 seconds;
+k-nearest neighbors (random 2d, k=1) find neighbors : 1.91 seconds;
+
+./nearestNeighborTest 10000000 -cilk_set_worker_count 8
+k-nearest neighbors (random 3d, k=1) build tree : 0.922 seconds;
+k-nearest neighbors (random 3d, k=1) find neighbors : 1.64 seconds;
+k-nearest neighbors (random 2d, k=1) build tree : 1.01 seconds;
+k-nearest neighbors (random 2d, k=1) find neighbors : 0.959 seconds;
+
+./barnesHut 10000000 -cilk_set_worker_count 1
+Barnes Hut (build tree): 4.53 seconds; 
+Barnes Hut (calculate forces): 426 seconds; 
+
+./barnesHut 10000000 -cilk_set_worker_count 2
+Barnes Hut (build tree): 2.5 seconds; 
+Barnes Hut (calculate forces): 215 seconds; 
+
+./barnesHut 10000000 -cilk_set_worker_count 4
+Barnes Hut (build tree): 2.17 seconds; 
+Barnes Hut (calculate forces): 112 seconds; 
+
+./barnesHut 10000000 -cilk_set_worker_count 8
+Barnes Hut (build tree): 1.14 seconds; 
+Barnes Hut (calculate forces): 57.2 seconds; 
+
+./suffixArrayTest 10000000 -cilk_set_worker_count 1
+Suffix array (random chars in range [1:8]): 3.72 seconds; 
+
+./suffixArrayTest 10000000 -cilk_set_worker_count 2
+Suffix array (random chars in range [1:8]): 1.96 seconds; 
+
+./suffixArrayTest 10000000 -cilk_set_worker_count 4
+Suffix array (random chars in range [1:8]): 1.16 seconds; 
+
+./suffixArrayTest 10000000 -cilk_set_worker_count 8
+Suffix array (random chars in range [1:8]): 0.708 seconds; 
+
+./hull 100000000 -cilk_set_worker_count 1
+Convex Hull (random in unit circle): 7.33 seconds; 
+
+./hull 100000000 -cilk_set_worker_count 2
+Convex Hull (random in unit circle): 3.73 seconds; 
+
+./hull 100000000 -cilk_set_worker_count 4
+Convex Hull (random in unit circle): 2.14 seconds; 
+
+./hull 100000000 -cilk_set_worker_count 8
+Convex Hull (random in unit circle): 1.19 seconds; 
+
+./mstTest 10000000 -cilk_set_worker_count 1
+sequential MST (random, m = 6n) : 10.6 seconds
+sequential MST (2d grid, m = 2n) : 4.1 seconds
+parallel MST (random, m = 6n) : 13.1 seconds
+parallel MST (2d grid, m = 2n) : 5.88 seconds
+
+./mstTest 10000000 -cilk_set_worker_count 2
+sequential MST (random, m = 6n) : 10.7 seconds
+sequential MST (2d grid, m = 2n) : 4.11 seconds
+parallel MST (random, m = 6n) : 6.72 seconds
+parallel MST (2d grid, m = 2n) : 3 seconds
+
+./mstTest 10000000 -cilk_set_worker_count 4
+sequential MST (random, m = 6n) : 11 seconds
+sequential MST (2d grid, m = 2n) : 4.21 seconds
+parallel MST (random, m = 6n) : 3.7 seconds
+parallel MST (2d grid, m = 2n) : 1.63 seconds
+
+./mstTest 10000000 -cilk_set_worker_count 8
+sequential MST (random, m = 6n) : 10.9 seconds
+sequential MST (2d grid, m = 2n) : 4.19 seconds
+parallel MST (random, m = 6n) : 2.08 seconds
+parallel MST (2d grid, m = 2n) : 0.933 seconds

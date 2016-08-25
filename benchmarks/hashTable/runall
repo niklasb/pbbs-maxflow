@@ -1,0 +1,84 @@
+#!/usr/bin/python
+#
+# run all tests
+#
+
+import os
+import sys
+import signal
+import time
+import subprocess
+
+
+def signal_handler(signal,frame):
+  print "bye\n"
+  sys.exit(0)
+signal.signal(signal.SIGINT,signal_handler)
+
+def shellGetOutput(str) :
+  process = subprocess.Popen(str,shell=True,stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE)
+  output, err = process.communicate()
+  
+  if (len(err) > 0):
+      raise NameError(str+"\n"+output+err)
+  return output
+
+applications = ["deterministicHash","ndHash","cuckooHash"]
+#applications = ["deterministicHash"]
+applications2=["chainedHash2","chainedHashOpt"]
+applications3=["chainedHash2_80","chainedHashOpt80"]
+applications2=[]
+applications3=[]
+
+serial_applications = ["serialHash","basicHash"]
+serial_applications=["serialHash"]
+testfiles = ["randomSeq_300000000","randSeqPair_300000000","trigramSeq_300000000","trigramSeq_pairInt_300000000","exptSeq_300000000","exptSeq_pairInt_300000000"]
+#testfiles2=["randSeqPair_300000000"]
+
+processors = [1,2,4]+range(8,80+1,8)
+#processors = [1,80]
+
+for app in applications:
+  for testfile in testfiles :
+    for p in processors : #parallel
+      if p == 1:
+        os.system("unset GCILK; cd "+app+"; make clean -s; make -s; cd ..");
+        ss = "./" + app + "/dict sequenceData/data/"+testfile
+        print app+" 1 " + testfile 
+        print shellGetOutput(ss)
+        sys.stdout.flush() 
+        os.system("export GCILK=1; cd "+app+"; make clean -s; make -s; cd ..");
+      else:
+        ss = "export CILK_NWORKERS="+`p`+"; ./" + app + "/dict sequenceData/data/"+testfile
+        print app+" "+`p` + " " + testfile 
+        print shellGetOutput(ss)
+        sys.stdout.flush()
+
+for app in applications2:
+  os.system("export GCILK=1; cd "+app+"; make clean -s; make -s; cd ..");
+  for testfile in testfiles :
+
+    ss = "export CILK_NWORKERS=1; ./" + app + "/dict sequenceData/data/"+testfile
+    print app+" 1 " + testfile 
+    print shellGetOutput(ss)
+    sys.stdout.flush()
+
+for app in applications3:
+  os.system("export GCILK=1; cd "+app+"; make clean -s; make -s; cd ..");
+  for testfile in testfiles :    
+    ss = "export CILK_NWORKERS=80; ./" + app + "/dict sequenceData/data/"+testfile
+    print app+" 80 " + testfile 
+    print shellGetOutput(ss)
+    sys.stdout.flush()
+
+os.system("unset CILK_NWORKERS;")
+
+for app in serial_applications:
+  os.system("cd "+app+"; make clean -s; make -s; cd ..");
+  for testfile in testfiles :
+    ss = "./" + app + "/dict sequenceData/data/"+testfile
+    print app + " " + testfile 
+    print shellGetOutput(ss)
+    sys.stdout.flush()
+

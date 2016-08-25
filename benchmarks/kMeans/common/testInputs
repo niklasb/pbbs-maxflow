@@ -1,0 +1,20 @@
+#!/usr/bin/python 
+ 
+bnchmrk="kmeans"
+benchmark="K Means"
+checkProgram="../common/kmeansCheck" 
+dataDir = "../data"
+
+tests = [ 
+    [1, "cloud", "-k 10", ""],
+		[1, "gauss10000_2", "-k 10", ""],
+		[1, "gauss100000_4", "-k 100", ""],
+		[1, "spam", "-k 25", ""],
+		[1, "gauss100000_50", "-k 100", ""],
+		[1, "kddcup10", "-k 50", ""],
+		[1, "kddcup40", "-k 1000", ""]
+	]
+
+
+import runTests
+runTests.timeAllArgs(bnchmrk, benchmark, checkProgram, dataDir, tests)

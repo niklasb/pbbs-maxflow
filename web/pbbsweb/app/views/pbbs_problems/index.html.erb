@@ -1,0 +1,30 @@
+<h1>List of PBBS Problems</h1>
+
+<p>
+	<div class="descs">
+List of problems in the database. Content hash for a problem is computed from
+the input datafiles and parameters: if they change, the hash changes and a new
+problem is created into database. This ensures runs of problems are comparable.
+  </div>
+</p>
+<table>
+  <tr>
+    <th><a href="?sort=name">Name<a></th>
+    <th>Description</th>
+	<th width="100">Content hash</th>
+    <th><a href="?sort=recentrun">Most recent run<a></th>
+  </tr>
+
+<% @pbbs_problems.each do |prb| %>
+  <tr>
+    <td><%= link_to prb.name,  :action => "index", :controller => "pbbs_runs", :problem_id => prb.id %> </td>
+    <td width="200"><%= prb.description %> <%= link_to 'Edit', edit_pbbs_problem_path(prb) %> </td>
+    <td width="100"><a href="javascript:document.getElementById('<%= prb.id %>').innerHTML='<%=   prb.content_hash %>'">Show</a><div id="<%= prb.id %>" style=" "> </div></td>
+ 	<td><%= prb.recent%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+ 

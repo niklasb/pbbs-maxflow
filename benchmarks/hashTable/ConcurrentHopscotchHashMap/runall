@@ -1,0 +1,39 @@
+#!/usr/bin/python
+#
+# run all tests
+#
+
+import os
+import sys
+import signal
+import time
+import subprocess
+
+
+def signal_handler(signal,frame):
+  print "bye\n"
+  sys.exit(0)
+signal.signal(signal.SIGINT,signal_handler)
+
+def shellGetOutput(str) :
+  process = subprocess.Popen(str,shell=True,stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE)
+  output, err = process.communicate()
+  
+  if (len(err) > 0):
+      raise NameError(str+"\n"+output+err)
+  return output
+
+processors = [1,2,4]+range(8,80+1,8)
+#processors = [1,40,60,80]
+#processors = [80]
+testfiles = ["randSeqPair_300000000","trigramSeq_pairInt_300000000","exptSeq_pairInt_300000000"]
+
+for testfile in testfiles:
+  print testfile
+  for p in processors:
+    print `p`+ " threads"
+    ss = "export CILK_NWORKERS="+`p`+"; ./test_intel64 -t " +`p`+" ../sequenceData/data/"+testfile
+    print shellGetOutput(ss)
+    sys.stdout.flush()
+

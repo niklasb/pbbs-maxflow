@@ -1,0 +1,53 @@
+#include <iostream>
+#include <cstdlib>
+#include "sequence.h"
+#include "graphGen.h"
+#include "gettime.h"
+#include "cilk.h"
+using namespace std;
+
+int* maxIndependentSet(graph G, int seed);
+void checkMaximalIndependentSet(graph G, int* Flags);
+
+// **************************************************************
+//    MAIN
+// **************************************************************
+
+int cilk_main(int argc, char *argv[]) {
+  int n,m;
+  if (argc > 1) n = atoi(argv[1]); else n = 10;
+  if (argc > 2) m = atoi(argv[2]); else m = 10;
+
+  {
+    graph G = graphRandomWithDimension(2, m, n);
+    cout << "m = " << G.m << endl;
+    startTime();
+    int *flags = maxIndependentSet(G,0);
+    stopTime(.1,"Maximal Independent Set (rand dim=2, m=n*10)");
+    checkMaximalIndependentSet(G,flags);
+    G.del(); free(flags);
+  }
+
+  {
+    graph G = graph2DMesh(n);
+    startTime();
+    int *flags = maxIndependentSet(G,0);
+    stopTime(.2,"Maximal Independent Set (2d grid)");
+    checkMaximalIndependentSet(G,flags);
+    G.del(); free(flags);
+  }
+
+  {
+    edgeArray E = edgeRmat(n,5*n,0,.5,.1,.1,.3);
+    graph G = graphFromEdges(E,1);
+    E.del();
+    startTime();
+    int *flags = maxIndependentSet(G,0);
+    stopTime(.1,"Maximal Independent Set (rMat m = n*10)");
+    checkMaximalIndependentSet(G,flags);
+    G.del(); free(flags);
+  }
+
+  reportTime("Maximal Independent Set (weighted average)");
+
+}

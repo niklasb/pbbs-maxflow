@@ -1,0 +1,10 @@
+include parallelDefs
+
+# required files
+SORT = quickSort.h sampleSort.h transpose.h serialSort.h stlParallelSort.h
+GLOBAL_REQUIRE = graph.h sequence.h $(SORT)
+LOCAL_REQUIRE = intHash.h
+OBJS = TC.o
+
+include ../common/timeRequiredFiles
+include MakeBench

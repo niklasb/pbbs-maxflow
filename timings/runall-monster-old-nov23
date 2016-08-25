@@ -1,0 +1,1597 @@
+HOSTNAME: monster
+Path: .
+URL: https://freyja.aladdin.cs.cmu.edu/svn/pbbs/branches/tmpsrc
+Repository Root: https://freyja.aladdin.cs.cmu.edu/svn/pbbs
+Repository UUID: 62bc7976-c1cc-4065-800b-67e61e609b9e
+Revision: 264
+Node Kind: directory
+Schedule: normal
+Last Changed Author: guyb@CS.CMU.EDU
+Last Changed Rev: 264
+Last Changed Date: 2010-11-23 18:14:17 -0500 (Tue, 23 Nov 2010)
+
+make: Nothing to be done for `all'.
+
+./runtest sequenceTest 100000000 1
+tabulate (double) : 0.212 seconds
+map (double, +1) : 0.351 seconds
+map (char, +1)  : 0.2 seconds
+map (char, isalpha) : 0.471 seconds
+reduce (double, add) : 0.246 seconds
+max Index (double) : 0.237 seconds
+scan (double, add, inplace) : 0.547 seconds
+scan (double, add) : 0.604 seconds
+scanI (double, add) : 0.608 seconds
+scan (int, max) : 0.426 seconds
+sequential scan (double, add) : 0.345 seconds
+sequential scan (int, max) : 0.232 seconds
+filter (double, odd) : 0.591 seconds
+pack (double, odd) : 0.452 seconds
+gather (int) : 2.72 seconds
+gather (double) : 2.91 seconds
+scatter (int) : 2.88 seconds
+scatter (double) : 3.05 seconds
+scatter contended (10^6) : 0.867 seconds
+scatter contended (10^5) : 0.67 seconds
+scatter CAS (int) : 14.5 seconds
+scatter CAS contended (10^6) : 2.48 seconds
+scatter CAS contended conditional (10^6) : 0.929 seconds
+scatter CAS contended (10^5) : 1.72 seconds
+scatter CAS contended conditional (10^5) : 0.797 seconds
+partition : 0.21 seconds
+
+./runtest sequenceTest 100000000 2
+tabulate (double) : 0.141 seconds
+map (double, +1) : 0.256 seconds
+map (char, +1)  : 0.101 seconds
+map (char, isalpha) : 0.236 seconds
+reduce (double, add) : 0.183 seconds
+max Index (double) : 0.176 seconds
+scan (double, add, inplace) : 0.34 seconds
+scan (double, add) : 0.4 seconds
+scanI (double, add) : 0.378 seconds
+scan (int, max) : 0.23 seconds
+sequential scan (double, add) : 0.414 seconds
+sequential scan (int, max) : 0.24 seconds
+filter (double, odd) : 0.358 seconds
+pack (double, odd) : 0.271 seconds
+gather (int) : 1.51 seconds
+gather (double) : 1.49 seconds
+scatter (int) : 1.54 seconds
+scatter (double) : 1.59 seconds
+scatter contended (10^6) : 0.751 seconds
+scatter contended (10^5) : 0.816 seconds
+scatter CAS (int) : 8.01 seconds
+scatter CAS contended (10^6) : 3.5 seconds
+scatter CAS contended conditional (10^6) : 1.07 seconds
+scatter CAS contended (10^5) : 3.66 seconds
+scatter CAS contended conditional (10^5) : 1.16 seconds
+partition : 0.257 seconds
+
+./runtest sequenceTest 100000000 4
+tabulate (double) : 0.0647 seconds
+map (double, +1) : 0.116 seconds
+map (char, +1)  : 0.0527 seconds
+map (char, isalpha) : 0.12 seconds
+reduce (double, add) : 0.0769 seconds
+max Index (double) : 0.0871 seconds
+scan (double, add, inplace) : 0.187 seconds
+scan (double, add) : 0.206 seconds
+scanI (double, add) : 0.207 seconds
+scan (int, max) : 0.124 seconds
+sequential scan (double, add) : 0.437 seconds
+sequential scan (int, max) : 0.272 seconds
+filter (double, odd) : 0.2 seconds
+pack (double, odd) : 0.147 seconds
+gather (int) : 0.761 seconds
+gather (double) : 0.816 seconds
+scatter (int) : 0.825 seconds
+scatter (double) : 0.858 seconds
+scatter contended (10^6) : 0.422 seconds
+scatter contended (10^5) : 0.468 seconds
+scatter CAS (int) : 4.22 seconds
+scatter CAS contended (10^6) : 2.32 seconds
+scatter CAS contended conditional (10^6) : 0.587 seconds
+scatter CAS contended (10^5) : 2.59 seconds
+scatter CAS contended conditional (10^5) : 0.653 seconds
+partition : 0.267 seconds
+
+./runtest sequenceTest 100000000 8
+tabulate (double) : 0.0449 seconds
+map (double, +1) : 0.0732 seconds
+map (char, +1)  : 0.0263 seconds
+map (char, isalpha) : 0.0609 seconds
+reduce (double, add) : 0.0413 seconds
+max Index (double) : 0.0448 seconds
+scan (double, add, inplace) : 0.101 seconds
+scan (double, add) : 0.11 seconds
+scanI (double, add) : 0.119 seconds
+scan (int, max) : 0.0745 seconds
+sequential scan (double, add) : 0.432 seconds
+sequential scan (int, max) : 0.305 seconds
+filter (double, odd) : 0.109 seconds
+pack (double, odd) : 0.0809 seconds
+gather (int) : 0.383 seconds
+gather (double) : 0.41 seconds
+scatter (int) : 0.424 seconds
+scatter (double) : 0.445 seconds
+scatter contended (10^6) : 0.226 seconds
+scatter contended (10^5) : 0.253 seconds
+scatter CAS (int) : 2.12 seconds
+scatter CAS contended (10^6) : 1.24 seconds
+scatter CAS contended conditional (10^6) : 0.316 seconds
+scatter CAS contended (10^5) : 1.38 seconds
+scatter CAS contended conditional (10^5) : 0.365 seconds
+partition : 0.262 seconds
+
+./runtest sequenceTest 100000000 16
+tabulate (double) : 0.0371 seconds
+map (double, +1) : 0.0598 seconds
+map (char, +1)  : 0.0136 seconds
+map (char, isalpha) : 0.0304 seconds
+reduce (double, add) : 0.0247 seconds
+max Index (double) : 0.0247 seconds
+scan (double, add, inplace) : 0.0636 seconds
+scan (double, add) : 0.0775 seconds
+scanI (double, add) : 0.0785 seconds
+scan (int, max) : 0.046 seconds
+sequential scan (double, add) : 0.439 seconds
+sequential scan (int, max) : 0.292 seconds
+filter (double, odd) : 0.0717 seconds
+pack (double, odd) : 0.051 seconds
+gather (int) : 0.198 seconds
+gather (double) : 0.212 seconds
+scatter (int) : 0.324 seconds
+scatter (double) : 0.289 seconds
+scatter contended (10^6) : 0.172 seconds
+scatter contended (10^5) : 0.184 seconds
+scatter CAS (int) : 1.04 seconds
+scatter CAS contended (10^6) : 0.678 seconds
+scatter CAS contended conditional (10^6) : 0.181 seconds
+scatter CAS contended (10^5) : 0.734 seconds
+scatter CAS contended conditional (10^5) : 0.242 seconds
+partition : 0.275 seconds
+
+./runtest sequenceTest 100000000 24
+tabulate (double) : 0.0347 seconds
+map (double, +1) : 0.0515 seconds
+map (char, +1)  : 0.00959 seconds
+map (char, isalpha) : 0.0204 seconds
+reduce (double, add) : 0.0196 seconds
+max Index (double) : 0.0191 seconds
+scan (double, add, inplace) : 0.0558 seconds
+scan (double, add) : 0.0728 seconds
+scanI (double, add) : 0.0743 seconds
+scan (int, max) : 0.0389 seconds
+sequential scan (double, add) : 0.479 seconds
+sequential scan (int, max) : 0.273 seconds
+filter (double, odd) : 0.063 seconds
+pack (double, odd) : 0.0489 seconds
+gather (int) : 0.147 seconds
+gather (double) : 0.163 seconds
+scatter (int) : 0.247 seconds
+scatter (double) : 0.271 seconds
+scatter contended (10^6) : 0.177 seconds
+scatter contended (10^5) : 0.192 seconds
+scatter CAS (int) : 0.695 seconds
+scatter CAS contended (10^6) : 0.473 seconds
+scatter CAS contended conditional (10^6) : 0.167 seconds
+scatter CAS contended (10^5) : 0.498 seconds
+scatter CAS contended conditional (10^5) : 0.222 seconds
+partition : 0.27 seconds
+
+./runtest sequenceTest 100000000 28
+tabulate (double) : 0.0334 seconds
+map (double, +1) : 0.0513 seconds
+map (char, +1)  : 0.00872 seconds
+map (char, isalpha) : 0.0177 seconds
+reduce (double, add) : 0.0191 seconds
+max Index (double) : 0.0187 seconds
+scan (double, add, inplace) : 0.0518 seconds
+scan (double, add) : 0.0702 seconds
+scanI (double, add) : 0.0709 seconds
+scan (int, max) : 0.0387 seconds
+sequential scan (double, add) : 0.527 seconds
+sequential scan (int, max) : 0.284 seconds
+filter (double, odd) : 0.0601 seconds
+pack (double, odd) : 0.0475 seconds
+gather (int) : 0.131 seconds
+gather (double) : 0.154 seconds
+scatter (int) : 0.252 seconds
+scatter (double) : 0.269 seconds
+scatter contended (10^6) : 0.178 seconds
+scatter contended (10^5) : 0.193 seconds
+scatter CAS (int) : 0.6 seconds
+scatter CAS contended (10^6) : 0.412 seconds
+scatter CAS contended conditional (10^6) : 0.17 seconds
+scatter CAS contended (10^5) : 0.43 seconds
+scatter CAS contended conditional (10^5) : 0.231 seconds
+partition : 0.273 seconds
+
+./runtest sequenceTest 100000000 32
+tabulate (double) : 0.0346 seconds
+map (double, +1) : 0.0495 seconds
+map (char, +1)  : 0.00856 seconds
+map (char, isalpha) : 0.0154 seconds
+reduce (double, add) : 0.0172 seconds
+max Index (double) : 0.0175 seconds
+scan (double, add, inplace) : 0.0539 seconds
+scan (double, add) : 0.0667 seconds
+scanI (double, add) : 0.0702 seconds
+scan (int, max) : 0.0381 seconds
+sequential scan (double, add) : 0.443 seconds
+sequential scan (int, max) : 0.276 seconds
+filter (double, odd) : 0.0587 seconds
+pack (double, odd) : 0.0456 seconds
+gather (int) : 0.137 seconds
+gather (double) : 0.15 seconds
+scatter (int) : 0.26 seconds
+scatter (double) : 0.265 seconds
+scatter contended (10^6) : 0.176 seconds
+scatter contended (10^5) : 0.193 seconds
+scatter CAS (int) : 0.529 seconds
+scatter CAS contended (10^6) : 0.364 seconds
+scatter CAS contended conditional (10^6) : 0.175 seconds
+scatter CAS contended (10^5) : 0.378 seconds
+scatter CAS contended conditional (10^5) : 0.243 seconds
+partition : 0.276 seconds
+
+./runtest sequenceTest 100000000 64
+tabulate (double) : 0.0335 seconds
+map (double, +1) : 0.0556 seconds
+map (char, +1)  : 0.0101 seconds
+map (char, isalpha) : 0.0122 seconds
+reduce (double, add) : 0.0162 seconds
+max Index (double) : 0.0165 seconds
+scan (double, add, inplace) : 0.0485 seconds
+scan (double, add) : 0.0657 seconds
+scanI (double, add) : 0.0702 seconds
+scan (int, max) : 0.0349 seconds
+sequential scan (double, add) : 0.553 seconds
+sequential scan (int, max) : 0.407 seconds
+filter (double, odd) : 0.0572 seconds
+pack (double, odd) : 0.0448 seconds
+gather (int) : 0.123 seconds
+gather (double) : 0.147 seconds
+scatter (int) : 0.246 seconds
+scatter (double) : 0.267 seconds
+scatter contended (10^6) : 0.141 seconds
+scatter contended (10^5) : 0.194 seconds
+scatter CAS (int) : 0.521 seconds
+scatter CAS contended (10^6) : 0.364 seconds
+scatter CAS contended conditional (10^6) : 0.171 seconds
+scatter CAS contended (10^5) : 0.377 seconds
+scatter CAS contended conditional (10^5) : 0.236 seconds
+partition : 0.327 seconds
+
+./runtest sequenceTest 100000000 64
+tabulate (double) : 0.0336 seconds
+map (double, +1) : 0.0498 seconds
+map (char, +1)  : 0.00782 seconds
+map (char, isalpha) : 0.0121 seconds
+reduce (double, add) : 0.0163 seconds
+max Index (double) : 0.0164 seconds
+scan (double, add, inplace) : 0.0474 seconds
+scan (double, add) : 0.0658 seconds
+scanI (double, add) : 0.0656 seconds
+scan (int, max) : 0.0351 seconds
+sequential scan (double, add) : 0.536 seconds
+sequential scan (int, max) : 0.386 seconds
+filter (double, odd) : 0.0551 seconds
+pack (double, odd) : 0.0428 seconds
+gather (int) : 0.124 seconds
+gather (double) : 0.145 seconds
+scatter (int) : 0.237 seconds
+scatter (double) : 0.267 seconds
+scatter contended (10^6) : 0.177 seconds
+scatter contended (10^5) : 0.194 seconds
+scatter CAS (int) : 0.521 seconds
+scatter CAS contended (10^6) : 0.362 seconds
+scatter CAS contended conditional (10^6) : 0.174 seconds
+scatter CAS contended (10^5) : 0.377 seconds
+scatter CAS contended conditional (10^5) : 0.239 seconds
+partition : 0.659 seconds
+
+./runtest mergeTest 100000000 1
+Merging (interleaved) :0.1: 0.295 seconds
+Merging (weighted average) : 0.295 seconds
+
+./runtest mergeTest 100000000 2
+Merging (interleaved) :0.1: 0.169 seconds
+Merging (weighted average) : 0.169 seconds
+
+./runtest mergeTest 100000000 4
+Merging (interleaved) :0.1: 0.238 seconds
+Merging (weighted average) : 0.238 seconds
+
+./runtest mergeTest 100000000 8
+Merging (interleaved) :0.1: 0.0725 seconds
+Merging (weighted average) : 0.0725 seconds
+
+./runtest mergeTest 100000000 16
+Merging (interleaved) :0.1: 0.0558 seconds
+Merging (weighted average) : 0.0558 seconds
+
+./runtest mergeTest 100000000 24
+Merging (interleaved) :0.1: 0.235 seconds
+Merging (weighted average) : 0.235 seconds
+
+./runtest mergeTest 100000000 28
+Merging (interleaved) :0.1: 0.237 seconds
+Merging (weighted average) : 0.237 seconds
+
+./runtest mergeTest 100000000 32
+Merging (interleaved) :0.1: 0.0533 seconds
+Merging (weighted average) : 0.0533 seconds
+
+./runtest mergeTest 100000000 64
+Merging (interleaved) :0.1: 0.167 seconds
+Merging (weighted average) : 0.167 seconds
+
+./runtest mergeTest 100000000 64
+Merging (interleaved) :0.1: 0.156 seconds
+Merging (weighted average) : 0.156 seconds
+
+./runtest intSortTest 100000000 1
+Integer Sort (32 bit, random) :0.1: 3.7 seconds
+Integer Sort (32 bit, exponential) :0.1: 3.28 seconds
+Integer Sort (8 bit key, 32 bit data, random) :0.1: 1.14 seconds
+Integer Sort (32 bit key, 64 bit data, random) :0.2: 4.86 seconds
+Integer Sort (weighted average) : 3.57 seconds
+
+./runtest intSortTest 100000000 2
+Integer Sort (32 bit, random) :0.1: 1.96 seconds
+Integer Sort (32 bit, exponential) :0.1: 1.95 seconds
+Integer Sort (8 bit key, 32 bit data, random) :0.1: 0.632 seconds
+Integer Sort (32 bit key, 64 bit data, random) :0.2: 2.76 seconds
+Integer Sort (weighted average) : 2.01 seconds
+
+./runtest intSortTest 100000000 4
+Integer Sort (32 bit, random) :0.1: 1.02 seconds
+Integer Sort (32 bit, exponential) :0.1: 1 seconds
+Integer Sort (8 bit key, 32 bit data, random) :0.1: 0.365 seconds
+Integer Sort (32 bit key, 64 bit data, random) :0.2: 1.51 seconds
+Integer Sort (weighted average) : 1.08 seconds
+
+./runtest intSortTest 100000000 8
+Integer Sort (32 bit, random) :0.1: 0.51 seconds
+Integer Sort (32 bit, exponential) :0.1: 0.503 seconds
+Integer Sort (8 bit key, 32 bit data, random) :0.1: 0.179 seconds
+Integer Sort (32 bit key, 64 bit data, random) :0.2: 0.79 seconds
+Integer Sort (weighted average) : 0.554 seconds
+
+./runtest intSortTest 100000000 16
+Integer Sort (32 bit, random) :0.1: 0.282 seconds
+Integer Sort (32 bit, exponential) :0.1: 0.287 seconds
+Integer Sort (8 bit key, 32 bit data, random) :0.1: 0.112 seconds
+Integer Sort (32 bit key, 64 bit data, random) :0.2: 0.513 seconds
+Integer Sort (weighted average) : 0.341 seconds
+
+./runtest intSortTest 100000000 24
+Integer Sort (32 bit, random) :0.1: 0.223 seconds
+Integer Sort (32 bit, exponential) :0.1: 0.219 seconds
+Integer Sort (8 bit key, 32 bit data, random) :0.1: 0.0905 seconds
+Integer Sort (32 bit key, 64 bit data, random) :0.2: 0.564 seconds
+Integer Sort (weighted average) : 0.332 seconds
+
+./runtest intSortTest 100000000 28
+Integer Sort (32 bit, random) :0.1: 0.198 seconds
+Integer Sort (32 bit, exponential) :0.1: 0.189 seconds
+Integer Sort (8 bit key, 32 bit data, random) :0.1: 0.0712 seconds
+Integer Sort (32 bit key, 64 bit data, random) :0.2: 0.486 seconds
+Integer Sort (weighted average) : 0.286 seconds
+
+./runtest intSortTest 100000000 32
+Integer Sort (32 bit, random) :0.1: 0.2 seconds
+Integer Sort (32 bit, exponential) :0.1: 0.186 seconds
+Integer Sort (8 bit key, 32 bit data, random) :0.1: 0.0764 seconds
+Integer Sort (32 bit key, 64 bit data, random) :0.2: 0.478 seconds
+Integer Sort (weighted average) : 0.284 seconds
+
+./runtest intSortTest 100000000 64
+Integer Sort (32 bit, random) :0.1: 0.237 seconds
+Integer Sort (32 bit, exponential) :0.1: 0.225 seconds
+Integer Sort (8 bit key, 32 bit data, random) :0.1: 0.277 seconds
+Integer Sort (32 bit key, 64 bit data, random) :0.2: 0.456 seconds
+Integer Sort (weighted average) : 0.331 seconds
+
+./runtest intSortTest 100000000 64
+Integer Sort (32 bit, random) :0.1: 0.261 seconds
+Integer Sort (32 bit, exponential) :0.1: 0.256 seconds
+Integer Sort (8 bit key, 32 bit data, random) :0.1: 0.0732 seconds
+Integer Sort (32 bit key, 64 bit data, random) :0.2: 0.484 seconds
+Integer Sort (weighted average) : 0.312 seconds
+
+./runtest quickSortTest 100000000 1
+Comparison Sort (double, random) :0.1: 16.8 seconds
+Comparison Sort (double, exponential) :0.1: 10.2 seconds
+Comparison Sort (double, almost sorted) :0.1: 3.9 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 46.4 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 65.7 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 22 seconds
+Comparison Sort (weighted average) : 32.1 seconds
+
+./runtest quickSortTest 100000000 2
+Comparison Sort (double, random) :0.1: 9.28 seconds
+Comparison Sort (double, exponential) :0.1: 5.4 seconds
+Comparison Sort (double, almost sorted) :0.1: 2.33 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 25.8 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 39.3 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 12.1 seconds
+Comparison Sort (weighted average) : 18.4 seconds
+
+./runtest quickSortTest 100000000 4
+Comparison Sort (double, random) :0.1: 5.23 seconds
+Comparison Sort (double, exponential) :0.1: 3.13 seconds
+Comparison Sort (double, almost sorted) :0.1: 1.5 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 14 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 23 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 6.89 seconds
+Comparison Sort (weighted average) : 10.4 seconds
+
+./runtest quickSortTest 100000000 8
+Comparison Sort (double, random) :0.1: 3.18 seconds
+Comparison Sort (double, exponential) :0.1: 2.27 seconds
+Comparison Sort (double, almost sorted) :0.1: 1.18 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 8.58 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 18.6 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 4.42 seconds
+Comparison Sort (weighted average) : 7.42 seconds
+
+./runtest quickSortTest 100000000 16
+Comparison Sort (double, random) :0.1: 2.27 seconds
+Comparison Sort (double, exponential) :0.1: 2.03 seconds
+Comparison Sort (double, almost sorted) :0.1: 0.994 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 6.35 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 16.3 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 3.34 seconds
+Comparison Sort (weighted average) : 6.06 seconds
+
+./runtest quickSortTest 100000000 24
+Comparison Sort (double, random) :0.1: 2.01 seconds
+Comparison Sort (double, exponential) :0.1: 2.04 seconds
+Comparison Sort (double, almost sorted) :0.1: 1.07 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 6.45 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 16.3 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 3.2 seconds
+Comparison Sort (weighted average) : 6.01 seconds
+
+./runtest quickSortTest 100000000 28
+Comparison Sort (double, random) :0.1: 2 seconds
+Comparison Sort (double, exponential) :0.1: 2.05 seconds
+Comparison Sort (double, almost sorted) :0.1: 1.06 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 5.62 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 18.4 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 3.9 seconds
+Comparison Sort (weighted average) : 6.49 seconds
+
+./runtest quickSortTest 100000000 32
+Comparison Sort (double, random) :0.1: 1.99 seconds
+Comparison Sort (double, exponential) :0.1: 2.07 seconds
+Comparison Sort (double, almost sorted) :0.1: 1.07 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 5.66 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 17.5 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 3.92 seconds
+Comparison Sort (weighted average) : 6.31 seconds
+
+./runtest quickSortTest 100000000 64
+Comparison Sort (double, random) :0.1: 4.22 seconds
+Comparison Sort (double, exponential) :0.1: 2.57 seconds
+Comparison Sort (double, almost sorted) :0.1: 1.38 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 8.6 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 28.7 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 3.92 seconds
+Comparison Sort (weighted average) : 9.46 seconds
+
+./runtest quickSortTest 100000000 64
+Comparison Sort (double, random) :0.1: 4.22 seconds
+Comparison Sort (double, exponential) :0.1: 2.49 seconds
+Comparison Sort (double, almost sorted) :0.1: 1.76 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 8.89 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 28.4 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 6.73 seconds
+Comparison Sort (weighted average) : 10.3 seconds
+
+./runtest sampleSortTest 100000000 1
+Comparison Sort (double, random) :0.1: 20.2 seconds
+Comparison Sort (double, exponential) :0.1: 13.8 seconds
+Comparison Sort (double, almost sorted) :0.1: 5.67 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 30.8 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 49.3 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 26.7 seconds
+Comparison Sort (weighted average) : 28 seconds
+
+./runtest sampleSortTest 100000000 2
+Comparison Sort (double, random) :0.1: 10.8 seconds
+Comparison Sort (double, exponential) :0.1: 7.21 seconds
+Comparison Sort (double, almost sorted) :0.1: 3.1 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 16 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 25.8 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 13.9 seconds
+Comparison Sort (weighted average) : 14.6 seconds
+
+./runtest sampleSortTest 100000000 4
+Comparison Sort (double, random) :0.1: 5.72 seconds
+Comparison Sort (double, exponential) :0.1: 3.73 seconds
+Comparison Sort (double, almost sorted) :0.1: 1.66 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 8.11 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 13 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 7.24 seconds
+Comparison Sort (weighted average) : 7.5 seconds
+
+./runtest sampleSortTest 100000000 8
+Comparison Sort (double, random) :0.1: 2.99 seconds
+Comparison Sort (double, exponential) :0.1: 2.13 seconds
+Comparison Sort (double, almost sorted) :0.1: 0.967 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 4.12 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 6.54 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 3.79 seconds
+Comparison Sort (weighted average) : 3.88 seconds
+
+./runtest sampleSortTest 100000000 16
+Comparison Sort (double, random) :0.1: 1.68 seconds
+Comparison Sort (double, exponential) :0.1: 1.18 seconds
+Comparison Sort (double, almost sorted) :0.1: 0.656 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 2.25 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 3.49 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 2.5 seconds
+Comparison Sort (weighted average) : 2.25 seconds
+
+./runtest sampleSortTest 100000000 24
+Comparison Sort (double, random) :0.1: 1.27 seconds
+Comparison Sort (double, exponential) :0.1: 0.866 seconds
+Comparison Sort (double, almost sorted) :0.1: 0.54 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 1.54 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 2.42 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 2.32 seconds
+Comparison Sort (weighted average) : 1.75 seconds
+
+./runtest sampleSortTest 100000000 28
+Comparison Sort (double, random) :0.1: 1.15 seconds
+Comparison Sort (double, exponential) :0.1: 0.77 seconds
+Comparison Sort (double, almost sorted) :0.1: 0.536 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 1.47 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 2.3 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 1.91 seconds
+Comparison Sort (weighted average) : 1.57 seconds
+
+./runtest sampleSortTest 100000000 32
+Comparison Sort (double, random) :0.1: 1.07 seconds
+Comparison Sort (double, exponential) :0.1: 0.725 seconds
+Comparison Sort (double, almost sorted) :0.1: 0.524 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 1.36 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 2.15 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 1.78 seconds
+Comparison Sort (weighted average) : 1.47 seconds
+
+./runtest sampleSortTest 100000000 64
+Comparison Sort (double, random) :0.1: 0.823 seconds
+Comparison Sort (double, exponential) :0.1: 0.534 seconds
+Comparison Sort (double, almost sorted) :0.1: 0.271 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 1.05 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 1.76 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 1.18 seconds
+Comparison Sort (weighted average) : 1.08 seconds
+
+./runtest sampleSortTest 100000000 64
+Comparison Sort (double, random) :0.1: 0.827 seconds
+Comparison Sort (double, exponential) :0.1: 0.524 seconds
+Comparison Sort (double, almost sorted) :0.1: 0.275 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 1.34 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 1.75 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 1.18 seconds
+Comparison Sort (weighted average) : 1.13 seconds
+
+./stlParallelSortTest 100000000
+Comparison Sort (double, random) :0.1: 1.06 seconds
+Comparison Sort (double, exponential) :0.1: 0.786 seconds
+Comparison Sort (double, almost sorted) :0.1: 1.11 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 4.63 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 7.08 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 2.03 seconds
+Comparison Sort (weighted average) : 3.24 seconds
+
+./serialSortTest 100000000
+Comparison Sort (double, random) :0.1: 15.8 seconds
+Comparison Sort (double, exponential) :0.1: 10.8 seconds
+Comparison Sort (double, almost sorted) :0.1: 3.28 seconds
+Comparison Sort (trigram strings adjacent) :0.2: 58.2 seconds
+Comparison Sort (trigram strings, random layout) :0.2: 82.5 seconds
+Comparison Sort (double with 3 x double payload) :0.3: 17.6 seconds
+Comparison Sort (weighted average) : 36.4 seconds
+
+./runtest remDuplicatesTest 10000000 1
+Remove Duplicates (int, random in n) :0.1: 0.936 seconds
+Remove Duplicates (int, exponential) :0.1: 0.688 seconds
+Remove Duplicates (trigram strings) :0.2: 1.05 seconds
+Remove Duplicates (weighted average) : 0.932 seconds
+
+./runtest remDuplicatesTest 10000000 2
+Remove Duplicates (int, random in n) :0.1: 0.534 seconds
+Remove Duplicates (int, exponential) :0.1: 0.371 seconds
+Remove Duplicates (trigram strings) :0.2: 0.622 seconds
+Remove Duplicates (weighted average) : 0.537 seconds
+
+./runtest remDuplicatesTest 10000000 4
+Remove Duplicates (int, random in n) :0.1: 0.287 seconds
+Remove Duplicates (int, exponential) :0.1: 0.191 seconds
+Remove Duplicates (trigram strings) :0.2: 0.338 seconds
+Remove Duplicates (weighted average) : 0.289 seconds
+
+./runtest remDuplicatesTest 10000000 8
+Remove Duplicates (int, random in n) :0.1: 0.147 seconds
+Remove Duplicates (int, exponential) :0.1: 0.0975 seconds
+Remove Duplicates (trigram strings) :0.2: 0.194 seconds
+Remove Duplicates (weighted average) : 0.158 seconds
+
+./runtest remDuplicatesTest 10000000 16
+Remove Duplicates (int, random in n) :0.1: 0.0797 seconds
+Remove Duplicates (int, exponential) :0.1: 0.0598 seconds
+Remove Duplicates (trigram strings) :0.2: 0.14 seconds
+Remove Duplicates (weighted average) : 0.105 seconds
+
+./runtest remDuplicatesTest 10000000 24
+Remove Duplicates (int, random in n) :0.1: 0.0617 seconds
+Remove Duplicates (int, exponential) :0.1: 0.0422 seconds
+Remove Duplicates (trigram strings) :0.2: 0.119 seconds
+Remove Duplicates (weighted average) : 0.0855 seconds
+
+./runtest remDuplicatesTest 10000000 28
+Remove Duplicates (int, random in n) :0.1: 0.089 seconds
+Remove Duplicates (int, exponential) :0.1: 0.0331 seconds
+Remove Duplicates (trigram strings) :0.2: 0.0898 seconds
+Remove Duplicates (weighted average) : 0.0754 seconds
+
+./runtest remDuplicatesTest 10000000 32
+Remove Duplicates (int, random in n) :0.1: 0.0543 seconds
+Remove Duplicates (int, exponential) :0.1: 0.0353 seconds
+Remove Duplicates (trigram strings) :0.2: 0.11 seconds
+Remove Duplicates (weighted average) : 0.0773 seconds
+
+./runtest remDuplicatesTest 10000000 64
+Remove Duplicates (int, random in n) :0.1: 0.0543 seconds
+Remove Duplicates (int, exponential) :0.1: 0.043 seconds
+Remove Duplicates (trigram strings) :0.2: 0.081 seconds
+Remove Duplicates (weighted average) : 0.0648 seconds
+
+./runtest remDuplicatesTest 10000000 64
+Remove Duplicates (int, random in n) :0.1: 0.0489 seconds
+Remove Duplicates (int, exponential) :0.1: 0.0322 seconds
+Remove Duplicates (trigram strings) :0.2: 0.0806 seconds
+Remove Duplicates (weighted average) : 0.0606 seconds
+
+./runtest tableTest 10000000 1
+Table (random in n, insert and find) :0.1: 1.24 seconds
+Table (trigram words, insert and find) :0.2: 1.64 seconds
+Table (weighted average) : 1.51 seconds
+
+./runtest tableTest 10000000 2
+Table (random in n, insert and find) :0.1: 0.724 seconds
+Table (trigram words, insert and find) :0.2: 0.9 seconds
+Table (weighted average) : 0.842 seconds
+
+./runtest tableTest 10000000 4
+Table (random in n, insert and find) :0.1: 0.383 seconds
+Table (trigram words, insert and find) :0.2: 0.451 seconds
+Table (weighted average) : 0.428 seconds
+
+./runtest tableTest 10000000 8
+Table (random in n, insert and find) :0.1: 0.195 seconds
+Table (trigram words, insert and find) :0.2: 0.234 seconds
+Table (weighted average) : 0.221 seconds
+
+./runtest tableTest 10000000 16
+Table (random in n, insert and find) :0.1: 0.111 seconds
+Table (trigram words, insert and find) :0.2: 0.128 seconds
+Table (weighted average) : 0.122 seconds
+
+./runtest tableTest 10000000 24
+Table (random in n, insert and find) :0.1: 0.086 seconds
+Table (trigram words, insert and find) :0.2: 0.0954 seconds
+Table (weighted average) : 0.0923 seconds
+
+./runtest tableTest 10000000 28
+Table (random in n, insert and find) :0.1: 0.074 seconds
+Table (trigram words, insert and find) :0.2: 0.0826 seconds
+Table (weighted average) : 0.0797 seconds
+
+./runtest tableTest 10000000 32
+Table (random in n, insert and find) :0.1: 0.068 seconds
+Table (trigram words, insert and find) :0.2: 0.0744 seconds
+Table (weighted average) : 0.0723 seconds
+
+./runtest tableTest 10000000 64
+Table (random in n, insert and find) :0.1: 0.0538 seconds
+Table (trigram words, insert and find) :0.2: 0.0527 seconds
+Table (weighted average) : 0.0531 seconds
+
+./runtest tableTest 10000000 64
+Table (random in n, insert and find) :0.1: 0.06 seconds
+Table (trigram words, insert and find) :0.2: 0.0534 seconds
+Table (weighted average) : 0.0556 seconds
+
+./runtest maxIndSetTest 10000000 1
+Maximal Independent Set (rand dim=2, m=n*10) :0.1: 1.59 seconds
+Maximal Independent Set (2d grid) :0.2: 0.807 seconds
+Maximal Independent Set (rMat m = n*10) :0.1: 3.76 seconds
+Maximal Independent Set (weighted average) : 1.74 seconds
+
+./runtest maxIndSetTest 10000000 2
+Maximal Independent Set (rand dim=2, m=n*10) :0.1: 0.902 seconds
+Maximal Independent Set (2d grid) :0.2: 0.445 seconds
+Maximal Independent Set (rMat m = n*10) :0.1: 2.11 seconds
+Maximal Independent Set (weighted average) : 0.975 seconds
+
+./runtest maxIndSetTest 10000000 4
+Maximal Independent Set (rand dim=2, m=n*10) :0.1: 0.505 seconds
+Maximal Independent Set (2d grid) :0.2: 0.226 seconds
+Maximal Independent Set (rMat m = n*10) :0.1: 1.07 seconds
+Maximal Independent Set (weighted average) : 0.507 seconds
+
+./runtest maxIndSetTest 10000000 8
+Maximal Independent Set (rand dim=2, m=n*10) :0.1: 0.253 seconds
+Maximal Independent Set (2d grid) :0.2: 0.128 seconds
+Maximal Independent Set (rMat m = n*10) :0.1: 0.544 seconds
+Maximal Independent Set (weighted average) : 0.263 seconds
+
+./runtest maxIndSetTest 10000000 16
+Maximal Independent Set (rand dim=2, m=n*10) :0.1: 0.133 seconds
+Maximal Independent Set (2d grid) :0.2: 0.0697 seconds
+Maximal Independent Set (rMat m = n*10) :0.1: 0.294 seconds
+Maximal Independent Set (weighted average) : 0.142 seconds
+
+./runtest maxIndSetTest 10000000 24
+Maximal Independent Set (rand dim=2, m=n*10) :0.1: 0.0964 seconds
+Maximal Independent Set (2d grid) :0.2: 0.0528 seconds
+Maximal Independent Set (rMat m = n*10) :0.1: 0.219 seconds
+Maximal Independent Set (weighted average) : 0.105 seconds
+
+./runtest maxIndSetTest 10000000 28
+Maximal Independent Set (rand dim=2, m=n*10) :0.1: 0.0864 seconds
+Maximal Independent Set (2d grid) :0.2: 0.0532 seconds
+Maximal Independent Set (rMat m = n*10) :0.1: 0.188 seconds
+Maximal Independent Set (weighted average) : 0.0953 seconds
+
+./runtest maxIndSetTest 10000000 32
+Maximal Independent Set (rand dim=2, m=n*10) :0.1: 0.0799 seconds
+Maximal Independent Set (2d grid) :0.2: 0.0491 seconds
+Maximal Independent Set (rMat m = n*10) :0.1: 0.192 seconds
+Maximal Independent Set (weighted average) : 0.0926 seconds
+
+./runtest maxIndSetTest 10000000 64
+Maximal Independent Set (rand dim=2, m=n*10) :0.1: 0.0656 seconds
+Maximal Independent Set (2d grid) :0.2: 0.0496 seconds
+Maximal Independent Set (rMat m = n*10) :0.1: 0.169 seconds
+Maximal Independent Set (weighted average) : 0.0835 seconds
+
+./runtest maxIndSetTest 10000000 64
+Maximal Independent Set (rand dim=2, m=n*10) :0.1: 0.0657 seconds
+Maximal Independent Set (2d grid) :0.2: 0.0431 seconds
+Maximal Independent Set (rMat m = n*10) :0.1: 0.152 seconds
+Maximal Independent Set (weighted average) : 0.076 seconds
+
+./runtest colorGraphTest 10000000 1
+Color Graph (rand dim=2, m=n*10) :0.1: 6.17 seconds
+Color Graph (2d grid) :0.1: 1.85 seconds
+Color Graph (weighted average) : 4.01 seconds
+
+./runtest colorGraphTest 10000000 2
+Color Graph (rand dim=2, m=n*10) :0.1: 3.54 seconds
+Color Graph (2d grid) :0.1: 1.03 seconds
+Color Graph (weighted average) : 2.29 seconds
+
+./runtest colorGraphTest 10000000 4
+Color Graph (rand dim=2, m=n*10) :0.1: 1.91 seconds
+Color Graph (2d grid) :0.1: 0.532 seconds
+Color Graph (weighted average) : 1.22 seconds
+
+./runtest colorGraphTest 10000000 8
+Color Graph (rand dim=2, m=n*10) :0.1: 0.994 seconds
+Color Graph (2d grid) :0.1: 0.301 seconds
+Color Graph (weighted average) : 0.647 seconds
+
+./runtest colorGraphTest 10000000 16
+Color Graph (rand dim=2, m=n*10) :0.1: 0.524 seconds
+Color Graph (2d grid) :0.1: 0.168 seconds
+Color Graph (weighted average) : 0.346 seconds
+
+./runtest colorGraphTest 10000000 24
+Color Graph (rand dim=2, m=n*10) :0.1: 0.386 seconds
+Color Graph (2d grid) :0.1: 0.138 seconds
+Color Graph (weighted average) : 0.262 seconds
+
+./runtest colorGraphTest 10000000 28
+Color Graph (rand dim=2, m=n*10) :0.1: 0.343 seconds
+Color Graph (2d grid) :0.1: 0.134 seconds
+Color Graph (weighted average) : 0.238 seconds
+
+./runtest colorGraphTest 10000000 32
+Color Graph (rand dim=2, m=n*10) :0.1: 0.326 seconds
+Color Graph (2d grid) :0.1: 0.126 seconds
+Color Graph (weighted average) : 0.226 seconds
+
+./runtest colorGraphTest 10000000 64
+Color Graph (rand dim=2, m=n*10) :0.1: 0.278 seconds
+Color Graph (2d grid) :0.1: 0.113 seconds
+Color Graph (weighted average) : 0.195 seconds
+
+./runtest colorGraphTest 10000000 64
+Color Graph (rand dim=2, m=n*10) :0.1: 0.271 seconds
+Color Graph (2d grid) :0.1: 0.116 seconds
+Color Graph (weighted average) : 0.194 seconds
+
+./runtest maxMatchingTest 10000000 1
+Maximal Matching (tree rand parent) :0.1: 1.2 seconds
+Maximal Matching (rand dim=2, m=n*10) :0.1: 2.24 seconds
+Maximal Matching (2d mesh) :0.1: 1.82 seconds
+Maximal Matching (weighted average) : 1.75 seconds
+
+./runtest maxMatchingTest 10000000 2
+Maximal Matching (tree rand parent) :0.1: 0.713 seconds
+Maximal Matching (rand dim=2, m=n*10) :0.1: 1.34 seconds
+Maximal Matching (2d mesh) :0.1: 1.08 seconds
+Maximal Matching (weighted average) : 1.04 seconds
+
+./runtest maxMatchingTest 10000000 4
+Maximal Matching (tree rand parent) :0.1: 0.39 seconds
+Maximal Matching (rand dim=2, m=n*10) :0.1: 0.736 seconds
+Maximal Matching (2d mesh) :0.1: 0.605 seconds
+Maximal Matching (weighted average) : 0.577 seconds
+
+./runtest maxMatchingTest 10000000 8
+Maximal Matching (tree rand parent) :0.1: 0.216 seconds
+Maximal Matching (rand dim=2, m=n*10) :0.1: 0.385 seconds
+Maximal Matching (2d mesh) :0.1: 0.319 seconds
+Maximal Matching (weighted average) : 0.307 seconds
+
+./runtest maxMatchingTest 10000000 16
+Maximal Matching (tree rand parent) :0.1: 0.146 seconds
+Maximal Matching (rand dim=2, m=n*10) :0.1: 0.232 seconds
+Maximal Matching (2d mesh) :0.1: 0.191 seconds
+Maximal Matching (weighted average) : 0.19 seconds
+
+./runtest maxMatchingTest 10000000 24
+Maximal Matching (tree rand parent) :0.1: 0.123 seconds
+Maximal Matching (rand dim=2, m=n*10) :0.1: 0.178 seconds
+Maximal Matching (2d mesh) :0.1: 0.194 seconds
+Maximal Matching (weighted average) : 0.165 seconds
+
+./runtest maxMatchingTest 10000000 28
+Maximal Matching (tree rand parent) :0.1: 0.117 seconds
+Maximal Matching (rand dim=2, m=n*10) :0.1: 0.167 seconds
+Maximal Matching (2d mesh) :0.1: 0.158 seconds
+Maximal Matching (weighted average) : 0.148 seconds
+
+./runtest maxMatchingTest 10000000 32
+Maximal Matching (tree rand parent) :0.1: 0.114 seconds
+Maximal Matching (rand dim=2, m=n*10) :0.1: 0.155 seconds
+Maximal Matching (2d mesh) :0.1: 0.132 seconds
+Maximal Matching (weighted average) : 0.133 seconds
+
+./runtest maxMatchingTest 10000000 64
+Maximal Matching (tree rand parent) :0.1: 0.0965 seconds
+Maximal Matching (rand dim=2, m=n*10) :0.1: 0.147 seconds
+Maximal Matching (2d mesh) :0.1: 0.126 seconds
+Maximal Matching (weighted average) : 0.123 seconds
+
+./runtest maxMatchingTest 10000000 64
+Maximal Matching (tree rand parent) :0.1: 0.0994 seconds
+Maximal Matching (rand dim=2, m=n*10) :0.1: 0.146 seconds
+Maximal Matching (2d mesh) :0.1: 0.148 seconds
+Maximal Matching (weighted average) : 0.131 seconds
+
+./runtest separatorTest 10000000 1
+Separator (2d mesh) :0.1: 17.8 seconds
+  Quality: Log Cost = 6.32 before, 3.23 after
+Separator (rand dim, d=2, m = 10*n) :0.1: 50.1 seconds
+  Quality: Log Cost = 4.94 before, 6.5 after
+Separator (weighted average) : 33.9 seconds
+
+./runtest separatorTest 10000000 2
+Separator (2d mesh) :0.1: 10.3 seconds
+  Quality: Log Cost = 6.32 before, 3.23 after
+Separator (rand dim, d=2, m = 10*n) :0.1: 27.7 seconds
+  Quality: Log Cost = 4.94 before, 6.5 after
+Separator (weighted average) : 19 seconds
+
+./runtest separatorTest 10000000 4
+Separator (2d mesh) :0.1: 5.49 seconds
+  Quality: Log Cost = 6.32 before, 3.23 after
+Separator (rand dim, d=2, m = 10*n) :0.1: 14.2 seconds
+  Quality: Log Cost = 4.94 before, 6.5 after
+Separator (weighted average) : 9.86 seconds
+
+./runtest separatorTest 10000000 8
+Separator (2d mesh) :0.1: 3.17 seconds
+  Quality: Log Cost = 6.32 before, 3.23 after
+Separator (rand dim, d=2, m = 10*n) :0.1: 7.39 seconds
+  Quality: Log Cost = 4.94 before, 6.5 after
+Separator (weighted average) : 5.28 seconds
+
+./runtest separatorTest 10000000 16
+Separator (2d mesh) :0.1: 1.89 seconds
+  Quality: Log Cost = 6.32 before, 3.23 after
+Separator (rand dim, d=2, m = 10*n) :0.1: 4.26 seconds
+  Quality: Log Cost = 4.94 before, 6.5 after
+Separator (weighted average) : 3.08 seconds
+
+./runtest separatorTest 10000000 24
+Separator (2d mesh) :0.1: 1.51 seconds
+  Quality: Log Cost = 6.32 before, 3.23 after
+Separator (rand dim, d=2, m = 10*n) :0.1: 3.22 seconds
+  Quality: Log Cost = 4.94 before, 6.5 after
+Separator (weighted average) : 2.36 seconds
+
+./runtest separatorTest 10000000 28
+Separator (2d mesh) :0.1: 1.42 seconds
+  Quality: Log Cost = 6.32 before, 3.23 after
+Separator (rand dim, d=2, m = 10*n) :0.1: 3.22 seconds
+  Quality: Log Cost = 4.94 before, 6.5 after
+Separator (weighted average) : 2.32 seconds
+
+./runtest separatorTest 10000000 32
+Separator (2d mesh) :0.1: 1.36 seconds
+  Quality: Log Cost = 6.32 before, 3.23 after
+Separator (rand dim, d=2, m = 10*n) :0.1: 2.71 seconds
+  Quality: Log Cost = 4.94 before, 6.5 after
+Separator (weighted average) : 2.04 seconds
+
+./runtest separatorTest 10000000 64
+Separator (2d mesh) :0.1: 1.44 seconds
+  Quality: Log Cost = 6.32 before, 3.23 after
+Separator (rand dim, d=2, m = 10*n) :0.1: 2.57 seconds
+  Quality: Log Cost = 4.94 before, 6.5 after
+Separator (weighted average) : 2 seconds
+
+./runtest separatorTest 10000000 64
+Separator (2d mesh) :0.1: 1.47 seconds
+  Quality: Log Cost = 6.32 before, 3.23 after
+Separator (rand dim, d=2, m = 10*n) :0.1: 2.62 seconds
+  Quality: Log Cost = 4.94 before, 6.5 after
+Separator (weighted average) : 2.04 seconds
+
+./runtest bfsTest 10000000 1
+BFS (return BFS tree) (rand dim=2, m=n*10) :0.2: 4.05 seconds
+BFS (return BFS tree) (3d grid) :0.1: 3.01 seconds
+BFS (return BFS tree) (rMat, .5,.1,.3) :0.1: 8.98 seconds
+BFS (weighted average) : 5.02 seconds
+
+./runtest bfsTest 10000000 2
+BFS (return BFS tree) (rand dim=2, m=n*10) :0.2: 2.41 seconds
+BFS (return BFS tree) (3d grid) :0.1: 2.28 seconds
+BFS (return BFS tree) (rMat, .5,.1,.3) :0.1: 5.34 seconds
+BFS (weighted average) : 3.11 seconds
+
+./runtest bfsTest 10000000 4
+BFS (return BFS tree) (rand dim=2, m=n*10) :0.2: 1.28 seconds
+BFS (return BFS tree) (3d grid) :0.1: 1.44 seconds
+BFS (return BFS tree) (rMat, .5,.1,.3) :0.1: 2.79 seconds
+BFS (weighted average) : 1.7 seconds
+
+./runtest bfsTest 10000000 8
+BFS (return BFS tree) (rand dim=2, m=n*10) :0.2: 0.653 seconds
+BFS (return BFS tree) (3d grid) :0.1: 0.829 seconds
+BFS (return BFS tree) (rMat, .5,.1,.3) :0.1: 1.39 seconds
+BFS (weighted average) : 0.882 seconds
+
+./runtest bfsTest 10000000 16
+BFS (return BFS tree) (rand dim=2, m=n*10) :0.2: 0.34 seconds
+BFS (return BFS tree) (3d grid) :0.1: 0.5 seconds
+BFS (return BFS tree) (rMat, .5,.1,.3) :0.1: 0.725 seconds
+BFS (weighted average) : 0.477 seconds
+
+./runtest bfsTest 10000000 24
+BFS (return BFS tree) (rand dim=2, m=n*10) :0.2: 0.239 seconds
+BFS (return BFS tree) (3d grid) :0.1: 0.398 seconds
+BFS (return BFS tree) (rMat, .5,.1,.3) :0.1: 0.514 seconds
+BFS (weighted average) : 0.348 seconds
+
+./runtest bfsTest 10000000 28
+BFS (return BFS tree) (rand dim=2, m=n*10) :0.2: 0.218 seconds
+BFS (return BFS tree) (3d grid) :0.1: 0.375 seconds
+BFS (return BFS tree) (rMat, .5,.1,.3) :0.1: 0.471 seconds
+BFS (weighted average) : 0.32 seconds
+
+./runtest bfsTest 10000000 32
+BFS (return BFS tree) (rand dim=2, m=n*10) :0.2: 0.197 seconds
+BFS (return BFS tree) (3d grid) :0.1: 0.355 seconds
+BFS (return BFS tree) (rMat, .5,.1,.3) :0.1: 0.413 seconds
+BFS (weighted average) : 0.29 seconds
+
+./runtest bfsTest 10000000 64
+BFS (return BFS tree) (rand dim=2, m=n*10) :0.2: 0.157 seconds
+BFS (return BFS tree) (3d grid) :0.1: 0.301 seconds
+BFS (return BFS tree) (rMat, .5,.1,.3) :0.1: 0.328 seconds
+BFS (weighted average) : 0.236 seconds
+
+./runtest bfsTest 10000000 64
+BFS (return BFS tree) (rand dim=2, m=n*10) :0.2: 0.155 seconds
+BFS (return BFS tree) (3d grid) :0.1: 0.305 seconds
+BFS (return BFS tree) (rMat, .5,.1,.3) :0.1: 0.337 seconds
+BFS (weighted average) : 0.238 seconds
+
+./runtest buildTreeTest 10000000 1
+build tree (random 2d) :0.1: 2.67 seconds
+build tree (kuzmin 2d) :0.1: 5.58 seconds
+build tree (random 3d) :0.1: 3.13 seconds
+build tree (plummer 3d) :0.1: 5.73 seconds
+build tree (weighted average) : 4.28 seconds
+
+./runtest buildTreeTest 10000000 2
+build tree (random 2d) :0.1: 1.47 seconds
+build tree (kuzmin 2d) :0.1: 3.59 seconds
+build tree (random 3d) :0.1: 1.87 seconds
+build tree (plummer 3d) :0.1: 3.54 seconds
+build tree (weighted average) : 2.62 seconds
+
+./runtest buildTreeTest 10000000 4
+build tree (random 2d) :0.1: 0.847 seconds
+build tree (kuzmin 2d) :0.1: 1.89 seconds
+build tree (random 3d) :0.1: 0.939 seconds
+build tree (plummer 3d) :0.1: 1.94 seconds
+build tree (weighted average) : 1.4 seconds
+
+./runtest buildTreeTest 10000000 8
+build tree (random 2d) :0.1: 0.464 seconds
+build tree (kuzmin 2d) :0.1: 1.18 seconds
+build tree (random 3d) :0.1: 0.514 seconds
+build tree (plummer 3d) :0.1: 1.09 seconds
+build tree (weighted average) : 0.811 seconds
+
+./runtest buildTreeTest 10000000 16
+build tree (random 2d) :0.1: 0.312 seconds
+build tree (kuzmin 2d) :0.1: 0.805 seconds
+build tree (random 3d) :0.1: 0.411 seconds
+build tree (plummer 3d) :0.1: 0.766 seconds
+build tree (weighted average) : 0.574 seconds
+
+./runtest buildTreeTest 10000000 24
+build tree (random 2d) :0.1: 0.261 seconds
+build tree (kuzmin 2d) :0.1: 0.854 seconds
+build tree (random 3d) :0.1: 0.315 seconds
+build tree (plummer 3d) :0.1: 0.803 seconds
+build tree (weighted average) : 0.558 seconds
+
+./runtest buildTreeTest 10000000 28
+build tree (random 2d) :0.1: 0.326 seconds
+build tree (kuzmin 2d) :0.1: 0.96 seconds
+build tree (random 3d) :0.1: 0.392 seconds
+build tree (plummer 3d) :0.1: 0.785 seconds
+build tree (weighted average) : 0.616 seconds
+
+./runtest buildTreeTest 10000000 32
+build tree (random 2d) :0.1: 0.392 seconds
+build tree (kuzmin 2d) :0.1: 0.753 seconds
+build tree (random 3d) :0.1: 0.446 seconds
+build tree (plummer 3d) :0.1: 0.791 seconds
+build tree (weighted average) : 0.596 seconds
+
+./runtest buildTreeTest 10000000 64
+build tree (random 2d) :0.1: 0.775 seconds
+build tree (kuzmin 2d) :0.1: 1.34 seconds
+build tree (random 3d) :0.1: 0.488 seconds
+build tree (plummer 3d) :0.1: 0.953 seconds
+build tree (weighted average) : 0.89 seconds
+
+./runtest buildTreeTest 10000000 64
+build tree (random 2d) :0.1: 0.439 seconds
+build tree (kuzmin 2d) :0.1: 1.14 seconds
+build tree (random 3d) :0.1: 0.51 seconds
+build tree (plummer 3d) :0.1: 0.92 seconds
+build tree (weighted average) : 0.752 seconds
+
+./runtest delaunayTest 10000000 1
+Delaunay (random points in square) :0.1: 88.7 seconds
+Delaunay (random points in kuzmin distribution) :0.1: 94.5 seconds
+Delaunay (weighted average) : 91.6 seconds
+
+./runtest delaunayTest 10000000 2
+Delaunay (random points in square) :0.1: 57 seconds
+Delaunay (random points in kuzmin distribution) :0.1: 58 seconds
+Delaunay (weighted average) : 57.5 seconds
+
+./runtest delaunayTest 10000000 4
+Delaunay (random points in square) :0.1: 28.7 seconds
+Delaunay (random points in kuzmin distribution) :0.1: 29.8 seconds
+Delaunay (weighted average) : 29.3 seconds
+
+./runtest delaunayTest 10000000 8
+Delaunay (random points in square) :0.1: 14.3 seconds
+Delaunay (random points in kuzmin distribution) :0.1: 15.5 seconds
+Delaunay (weighted average) : 14.9 seconds
+
+./runtest delaunayTest 10000000 16
+Delaunay (random points in square) :0.1: 7.68 seconds
+Delaunay (random points in kuzmin distribution) :0.1: 8.58 seconds
+Delaunay (weighted average) : 8.13 seconds
+
+./runtest delaunayTest 10000000 24
+Delaunay (random points in square) :0.1: 5.6 seconds
+Delaunay (random points in kuzmin distribution) :0.1: 6.26 seconds
+Delaunay (weighted average) : 5.93 seconds
+
+./runtest delaunayTest 10000000 28
+Delaunay (random points in square) :0.1: 4.99 seconds
+Delaunay (random points in kuzmin distribution) :0.1: 5.78 seconds
+Delaunay (weighted average) : 5.39 seconds
+
+./runtest delaunayTest 10000000 32
+Delaunay (random points in square) :0.1: 4.72 seconds
+Delaunay (random points in kuzmin distribution) :0.1: 5.41 seconds
+Delaunay (weighted average) : 5.06 seconds
+
+./runtest delaunayTest 10000000 64
+Delaunay (random points in square) :0.1: 3.92 seconds
+Delaunay (random points in kuzmin distribution) :0.1: 5.2 seconds
+Delaunay (weighted average) : 4.56 seconds
+
+./runtest delaunayTest 10000000 64
+Delaunay (random points in square) :0.1: 3.98 seconds
+Delaunay (random points in kuzmin distribution) :0.1: 4.65 seconds
+Delaunay (weighted average) : 4.32 seconds
+
+./runtest nearestNeighborTest 10000000 1
+k-nearest neighbors (random 2d, k=1) :0.1: 12.9 seconds
+k-nearest neighbors (random 3d, k=1) :0.1: 19.2 seconds
+k-nearest neighbors (plummer 3d, k=1) :0.1: 32.4 seconds
+k-nearest neighbors (random 2d, k=10) :0.1: 26.7 seconds
+k-nearest neighbors (kuzmin 2d, k=10) :0.1: 50.5 seconds
+k-nearest neighbors (random 3d, k=10) :0.1: 48.1 seconds
+k-nearest neighbors (weighted average) : 31.6 seconds
+
+./runtest nearestNeighborTest 10000000 2
+k-nearest neighbors (random 2d, k=1) :0.1: 6.97 seconds
+k-nearest neighbors (random 3d, k=1) :0.1: 10.6 seconds
+k-nearest neighbors (plummer 3d, k=1) :0.1: 18.9 seconds
+k-nearest neighbors (random 2d, k=10) :0.1: 13.5 seconds
+k-nearest neighbors (kuzmin 2d, k=10) :0.1: 36.9 seconds
+k-nearest neighbors (random 3d, k=10) :0.1: 24.9 seconds
+k-nearest neighbors (weighted average) : 18.6 seconds
+
+./runtest nearestNeighborTest 10000000 4
+k-nearest neighbors (random 2d, k=1) :0.1: 3.65 seconds
+k-nearest neighbors (random 3d, k=1) :0.1: 5.66 seconds
+k-nearest neighbors (plummer 3d, k=1) :0.1: 10.3 seconds
+k-nearest neighbors (random 2d, k=10) :0.1: 7.1 seconds
+k-nearest neighbors (kuzmin 2d, k=10) :0.1: 20.2 seconds
+k-nearest neighbors (random 3d, k=10) :0.1: 12.5 seconds
+k-nearest neighbors (weighted average) : 9.9 seconds
+
+./runtest nearestNeighborTest 10000000 8
+k-nearest neighbors (random 2d, k=1) :0.1: 2.01 seconds
+k-nearest neighbors (random 3d, k=1) :0.1: 3.13 seconds
+k-nearest neighbors (plummer 3d, k=1) :0.1: 5.41 seconds
+k-nearest neighbors (random 2d, k=10) :0.1: 4.01 seconds
+k-nearest neighbors (kuzmin 2d, k=10) :0.1: 9.63 seconds
+k-nearest neighbors (random 3d, k=10) :0.1: 6.42 seconds
+k-nearest neighbors (weighted average) : 5.1 seconds
+
+./runtest nearestNeighborTest 10000000 16
+k-nearest neighbors (random 2d, k=1) :0.1: 1.19 seconds
+k-nearest neighbors (random 3d, k=1) :0.1: 1.9 seconds
+k-nearest neighbors (plummer 3d, k=1) :0.1: 3.07 seconds
+k-nearest neighbors (random 2d, k=10) :0.1: 2.15 seconds
+k-nearest neighbors (kuzmin 2d, k=10) :0.1: 6.53 seconds
+k-nearest neighbors (random 3d, k=10) :0.1: 3.84 seconds
+k-nearest neighbors (weighted average) : 3.11 seconds
+
+./runtest nearestNeighborTest 10000000 24
+k-nearest neighbors (random 2d, k=1) :0.1: 1.02 seconds
+k-nearest neighbors (random 3d, k=1) :0.1: 1.58 seconds
+k-nearest neighbors (plummer 3d, k=1) :0.1: 2.43 seconds
+k-nearest neighbors (random 2d, k=10) :0.1: 1.57 seconds
+k-nearest neighbors (kuzmin 2d, k=10) :0.1: 4.54 seconds
+k-nearest neighbors (random 3d, k=10) :0.1: 2.74 seconds
+k-nearest neighbors (weighted average) : 2.31 seconds
+
+./runtest nearestNeighborTest 10000000 28
+k-nearest neighbors (random 2d, k=1) :0.1: 1.03 seconds
+k-nearest neighbors (random 3d, k=1) :0.1: 1.37 seconds
+k-nearest neighbors (plummer 3d, k=1) :0.1: 2.19 seconds
+k-nearest neighbors (random 2d, k=10) :0.1: 1.39 seconds
+k-nearest neighbors (kuzmin 2d, k=10) :0.1: 5.06 seconds
+k-nearest neighbors (random 3d, k=10) :0.1: 2.48 seconds
+k-nearest neighbors (weighted average) : 2.26 seconds
+
+./runtest nearestNeighborTest 10000000 32
+k-nearest neighbors (random 2d, k=1) :0.1: 0.927 seconds
+k-nearest neighbors (random 3d, k=1) :0.1: 1.35 seconds
+k-nearest neighbors (plummer 3d, k=1) :0.1: 2.06 seconds
+k-nearest neighbors (random 2d, k=10) :0.1: 1.28 seconds
+k-nearest neighbors (kuzmin 2d, k=10) :0.1: 4.54 seconds
+k-nearest neighbors (random 3d, k=10) :0.1: 2.19 seconds
+k-nearest neighbors (weighted average) : 2.06 seconds
+
+./runtest nearestNeighborTest 10000000 64
+k-nearest neighbors (random 2d, k=1) :0.1: 2.03 seconds
+k-nearest neighbors (random 3d, k=1) :0.1: 2.78 seconds
+k-nearest neighbors (plummer 3d, k=1) :0.1: 2.28 seconds
+k-nearest neighbors (random 2d, k=10) :0.1: 1.18 seconds
+k-nearest neighbors (kuzmin 2d, k=10) :0.1: 5.48 seconds
+k-nearest neighbors (random 3d, k=10) :0.1: 1.95 seconds
+k-nearest neighbors (weighted average) : 2.62 seconds
+
+./runtest nearestNeighborTest 10000000 64
+k-nearest neighbors (random 2d, k=1) :0.1: 1.3 seconds
+k-nearest neighbors (random 3d, k=1) :0.1: 2.36 seconds
+k-nearest neighbors (plummer 3d, k=1) :0.1: 2.8 seconds
+k-nearest neighbors (random 2d, k=10) :0.1: 1.25 seconds
+k-nearest neighbors (kuzmin 2d, k=10) :0.1: 5.76 seconds
+k-nearest neighbors (random 3d, k=10) :0.1: 1.96 seconds
+k-nearest neighbors (weighted average) : 2.57 seconds
+
+./runtest spmvTest 1000000 1
+sparse VM (rand dim d=2, m = n*20)  :0.1: 0.086 seconds
+sparse VM (rMat m = n*20)  :0.1: 0.118 seconds
+sparse VM (weighted average) : 0.102 seconds
+
+./runtest spmvTest 1000000 2
+sparse VM (rand dim d=2, m = n*20)  :0.1: 0.0566 seconds
+sparse VM (rMat m = n*20)  :0.1: 0.0658 seconds
+sparse VM (weighted average) : 0.0612 seconds
+
+./runtest spmvTest 1000000 4
+sparse VM (rand dim d=2, m = n*20)  :0.1: 0.028 seconds
+sparse VM (rMat m = n*20)  :0.1: 0.0346 seconds
+sparse VM (weighted average) : 0.0313 seconds
+
+./runtest spmvTest 1000000 8
+sparse VM (rand dim d=2, m = n*20)  :0.1: 0.0144 seconds
+sparse VM (rMat m = n*20)  :0.1: 0.0183 seconds
+sparse VM (weighted average) : 0.0163 seconds
+
+./runtest spmvTest 1000000 16
+sparse VM (rand dim d=2, m = n*20)  :0.1: 0.00877 seconds
+sparse VM (rMat m = n*20)  :0.1: 0.0103 seconds
+sparse VM (weighted average) : 0.00954 seconds
+
+./runtest spmvTest 1000000 24
+sparse VM (rand dim d=2, m = n*20)  :0.1: 0.00772 seconds
+sparse VM (rMat m = n*20)  :0.1: 0.00863 seconds
+sparse VM (weighted average) : 0.00818 seconds
+
+./runtest spmvTest 1000000 28
+sparse VM (rand dim d=2, m = n*20)  :0.1: 0.00735 seconds
+sparse VM (rMat m = n*20)  :0.1: 0.00789 seconds
+sparse VM (weighted average) : 0.00762 seconds
+
+./runtest spmvTest 1000000 32
+sparse VM (rand dim d=2, m = n*20)  :0.1: 0.00714 seconds
+sparse VM (rMat m = n*20)  :0.1: 0.00784 seconds
+sparse VM (weighted average) : 0.00749 seconds
+
+./runtest spmvTest 1000000 64
+sparse VM (rand dim d=2, m = n*20)  :0.1: 0.0068 seconds
+sparse VM (rMat m = n*20)  :0.1: 0.00899 seconds
+sparse VM (weighted average) : 0.00789 seconds
+
+./runtest spmvTest 1000000 64
+sparse VM (rand dim d=2, m = n*20)  :0.1: 0.00687 seconds
+sparse VM (rMat m = n*20)  :0.1: 0.00753 seconds
+sparse VM (weighted average) : 0.0072 seconds
+
+./runtest nbodyTest 1000000 1
+Nbody (Random 3d points) :0.1: 312 seconds
+  Sampled RMS Error = 0.00208
+Nbody (weighted average) : 312 seconds
+
+./runtest nbodyTest 1000000 2
+Nbody (Random 3d points) :0.1: 158 seconds
+  Sampled RMS Error = 0.00208
+Nbody (weighted average) : 158 seconds
+
+./runtest nbodyTest 1000000 4
+Nbody (Random 3d points) :0.1: 81.2 seconds
+  Sampled RMS Error = 0.00208
+Nbody (weighted average) : 81.2 seconds
+
+./runtest nbodyTest 1000000 8
+Nbody (Random 3d points) :0.1: 42.1 seconds
+  Sampled RMS Error = 0.00208
+Nbody (weighted average) : 42.1 seconds
+
+./runtest nbodyTest 1000000 16
+Nbody (Random 3d points) :0.1: 21.8 seconds
+  Sampled RMS Error = 0.00208
+Nbody (weighted average) : 21.8 seconds
+
+./runtest nbodyTest 1000000 24
+Nbody (Random 3d points) :0.1: 15.4 seconds
+  Sampled RMS Error = 0.00208
+Nbody (weighted average) : 15.4 seconds
+
+./runtest nbodyTest 1000000 28
+Nbody (Random 3d points) :0.1: 13.5 seconds
+  Sampled RMS Error = 0.00208
+Nbody (weighted average) : 13.5 seconds
+
+./runtest nbodyTest 1000000 32
+Nbody (Random 3d points) :0.1: 12 seconds
+  Sampled RMS Error = 0.00208
+Nbody (weighted average) : 12 seconds
+
+./runtest nbodyTest 1000000 64
+Nbody (Random 3d points) :0.1: 11 seconds
+  Sampled RMS Error = 0.00208
+Nbody (weighted average) : 11 seconds
+
+./runtest nbodyTest 1000000 64
+Nbody (Random 3d points) :0.1: 10.9 seconds
+  Sampled RMS Error = 0.00208
+Nbody (weighted average) : 10.9 seconds
+
+./runtest suffixArrayTest 10000000 1
+Radix sort time: 1.73217
+Merge time: 1.84918
+LCP time: 0
+Suffix Array (trigram string) :0.3: 5.21 seconds
+Radix sort time: 0.47
+Merge time: 0.462
+LCP time: 0
+Suffix Array (equal string) :0.1: 1.79 seconds
+Radix sort time: 0.709
+Merge time: 1.16
+LCP time: 0
+Suffix Array (repeated string) :0.1: 3.25 seconds
+Suffix Array (weighted average) : 4.13 seconds
+
+./runtest suffixArrayTest 10000000 2
+Radix sort time: 0.916427
+Merge time: 1.01273
+LCP time: 0
+Suffix Array (trigram string) :0.3: 2.8 seconds
+Radix sort time: 0.264
+Merge time: 0.226
+LCP time: 0
+Suffix Array (equal string) :0.1: 0.961 seconds
+Radix sort time: 0.438
+Merge time: 0.751
+LCP time: 0
+Suffix Array (repeated string) :0.1: 2.12 seconds
+Suffix Array (weighted average) : 2.3 seconds
+
+./runtest suffixArrayTest 10000000 4
+Radix sort time: 0.459213
+Merge time: 0.468877
+LCP time: 0
+Suffix Array (trigram string) :0.3: 1.37 seconds
+Radix sort time: 0.155
+Merge time: 0.114
+LCP time: 0
+Suffix Array (equal string) :0.1: 0.521 seconds
+Radix sort time: 0.229
+Merge time: 0.477
+LCP time: 0
+Suffix Array (repeated string) :0.1: 1.33 seconds
+Suffix Array (weighted average) : 1.19 seconds
+
+./runtest suffixArrayTest 10000000 8
+Radix sort time: 0.248785
+Merge time: 0.234512
+LCP time: 0
+Suffix Array (trigram string) :0.3: 0.716 seconds
+Radix sort time: 0.108
+Merge time: 0.0591
+LCP time: 0
+Suffix Array (equal string) :0.1: 0.312 seconds
+Radix sort time: 0.134
+Merge time: 0.253
+LCP time: 0
+Suffix Array (repeated string) :0.1: 0.789 seconds
+Suffix Array (weighted average) : 0.65 seconds
+
+./runtest suffixArrayTest 10000000 16
+Radix sort time: 0.140967
+Merge time: 0.120461
+LCP time: 0
+Suffix Array (trigram string) :0.3: 0.398 seconds
+Radix sort time: 0.0887
+Merge time: 0.0307
+LCP time: 0
+Suffix Array (equal string) :0.1: 0.213 seconds
+Radix sort time: 0.0886
+Merge time: 0.134
+LCP time: 0
+Suffix Array (repeated string) :0.1: 0.506 seconds
+Suffix Array (weighted average) : 0.382 seconds
+
+./runtest suffixArrayTest 10000000 24
+Radix sort time: 0.109264
+Merge time: 0.0829618
+LCP time: 0
+Suffix Array (trigram string) :0.3: 0.302 seconds
+Radix sort time: 0.0851
+Merge time: 0.0221
+LCP time: 0
+Suffix Array (equal string) :0.1: 0.191 seconds
+Radix sort time: 0.078
+Merge time: 0.0869
+LCP time: 0
+Suffix Array (repeated string) :0.1: 0.379 seconds
+Suffix Array (weighted average) : 0.295 seconds
+
+./runtest suffixArrayTest 10000000 28
+Radix sort time: 0.104473
+Merge time: 0.0733891
+LCP time: 0
+Suffix Array (trigram string) :0.3: 0.285 seconds
+Radix sort time: 0.086
+Merge time: 0.0194
+LCP time: 0
+Suffix Array (equal string) :0.1: 0.19 seconds
+Radix sort time: 0.077
+Merge time: 0.0838
+LCP time: 0
+Suffix Array (repeated string) :0.1: 0.358 seconds
+Suffix Array (weighted average) : 0.281 seconds
+
+./runtest suffixArrayTest 10000000 32
+Radix sort time: 0.0991211
+Merge time: 0.0654359
+LCP time: 0
+Suffix Array (trigram string) :0.3: 0.264 seconds
+Radix sort time: 0.0872
+Merge time: 0.0174
+LCP time: 0
+Suffix Array (equal string) :0.1: 0.186 seconds
+Radix sort time: 0.0749
+Merge time: 0.0709
+LCP time: 0
+Suffix Array (repeated string) :0.1: 0.323 seconds
+Suffix Array (weighted average) : 0.26 seconds
+
+./runtest suffixArrayTest 10000000 64
+Radix sort time: 0.0919123
+Merge time: 0.0520844
+LCP time: 0
+Suffix Array (trigram string) :0.3: 0.237 seconds
+Radix sort time: 0.102
+Merge time: 0.0175
+LCP time: 0
+Suffix Array (equal string) :0.1: 0.201 seconds
+Radix sort time: 0.0816
+Merge time: 0.0555
+LCP time: 0
+Suffix Array (repeated string) :0.1: 0.294 seconds
+Suffix Array (weighted average) : 0.241 seconds
+
+./runtest suffixArrayTest 10000000 64
+Radix sort time: 0.094136
+Merge time: 0.0546019
+LCP time: 0
+Suffix Array (trigram string) :0.3: 0.244 seconds
+Radix sort time: 0.104
+Merge time: 0.0174
+LCP time: 0
+Suffix Array (equal string) :0.1: 0.205 seconds
+Radix sort time: 0.0836
+Merge time: 0.0516
+LCP time: 0
+Suffix Array (repeated string) :0.1: 0.292 seconds
+Suffix Array (weighted average) : 0.246 seconds
+
+./runtest hullTest 10000000 1
+Convex Hull (random on unit circle) :0.1: 9.08 seconds
+Convex Hull (random in unit circle) :0.3: 0.947 seconds
+Convex Hull (random projected Parabola) :0.3: 0.86 seconds
+Convex Hull (weighted average) : 2.07 seconds
+
+./runtest hullTest 10000000 2
+Convex Hull (random on unit circle) :0.1: 4.59 seconds
+Convex Hull (random in unit circle) :0.3: 0.451 seconds
+Convex Hull (random projected Parabola) :0.3: 0.41 seconds
+Convex Hull (weighted average) : 1.02 seconds
+
+./runtest hullTest 10000000 4
+Convex Hull (random on unit circle) :0.1: 2.35 seconds
+Convex Hull (random in unit circle) :0.3: 0.24 seconds
+Convex Hull (random projected Parabola) :0.3: 0.245 seconds
+Convex Hull (weighted average) : 0.544 seconds
+
+./runtest hullTest 10000000 8
+Convex Hull (random on unit circle) :0.1: 1.26 seconds
+Convex Hull (random in unit circle) :0.3: 0.138 seconds
+Convex Hull (random projected Parabola) :0.3: 0.128 seconds
+Convex Hull (weighted average) : 0.293 seconds
+
+./runtest hullTest 10000000 16
+Convex Hull (random on unit circle) :0.1: 0.751 seconds
+Convex Hull (random in unit circle) :0.3: 0.117 seconds
+Convex Hull (random projected Parabola) :0.3: 0.123 seconds
+Convex Hull (weighted average) : 0.21 seconds
+
+./runtest hullTest 10000000 24
+Convex Hull (random on unit circle) :0.1: 0.601 seconds
+Convex Hull (random in unit circle) :0.3: 0.117 seconds
+Convex Hull (random projected Parabola) :0.3: 0.0916 seconds
+Convex Hull (weighted average) : 0.175 seconds
+
+./runtest hullTest 10000000 28
+Convex Hull (random on unit circle) :0.1: 0.57 seconds
+Convex Hull (random in unit circle) :0.3: 0.0924 seconds
+Convex Hull (random projected Parabola) :0.3: 0.0882 seconds
+Convex Hull (weighted average) : 0.159 seconds
+
+./runtest hullTest 10000000 32
+Convex Hull (random on unit circle) :0.1: 0.544 seconds
+Convex Hull (random in unit circle) :0.3: 0.115 seconds
+Convex Hull (random projected Parabola) :0.3: 0.088 seconds
+Convex Hull (weighted average) : 0.165 seconds
+
+./runtest hullTest 10000000 64
+Convex Hull (random on unit circle) :0.1: 0.54 seconds
+Convex Hull (random in unit circle) :0.3: 0.103 seconds
+Convex Hull (random projected Parabola) :0.3: 0.0894 seconds
+Convex Hull (weighted average) : 0.159 seconds
+
+./runtest hullTest 10000000 64
+Convex Hull (random on unit circle) :0.1: 0.56 seconds
+Convex Hull (random in unit circle) :0.3: 0.101 seconds
+Convex Hull (random projected Parabola) :0.3: 0.103 seconds
+Convex Hull (weighted average) : 0.167 seconds
+
+./runtest mstTest 10000000 1
+Minimum Spanning Tree (2d grid, m = 2n) :0.1: 8.08 seconds
+Minimum Spanning Tree (rMat m = 5n) :0.1: 15.4 seconds
+Minimum Spanning Tree (random, m = 6n) :0.1: 12.5 seconds
+Minimum Spanning Tree (weighted average) : 12 seconds
+
+./runtest mstTest 10000000 2
+Minimum Spanning Tree (2d grid, m = 2n) :0.1: 4.39 seconds
+Minimum Spanning Tree (rMat m = 5n) :0.1: 8.35 seconds
+Minimum Spanning Tree (random, m = 6n) :0.1: 6.83 seconds
+Minimum Spanning Tree (weighted average) : 6.53 seconds
+
+./runtest mstTest 10000000 4
+Minimum Spanning Tree (2d grid, m = 2n) :0.1: 2.34 seconds
+Minimum Spanning Tree (rMat m = 5n) :0.1: 4.41 seconds
+Minimum Spanning Tree (random, m = 6n) :0.1: 3.62 seconds
+Minimum Spanning Tree (weighted average) : 3.45 seconds
+
+./runtest mstTest 10000000 8
+Minimum Spanning Tree (2d grid, m = 2n) :0.1: 1.24 seconds
+Minimum Spanning Tree (rMat m = 5n) :0.1: 2.52 seconds
+Minimum Spanning Tree (random, m = 6n) :0.1: 1.88 seconds
+Minimum Spanning Tree (weighted average) : 1.88 seconds
+
+./runtest mstTest 10000000 16
+Minimum Spanning Tree (2d grid, m = 2n) :0.1: 0.776 seconds
+Minimum Spanning Tree (rMat m = 5n) :0.1: 1.49 seconds
+Minimum Spanning Tree (random, m = 6n) :0.1: 1.3 seconds
+Minimum Spanning Tree (weighted average) : 1.19 seconds
+
+./runtest mstTest 10000000 24
+Minimum Spanning Tree (2d grid, m = 2n) :0.1: 0.598 seconds
+Minimum Spanning Tree (rMat m = 5n) :0.1: 1.21 seconds
+Minimum Spanning Tree (random, m = 6n) :0.1: 0.871 seconds
+Minimum Spanning Tree (weighted average) : 0.895 seconds
+
+./runtest mstTest 10000000 28
+Minimum Spanning Tree (2d grid, m = 2n) :0.1: 0.575 seconds
+Minimum Spanning Tree (rMat m = 5n) :0.1: 1.18 seconds
+Minimum Spanning Tree (random, m = 6n) :0.1: 0.857 seconds
+Minimum Spanning Tree (weighted average) : 0.872 seconds
+
+./runtest mstTest 10000000 32
+Minimum Spanning Tree (2d grid, m = 2n) :0.1: 0.533 seconds
+Minimum Spanning Tree (rMat m = 5n) :0.1: 1.1 seconds
+Minimum Spanning Tree (random, m = 6n) :0.1: 0.758 seconds
+Minimum Spanning Tree (weighted average) : 0.796 seconds
+
+./runtest mstTest 10000000 64
+Minimum Spanning Tree (2d grid, m = 2n) :0.1: 0.45 seconds
+Minimum Spanning Tree (rMat m = 5n) :0.1: 0.922 seconds
+Minimum Spanning Tree (random, m = 6n) :0.1: 0.665 seconds
+Minimum Spanning Tree (weighted average) : 0.679 seconds
+
+./runtest mstTest 10000000 64
+Minimum Spanning Tree (2d grid, m = 2n) :0.1: 0.46 seconds
+Minimum Spanning Tree (rMat m = 5n) :0.1: 0.978 seconds
+Minimum Spanning Tree (random, m = 6n) :0.1: 0.697 seconds
+Minimum Spanning Tree (weighted average) : 0.712 seconds
+
+./serialMstTest 10000000
+Minimum Spanning Tree (2d grid, m = 2n) :0.1: 5.29 seconds
+Minimum Spanning Tree (rMat m = 5n) :0.1: 15.1 seconds
+Minimum Spanning Tree (random, m = 6n) :0.1: 14.4 seconds
+Minimum Spanning Tree (weighted average) : 11.6 seconds

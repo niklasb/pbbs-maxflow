@@ -1,0 +1,35 @@
+#!/usr/bin/python
+#
+# run all tests
+#
+
+import os
+import sys
+
+os.system("echo HOSTNAME: `hostname`")
+os.system("svn info")
+os.system("make mergeSuffixTreeTest")
+
+
+testfiles = ["wikisamp9.xml","10Midentical","10Mrandom","10Msqrtn","chr22.dna","etext99","howto","jdk13c","kingjamesbible","rctail96","rfc","sprot34.dat","thesaurus.doc","w3c2","wikisamp8.xml"]
+
+integertestfiles = ["10Mrandom_ints_range_10K","10Mrandom_ints_range_INTMAX"]
+
+processors = [1,2,4,8,16,24,28,32,64,64]
+
+if (len(sys.argv) > 1) :
+  tests = [test for test in tests if test[0] in sys.argv]
+
+for testfile in testfiles :
+    for p in processors :
+      ss = "./mergeSuffixTreeTest f ../julians-branch/testfiles/"+testfile+" -cilk_set_worker_count "+ `p`
+      os.system("echo")
+      os.system("echo "+ss)
+      os.system(ss)
+
+for testfile in integertestfiles :
+    for p in processors :
+      ss = "./mergeSuffixTreeTest i ../julians-branch/testfiles/"+testfile+" -cilk_set_worker_count "+ `p`
+      os.system("echo")
+      os.system("echo "+ss)
+      os.system(ss)

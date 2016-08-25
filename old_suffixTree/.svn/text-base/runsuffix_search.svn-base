@@ -1,0 +1,26 @@
+#!/usr/bin/python
+#
+# run all tests
+#
+
+import os
+import sys
+
+os.system("echo HOSTNAME: `hostname`")
+os.system("svn info")
+os.system("make mergeSuffixTreeTest")
+
+
+testfiles = ["10Midentical","10Mrandom","10Msqrtn","etext98","sprot34.dat","100Mrandom"]
+
+processors = [1,32,64]
+
+if (len(sys.argv) > 1) :
+  tests = [test for test in tests if test[0] in sys.argv]
+
+for testfile in testfiles :
+    for p in processors :
+      ss = "./mergeSuffixTreeTest f ../julians-branch/testfiles/"+testfile+" -cilk_set_worker_count "+ `p`
+      os.system("echo")
+      os.system("echo "+ss)
+      os.system(ss)

@@ -1,0 +1,86 @@
+#!/usr/bin/python
+#
+# run all tests
+#
+
+import os
+import sys
+import signal
+import time
+import subprocess
+
+
+def signal_handler(signal,frame):
+  print "bye\n"
+  sys.exit(0)
+signal.signal(signal.SIGINT,signal_handler)
+
+def shellGetOutput(str) :
+  process = subprocess.Popen(str,shell=True,stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE)
+  output, err = process.communicate()
+  
+  if (len(err) > 0):
+      raise NameError(str+"\n"+output+err)
+  return output
+
+applications = ["connectedComponents/nonDeterministicCC","connectedComponents/deterministicCC","connectedComponents/ndHybridCC"]#,"connectedComponents/nonDeterministicCC_parEdges"]
+#applications = ["connectedComponents/ndHybridCC"]
+serial_applications=["connectedComponents/serialCC"]
+testfiles = [("randLocalGraph_J_5_100000000","0.2"),("rMatGraph_J_5_100000000","0.1"),("3Dgrid_J_100000000","0.05"),("lineGraph_J_500000000","0.02"),("rMatGraph_J_500_1000000","0.3"),("com-orkut.ungraph.txt_J","0.5"),("nlpkkt240_J","0.03")]
+testfiles = [("lineGraph_J_500000000","0.02")]
+
+serial_ST_applications = ["spanningForest/serialST"]
+ST_applications = ["spanningForest/incrementalST"]
+ST_testfiles = ["randLocalGraph_E_5_100000000","rMatGraph_E_5_100000000","3Dgrid_E_100000000","lineGraph_E_500000000","rMatGraph_E_500_1000000","com-orkut.ungraph.txt_E_directed","nlpkkt240_E_directed"]
+
+processors = [1,2,4]+range(8,80+1,8)
+
+for app in applications:
+  for testfile in testfiles :
+    for p in processors : #parallel
+      if p == 1:
+        os.system("unset GCILK; cd "+app+"; make clean -s; make -s; cd ..");
+        ss = "./" + app + "/CC -r 3 -b " + testfile[1] + " testData/graphData/data/"+testfile[0]
+        print app+" 1 " + testfile[0] + " beta= " + testfile[1]
+        print shellGetOutput(ss)
+        sys.stdout.flush()
+        os.system("export GCILK=1; cd "+app+"; make clean -s; make -s; cd ..");
+      else:
+        ss = "CILK_NWORKERS="+`p`+" numactl -i all ./" + app + "/CC -r 3 -b " + testfile[1] + " testData/graphData/data/"+testfile[0]
+        print app+" "+`p` + " " + testfile[0] + " beta= "+ testfile[1] 
+        print shellGetOutput(ss)
+        sys.stdout.flush()
+
+sys.exit()
+
+for app in serial_applications:
+  for testfile in testfiles :
+    ss = "./" + app + "/CC -r 3 testData/graphData/data/" + testfile[0]
+    print app + " " + testfile[0]
+    print shellGetOutput(ss)
+    sys.stdout.flush()
+
+for app in ST_applications:
+  for testfile in ST_testfiles :
+    for p in processors : #parallel
+      if p == 1:
+        os.system("unset GCILK; cd "+app+"; make clean -s; make -s; cd ..");
+        ss = "./" + app + "/ST -r 3 testData/graphData/data/"+testfile
+        print app+" 1 " + testfile
+        print shellGetOutput(ss)
+        sys.stdout.flush()
+        os.system("export GCILK=1; cd "+app+"; make clean -s; make -s; cd ..");
+      else:
+        ss = "CILK_NWORKERS="+`p`+" numactl -i all ./" + app + "/ST -r 3 testData/graphData/data/"+testfile
+        print app+" "+`p` + " " + testfile
+        print shellGetOutput(ss)
+        sys.stdout.flush()
+
+for app in serial_ST_applications:
+  for testfile in ST_testfiles :
+    ss = "./" + app + "/ST -r 3 testData/graphData/data/" + testfile
+    print app + " " + testfile
+    print shellGetOutput(ss)
+    sys.stdout.flush()
+

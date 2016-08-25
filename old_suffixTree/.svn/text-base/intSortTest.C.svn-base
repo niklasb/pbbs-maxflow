@@ -1,0 +1,107 @@
+// -*- C++ -*-
+
+#include "gettime.h"
+#include "seq.h"
+#include "intSort.h"
+#include "seqGen.h"
+#include <iostream>
+#include <algorithm>
+
+using namespace utils;
+
+#define CHECK 0
+#define TTYPE double
+
+template <class T>
+void check(bool cond, int i, T val, string s) {
+  if (!cond) { 
+    cout << "Error for " << s << ": at i=" << i << " v=" << val << endl; 
+    abort(); } 
+}
+
+template <class T>
+void check2(bool cond, int i, int j, T val, string s) {
+  if (!cond) { 
+    cout << "Error for " << s << ": at i=" << i << " j=" << j << 
+      " v=" << val << endl; 
+    abort(); } 
+}
+
+template <class E>
+struct mod {
+  int mval;
+  mod(int bits) : mval((1<<bits)-1) {}
+  int operator() (E i) {return ((int) i) & mval;}
+};
+
+int cilk_main(int argc, char* argv[]) {
+  int n = 10;
+  if (argc > 1) n = std::atoi(argv[1]);
+  long t1;
+
+  {
+    int mult = 4;
+
+    // make sure mem is allocated
+    TTYPE *i1 = newA(TTYPE,mult*n);
+    cilk_for(int i =0; i < mult*n; i++) i1[i] = 0;
+
+    TTYPE *i2 = newA(TTYPE,mult*n);
+    cilk_for(int i =0; i < mult*n; i++) i2[i] = 0;
+
+    free(i1); free(i2);
+  }
+
+  typedef unsigned int uint;
+
+  for (int i=0; i < 1; i++) {
+    uint *A = dataGen::rand<uint>(0,n);
+    long maxVal = ((long) 1) << 32;
+    startTime();
+    intSort::iSort(A,n,n,utils::identityF<uint>());
+    stopTime(.1,"Integer Sort (32 bit, random)");
+    if (CHECK)
+      for (int i=1; i < n; i++) 
+	check((A[i-1]<=A[i]),i,A[i],"radix sort (int)");
+    free(A);
+  }
+
+  {
+    uint *A = dataGen::expDist<uint>(0,n);
+    long maxVal = ((long) 1) << 32;
+    startTime();
+    intSort::iSort(A,n,maxVal,utils::identityF<uint>());
+    stopTime(.1,"Integer Sort (32 bit, exponential)");
+    if (CHECK)
+      for (int i=1; i < n; i++) 
+	check((A[i-1]<=A[i]),i,A[i],"radix sort (int)");
+    free(A);
+  }
+
+  {
+    uint *A = dataGen::rand<uint>(0,n);
+    long maxVal = 256;
+    startTime();
+    intSort::iSort(A,n,maxVal,utils::identityF<uint>());
+    stopTime(.1,"Integer Sort (8 bit key, 32 bit data, random)");
+    free(A);
+  }
+
+  {
+    pair<uint,int> *A = new pair<uint,int>[n];
+    long maxVal = ((long) 1) << 32;
+    cilk_for (int i=0;i<n;i++)  {
+      A[i].first = dataGen::hash<uint>(i)%n;
+      A[i].second = 0;}
+    startTime();
+    intSort::iSort(A,n,n,utils::firstF<int,int>());
+    stopTime(.2,"Integer Sort (32 bit key, 64 bit data, random)");
+    if (CHECK)
+      for (int i=1; i < n; i++) 
+	check((A[i-1].first<=A[i].first),i,A[i].first,"radix sort (int,int)");
+    free(A);
+  }
+  reportTime("Integer Sort (weighted average)");
+
+}
+

@@ -61,8 +61,10 @@ the second step of flow reconstruction, after finding a maximum preflow.
 ---
 
 [1] "Efficient Implementation of a Synchronous Parallel Push-Relabel Algorithm", ESA 2015
+
 [2] "A Cache-Aware Parallel Implementation of the Push-Relabel Network
 Flow Algorithm and Experimental Evaluation of the Gap Relabeling
 Heuristic", PDCS 2005
+
 [3] "An Asynchronous Multithreaded Algorithm for the Maximum Network Flow
 Problem with Nonblocking Global Relabeling Heuristic", IEEE TPDS 2011

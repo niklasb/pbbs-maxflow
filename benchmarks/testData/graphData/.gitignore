@@ -1,1 +1,6 @@
 *.o
+/adjGraphAddSourceSink
+/adjGraphAddWeights
+/dimacsToFlowGraph
+/randLocalGraph
+/rMatGraph

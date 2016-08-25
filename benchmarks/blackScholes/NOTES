@@ -1,8 +1,0 @@
-To run a particular version, see parallelDefs for the environment
-variable to set (make sure the others are not set if they appear
-earlier in if/else sequence).
-
-Checker is in blackScholes/common directory. 
-
-To do:
-Decide if going to support SIMD.

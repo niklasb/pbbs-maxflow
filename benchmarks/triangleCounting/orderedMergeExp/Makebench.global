@@ -1,8 +1,0 @@
-CHECK = $(BNCHMRK)Check
-TIME = $(BNCHMRK)Time
-TEST_FILES = testInputs
-
-
-$(TEST_FILES) :
-	cp ../common/$@ .
-

@@ -1,83 +1,0 @@
-10
-
-dir
-106
-https://svn.uni-konstanz.de/algo/ortmann/cpp_workspaces/Triads/Release/src
-https://svn.uni-konstanz.de/algo/ortmann
-
-
-
-2013-07-09T09:02:55.195902Z
-105
-mark.ortmann
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-7d29c38d-8319-4584-a995-41aec0321a69
-
-algorithms
-dir
-
-generators
-dir
-
-io
-dir
-
-measurement
-dir
-
-network
-dir
-
-orderings
-dir
-
-subdir.mk
-file
-
-
-
-
-2013-09-16T10:38:46.000000Z
-c9270a1f207924398352f29b44a2e0cc
-2013-05-27T10:49:22.329450Z
-48
-mark.ortmann
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-670
-
-tests
-dir
-

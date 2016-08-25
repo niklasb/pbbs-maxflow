@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if test "$MKLROOTX"
-then
-export CILK_NWORKERS=$3
-./$1 $2 
-else
-./$1 $2 -cilk_set_worker_count $3
-fi
